@@ -15,14 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
-//        window = UIWindow(frame: UIScreen.main.bounds)
-//        window?.rootViewController = LoginViewController(nibName:String(describing: LoginViewController.self), bundle: nil)
-//        window?.makeKeyAndVisible()
+        var logined:Bool = false
+//        logined = true
         
+        if (!logined) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+            window?.rootViewController = initialViewController
+            //表示
+            window?.makeKeyAndVisible()
+        }
         return true
     }
 

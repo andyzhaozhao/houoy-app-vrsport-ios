@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */; };
-		1D3E9ED11F3209BD006CDD87 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED01F3209BD006CDD87 /* FirstViewController.swift */; };
-		1D3E9ED31F3209BD006CDD87 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED21F3209BD006CDD87 /* SecondViewController.swift */; };
 		1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED41F3209BD006CDD87 /* Main.storyboard */; };
 		1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED71F3209BD006CDD87 /* Assets.xcassets */; };
 		1D3E9EDB1F3209BD006CDD87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED91F3209BD006CDD87 /* LaunchScreen.storyboard */; };
@@ -18,6 +16,18 @@
 		1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F001F3213AB006CDD87 /* CommanViewController.swift */; };
 		1D3E9F061F3286B4006CDD87 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F051F3286B4006CDD87 /* LoginViewController.swift */; };
 		1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F071F3286CE006CDD87 /* RegisterViewController.swift */; };
+		1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F0A1F35A35B006CDD87 /* LoginNavigationController.swift */; };
+		1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F0C1F35A3CA006CDD87 /* TestViewController.swift */; };
+		1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F161F35D877006CDD87 /* MainTabBarController.swift */; };
+		1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */; };
+		1D3E9F1D1F35D877006CDD87 /* SportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F1A1F35D877006CDD87 /* SportViewController.swift */; };
+		1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */; };
+		1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F271F369C94006CDD87 /* MessageViewController.swift */; };
+		1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2C1F36A9A2006CDD87 /* DetailTableViewCell.swift */; };
+		1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */; };
+		1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */; };
+		1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */; };
+		1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +52,6 @@
 		0D7FEC4C06CA67E826B5A6B7 /* Pods-SmartHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.release.xcconfig"; sourceTree = "<group>"; };
 		1D3E9ECB1F3209BD006CDD87 /* SmartHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D3E9ED01F3209BD006CDD87 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		1D3E9ED21F3209BD006CDD87 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1D3E9ED51F3209BD006CDD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D3E9ED71F3209BD006CDD87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D3E9EDA1F3209BD006CDD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +65,18 @@
 		1D3E9F001F3213AB006CDD87 /* CommanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommanViewController.swift; sourceTree = "<group>"; };
 		1D3E9F051F3286B4006CDD87 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1D3E9F071F3286CE006CDD87 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1D3E9F0A1F35A35B006CDD87 /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
+		1D3E9F0C1F35A3CA006CDD87 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		1D3E9F161F35D877006CDD87 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		1D3E9F1A1F35D877006CDD87 /* SportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportViewController.swift; sourceTree = "<group>"; };
+		1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1D3E9F271F369C94006CDD87 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		1D3E9F2C1F36A9A2006CDD87 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
+		1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,11 +141,10 @@
 		1D3E9ECD1F3209BD006CDD87 /* SmartHealth */ = {
 			isa = PBXGroup;
 			children = (
+				1D3E9F151F35D877006CDD87 /* TabBar */,
 				1D3E9F041F3286B4006CDD87 /* login */,
 				1D3E9F001F3213AB006CDD87 /* CommanViewController.swift */,
 				1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */,
-				1D3E9ED01F3209BD006CDD87 /* FirstViewController.swift */,
-				1D3E9ED21F3209BD006CDD87 /* SecondViewController.swift */,
 				1D3E9ED41F3209BD006CDD87 /* Main.storyboard */,
 				1D3E9ED71F3209BD006CDD87 /* Assets.xcassets */,
 				1D3E9ED91F3209BD006CDD87 /* LaunchScreen.storyboard */,
@@ -157,8 +176,59 @@
 			children = (
 				1D3E9F051F3286B4006CDD87 /* LoginViewController.swift */,
 				1D3E9F071F3286CE006CDD87 /* RegisterViewController.swift */,
+				1D3E9F0A1F35A35B006CDD87 /* LoginNavigationController.swift */,
+				1D3E9F0C1F35A3CA006CDD87 /* TestViewController.swift */,
 			);
 			path = login;
+			sourceTree = "<group>";
+		};
+		1D3E9F151F35D877006CDD87 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E9F2B1F36A9A2006CDD87 /* Find */,
+				1D3E9F261F369C94006CDD87 /* Message */,
+				1D3E9F161F35D877006CDD87 /* MainTabBarController.swift */,
+				1D3E9F171F35D877006CDD87 /* MyPage */,
+				1D3E9F191F35D877006CDD87 /* Sport */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1D3E9F171F35D877006CDD87 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */,
+				1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		1D3E9F191F35D877006CDD87 /* Sport */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E9F1A1F35D877006CDD87 /* SportViewController.swift */,
+			);
+			path = Sport;
+			sourceTree = "<group>";
+		};
+		1D3E9F261F369C94006CDD87 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E9F271F369C94006CDD87 /* MessageViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		1D3E9F2B1F36A9A2006CDD87 /* Find */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E9F2C1F36A9A2006CDD87 /* DetailTableViewCell.swift */,
+				1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */,
+				1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */,
+				1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */,
+				1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */,
+			);
+			path = Find;
 			sourceTree = "<group>";
 		};
 		F576B1CF48E58D43FA2EF813 /* Frameworks */ = {
@@ -372,11 +442,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D3E9F061F3286B4006CDD87 /* LoginViewController.swift in Sources */,
+				1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */,
+				1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */,
 				1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */,
-				1D3E9ED31F3209BD006CDD87 /* SecondViewController.swift in Sources */,
+				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
+				1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */,
+				1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */,
+				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
-				1D3E9ED11F3209BD006CDD87 /* FirstViewController.swift in Sources */,
+				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
+				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
+				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
+				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
+				1D3E9F1D1F35D877006CDD87 /* SportViewController.swift in Sources */,
+				1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

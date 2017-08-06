@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommanViewController: UIViewController {
+class CommanViewController: UIViewController, UITextFieldDelegate {
     
     var navigationShow:Bool = true
     
@@ -16,10 +16,14 @@ class CommanViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func setNavigation(hidden:Bool, title:String) {
+    // MARK: - Tap the view, end edit
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func setNavigation(hidden:Bool) {
         self.navigationController?.delegate = self as? UINavigationControllerDelegate
         self.navigationController?.isNavigationBarHidden = hidden
-        self.navigationController?.title = title
     }
     
     func setTabbar(hidden:Bool) {
