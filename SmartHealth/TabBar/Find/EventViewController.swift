@@ -12,7 +12,7 @@ class EventViewController: CommanViewController, UITableViewDelegate, UITableVie
     var mArray: Array = [["image":"login_main.jpeg", "title":"标题", "detail":"详细内容"]]
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigation(hidden: false)
+        self.navigationController?.isNavigationBarHidden = false
     }
 
     override func didReceiveMemoryWarning() {

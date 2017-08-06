@@ -18,12 +18,11 @@ class RegisterViewController: CommanViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigation(hidden: false)
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        setNavigation(hidden: true)
     }
     
     override func didReceiveMemoryWarning() {

@@ -23,7 +23,7 @@ class LoginViewController: CommanViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        setNavigation(hidden: true, title: "")
+         self.navigationController?.isNavigationBarHidden = true
     }
     
     // MARK: - TextField Delegate

@@ -15,7 +15,7 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
     var setArray: Array = ["基本设置","帮助和关于","版本更新"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNavigation(hidden: false)
+        self.navigationController?.isNavigationBarHidden = false
         versionLabel.text = "V 0.0"
     }
 
