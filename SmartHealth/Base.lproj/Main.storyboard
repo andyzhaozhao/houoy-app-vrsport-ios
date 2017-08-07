@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Abd-yP-vNl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -365,6 +365,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bd-T1-DGo" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-818" y="44"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="n1o-7C-3ma">
+            <objects>
+                <viewController id="JG3-2u-aLo" customClass="ChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yL9-zz-2xe"/>
+                        <viewControllerLayoutGuide type="bottom" id="Cv5-9f-SUB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fyM-Yb-uCo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ujr-W6-p4U">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JG3-2u-aLo" id="AmG-AB-wYr"/>
+                                    <outlet property="delegate" destination="JG3-2u-aLo" id="TEf-qW-fZE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ujr-W6-p4U" firstAttribute="top" secondItem="fyM-Yb-uCo" secondAttribute="top" id="2Ir-hb-gbt"/>
+                            <constraint firstItem="Cv5-9f-SUB" firstAttribute="top" secondItem="Ujr-W6-p4U" secondAttribute="bottom" id="d0m-aa-kXr"/>
+                            <constraint firstItem="Ujr-W6-p4U" firstAttribute="leading" secondItem="fyM-Yb-uCo" secondAttribute="leading" id="f86-bP-SRg"/>
+                            <constraint firstAttribute="trailing" secondItem="Ujr-W6-p4U" secondAttribute="trailing" id="gUy-IN-3RS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="view" destination="fyM-Yb-uCo" id="nW3-3M-bu6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0GD-aC-hdJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269.60000000000002" y="29.23538230884558"/>
         </scene>
         <!--我的-->
         <scene sceneID="Qxu-RS-biN">
@@ -903,7 +940,7 @@
             <objects>
                 <navigationController title="MyPageNavigation" navigationBarHidden="YES" id="5IT-yp-TZe" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="AP3-bV-dCa"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bkt-bq-LZA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="bkt-bq-LZA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -920,7 +957,7 @@
             <objects>
                 <navigationController title="FindNavigation" navigationBarHidden="YES" id="edf-zV-Sby" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" id="Y0N-9Z-Oxq"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SwI-hQ-RYx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="SwI-hQ-RYx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -937,7 +974,7 @@
             <objects>
                 <navigationController title="SportNavigation" navigationBarHidden="YES" id="Zc9-KN-axO" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="d8N-lb-Ngy"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jgk-RG-uAN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jgk-RG-uAN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -954,7 +991,7 @@
             <objects>
                 <navigationController title="MessageNavigation" navigationBarHidden="YES" id="EYa-4c-ejp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="消息" id="LUJ-Cu-jYm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TRL-5y-kja">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="TRL-5y-kja">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -971,7 +1008,7 @@
             <objects>
                 <navigationController restorationIdentifier="LoginNavigationController" storyboardIdentifier="LoginNavigationController" title="FindNavigation" navigationBarHidden="YES" id="Nws-38-6T8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="发现" id="pDI-LU-c0E"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6SW-Im-B5y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6SW-Im-B5y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -987,6 +1024,135 @@
             </objects>
             <point key="canvasLocation" x="-3153" y="-944"/>
         </scene>
+        <!--Video-->
+        <scene sceneID="kzS-oI-nhQ">
+            <objects>
+                <viewController id="Abd-yP-vNl" customClass="VideoPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yg4-io-TAM"/>
+                        <viewControllerLayoutGuide type="bottom" id="DxM-el-s2q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LxF-IO-8wW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyD-9N-vQd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCe-pj-PQe" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1020"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gorillas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLb-IF-OdP">
+                                                <rect key="frame" x="16" y="8" width="568" height="24"/>
+                                                <edgeInsets key="layoutMargins" top="16" left="16" bottom="8" right="16"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The great apes from Central Africa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP8-gn-n2c">
+                                                <rect key="frame" x="16" y="40" width="568" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gfn-Bq-mSr">
+                                                <rect key="frame" x="16" y="65" width="568" height="91"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="91" id="Onr-Sj-AgB"/>
+                                                </constraints>
+                                                <string key="text">Gorillas are ground-dwelling, predominantly herbivorous apes that inhabit the forests of central Africa.
+
+The 360 video below shows gorillas in the Congo rainforest.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsp-pX-Rr6" customClass="GVRVideoView">
+                                                <rect key="frame" x="16" y="164" width="568" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="250" id="ALQ-W6-ONh"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llm-tJ-1Sp">
+                                                <rect key="frame" x="16" y="422" width="568" height="311"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="311" id="D26-lN-Wsp"/>
+                                                </constraints>
+                                                <string key="text">The eponymous genus Gorilla is divided into species: the eastern gorillas and the western gorillas, and either four or five subspecies. They are the largest living primates by physical size.
+
+The DNA of gorillas is highly similar to that of humans, from 95–99% depending on what is counted, and they are the next closest living relatives to humans after the chimpanzees and bonobos.
+
+Gorillas' natural habitats cover tropical or subtropical forests in Africa. Although their range covers a small percentage of Africa, gorillas cover a wide range of elevations. The mountain gorilla inhabits the Albertine Rift montane cloud forests of the Virunga Volcanoes, ranging in altitude from 2,200–4,300 metres (7,200–14,100 ft). Lowland gorillas live in dense forests and lowland swamps and marshes as low as sea level, with western lowland gorillas living in Central West African countries and eastern lowland gorillas living in the Democratic Republic of the Congo near its border with Rwanda.
+</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Source: Wikipedia" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-yF-mtv">
+                                                <rect key="frame" x="16" y="741" width="568" height="36"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="36" id="8Pf-qw-9vc"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.42467236520000001" green="0.42467236520000001" blue="0.42467236520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="OP8-gn-n2c" secondAttribute="trailing" constant="16" id="4fE-1Y-vws"/>
+                                            <constraint firstItem="Llm-tJ-1Sp" firstAttribute="leading" secondItem="eCe-pj-PQe" secondAttribute="leading" constant="16" id="7Lb-FN-LyL"/>
+                                            <constraint firstAttribute="trailing" secondItem="Llm-tJ-1Sp" secondAttribute="trailing" constant="16" id="Clo-Xi-Wwe"/>
+                                            <constraint firstItem="gsp-pX-Rr6" firstAttribute="leading" secondItem="eCe-pj-PQe" secondAttribute="leading" constant="16" id="Fz0-IJ-Bxf"/>
+                                            <constraint firstItem="xLb-IF-OdP" firstAttribute="leading" secondItem="eCe-pj-PQe" secondAttribute="leading" constant="16" id="I1i-Ls-Vhj"/>
+                                            <constraint firstItem="OP8-gn-n2c" firstAttribute="leading" secondItem="eCe-pj-PQe" secondAttribute="leading" constant="16" id="JDK-v9-Sar"/>
+                                            <constraint firstItem="OP8-gn-n2c" firstAttribute="top" secondItem="xLb-IF-OdP" secondAttribute="bottom" constant="8" id="NAJ-qx-Jqs"/>
+                                            <constraint firstItem="gsp-pX-Rr6" firstAttribute="top" secondItem="Gfn-Bq-mSr" secondAttribute="bottom" constant="8" id="WXg-Aj-MvL"/>
+                                            <constraint firstItem="qdM-yF-mtv" firstAttribute="top" secondItem="Llm-tJ-1Sp" secondAttribute="bottom" constant="8" id="av3-CB-496"/>
+                                            <constraint firstItem="qdM-yF-mtv" firstAttribute="leading" secondItem="eCe-pj-PQe" secondAttribute="leading" constant="16" id="b0F-zf-esN"/>
+                                            <constraint firstItem="Llm-tJ-1Sp" firstAttribute="top" secondItem="gsp-pX-Rr6" secondAttribute="bottom" constant="8" id="gKv-7a-Qyh"/>
+                                            <constraint firstAttribute="trailing" secondItem="qdM-yF-mtv" secondAttribute="trailing" constant="16" id="gVf-LX-DIk"/>
+                                            <constraint firstAttribute="trailing" secondItem="gsp-pX-Rr6" secondAttribute="trailing" constant="16" id="hEo-1K-Jm9"/>
+                                            <constraint firstItem="xLb-IF-OdP" firstAttribute="top" secondItem="eCe-pj-PQe" secondAttribute="top" constant="8" id="kp4-uv-1y5"/>
+                                            <constraint firstAttribute="height" constant="1020" id="nFV-M7-eQ3"/>
+                                            <constraint firstAttribute="trailing" secondItem="xLb-IF-OdP" secondAttribute="trailing" constant="16" id="rad-CB-rl7"/>
+                                            <constraint firstItem="Gfn-Bq-mSr" firstAttribute="leading" secondItem="eCe-pj-PQe" secondAttribute="leading" constant="16" id="soQ-vt-Pb2"/>
+                                            <constraint firstItem="Gfn-Bq-mSr" firstAttribute="top" secondItem="OP8-gn-n2c" secondAttribute="bottom" constant="8" id="tdU-aY-Q42"/>
+                                            <constraint firstAttribute="trailing" secondItem="Gfn-Bq-mSr" secondAttribute="trailing" constant="16" id="ucq-jj-JR0"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <accessibility key="accessibilityConfiguration" identifier="sample_scroll_view"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eCe-pj-PQe" secondAttribute="trailing" id="8hW-cg-4AE"/>
+                                    <constraint firstItem="eCe-pj-PQe" firstAttribute="leading" secondItem="vyD-9N-vQd" secondAttribute="leading" id="NDj-W9-kEV"/>
+                                    <constraint firstItem="eCe-pj-PQe" firstAttribute="top" secondItem="vyD-9N-vQd" secondAttribute="top" id="btQ-fo-pUt"/>
+                                    <constraint firstAttribute="bottom" secondItem="eCe-pj-PQe" secondAttribute="bottom" id="s1E-oH-ypT"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vyD-9N-vQd" firstAttribute="centerX" secondItem="LxF-IO-8wW" secondAttribute="centerX" id="BsQ-aB-pKk"/>
+                            <constraint firstItem="vyD-9N-vQd" firstAttribute="height" secondItem="LxF-IO-8wW" secondAttribute="height" id="RIR-Ul-bEB"/>
+                            <constraint firstItem="vyD-9N-vQd" firstAttribute="centerY" secondItem="LxF-IO-8wW" secondAttribute="centerY" id="aac-th-5gd"/>
+                            <constraint firstItem="eCe-pj-PQe" firstAttribute="width" secondItem="LxF-IO-8wW" secondAttribute="width" id="bve-Zs-med"/>
+                            <constraint firstItem="vyD-9N-vQd" firstAttribute="width" secondItem="LxF-IO-8wW" secondAttribute="width" id="ejo-Tc-EHJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Video" id="VKL-YI-TFb"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="attributionTextView" destination="qdM-yF-mtv" id="Kkv-0i-Bc7"/>
+                        <outlet property="videoView" destination="gsp-pX-Rr6" id="muh-8y-ACD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T2U-a8-8hp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="-2096"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
@@ -994,7 +1160,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RLq-qO-a7U"/>
+        <segue reference="7x6-bf-UM5"/>
         <segue reference="Bc7-Db-YV3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         var logined:Bool = false
-//        logined = true
+        logined = true
         
         if (!logined) {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //表示
             window?.makeKeyAndVisible()
         }
+        
         return true
     }
 

@@ -28,6 +28,9 @@
 		1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */; };
 		1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */; };
 		1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */; };
+		1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F381F39185B006CDD87 /* ChatViewController.m */; };
+		1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */; };
+		1D3E9F3F1F391E3B006CDD87 /* congo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,12 @@
 		1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
+		1D3E9F361F39185B006CDD87 /* SmartHealth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SmartHealth-Bridging-Header.h"; path = "TabBar/Message/SmartHealth-Bridging-Header.h"; sourceTree = "<group>"; };
+		1D3E9F371F39185B006CDD87 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		1D3E9F381F39185B006CDD87 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		1D3E9F3A1F391CB1006CDD87 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
+		1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
+		1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = congo.mp4; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +128,7 @@
 		1D3E9EC21F3209BD006CDD87 = {
 			isa = PBXGroup;
 			children = (
+				1D3E9F3D1F391E3B006CDD87 /* Resources */,
 				1D3E9ECD1F3209BD006CDD87 /* SmartHealth */,
 				1D3E9EE41F3209BD006CDD87 /* SmartHealthTests */,
 				1D3E9EEF1F3209BD006CDD87 /* SmartHealthUITests */,
@@ -141,6 +151,7 @@
 		1D3E9ECD1F3209BD006CDD87 /* SmartHealth */ = {
 			isa = PBXGroup;
 			children = (
+				1D3E9F361F39185B006CDD87 /* SmartHealth-Bridging-Header.h */,
 				1D3E9F151F35D877006CDD87 /* TabBar */,
 				1D3E9F041F3286B4006CDD87 /* login */,
 				1D3E9F001F3213AB006CDD87 /* CommanViewController.swift */,
@@ -206,6 +217,8 @@
 		1D3E9F191F35D877006CDD87 /* Sport */ = {
 			isa = PBXGroup;
 			children = (
+				1D3E9F3A1F391CB1006CDD87 /* VideoPlayerViewController.h */,
+				1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */,
 				1D3E9F1A1F35D877006CDD87 /* SportViewController.swift */,
 			);
 			path = Sport;
@@ -214,6 +227,8 @@
 		1D3E9F261F369C94006CDD87 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				1D3E9F371F39185B006CDD87 /* ChatViewController.h */,
+				1D3E9F381F39185B006CDD87 /* ChatViewController.m */,
 				1D3E9F271F369C94006CDD87 /* MessageViewController.swift */,
 			);
 			path = Message;
@@ -229,6 +244,15 @@
 				1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */,
 			);
 			path = Find;
+			sourceTree = "<group>";
+		};
+		1D3E9F3D1F391E3B006CDD87 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */,
+			);
+			name = Resources;
+			path = SmartHealth/Resources;
 			sourceTree = "<group>";
 		};
 		F576B1CF48E58D43FA2EF813 /* Frameworks */ = {
@@ -312,6 +336,7 @@
 					1D3E9ECA1F3209BD006CDD87 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 878799TLB4;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					1D3E9EE01F3209BD006CDD87 = {
@@ -355,6 +380,7 @@
 			files = (
 				1D3E9EDB1F3209BD006CDD87 /* LaunchScreen.storyboard in Resources */,
 				1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */,
+				1D3E9F3F1F391E3B006CDD87 /* congo.mp4 in Resources */,
 				1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */,
 				1D3E9F061F3286B4006CDD87 /* LoginViewController.swift in Sources */,
 				1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */,
 				1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */,
@@ -455,6 +482,7 @@
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
+				1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */,
 				1D3E9F1D1F35D877006CDD87 /* SportViewController.swift in Sources */,
 				1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */,
 			);
@@ -609,11 +637,14 @@
 			baseConfigurationReference = F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 878799TLB4;
 				INFOPLIST_FILE = SmartHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = health.smart.gov.SmartHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartHealth/TabBar/Message/SmartHealth-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -623,11 +654,13 @@
 			baseConfigurationReference = 0D7FEC4C06CA67E826B5A6B7 /* Pods-SmartHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 878799TLB4;
 				INFOPLIST_FILE = SmartHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = health.smart.gov.SmartHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartHealth/TabBar/Message/SmartHealth-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
