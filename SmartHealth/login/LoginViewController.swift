@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class LoginViewController: CommanViewController{
     
@@ -53,6 +54,7 @@ class LoginViewController: CommanViewController{
             performSegue(withIdentifier: "toMainTab", sender: nil)
 //
 //        }
+        Answers.logLogin(withMethod: "iOS", success: true, customAttributes: [])
     }
     
      // MARK: - Navigation
