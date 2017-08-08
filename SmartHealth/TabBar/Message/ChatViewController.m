@@ -14,15 +14,18 @@
 
 @implementation ChatViewController
 
+    int screenWidth;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
+    screenWidth = self.view.frame.size.width;
     
     NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"weixin",@"name",@"微信团队欢迎你。很高兴你开启了微信生活，期待能为你和朋友们带来愉快的沟通体检。",@"content", nil];
     NSDictionary *dict1 = [NSDictionary dictionaryWithObjectsAndKeys:@"rhl",@"name",@"hello",@"content", nil];
-    NSDictionary *dict2 = [NSDictionary dictionaryWithObjectsAndKeys:@"rhl",@"name",@"0",@"content", nil];
+    NSDictionary *dict2 = [NSDictionary dictionaryWithObjectsAndKeys:@"rhl",@"name",@"要是可以公开API的调用就更好啦！",@"content", nil];
     NSDictionary *dict3 = [NSDictionary dictionaryWithObjectsAndKeys:@"weixin",@"name",@"谢谢反馈，已收录。",@"content", nil];
-    NSDictionary *dict4 = [NSDictionary dictionaryWithObjectsAndKeys:@"rhl",@"name",@"0",@"content", nil];
+    NSDictionary *dict4 = [NSDictionary dictionaryWithObjectsAndKeys:@"rhl",@"name",@"恩 O(∩_∩)O谢谢",@"content", nil];
     NSDictionary *dict5 = [NSDictionary dictionaryWithObjectsAndKeys:@"weixin",@"name",@"谢谢反馈，已收录。",@"content", nil];
     NSDictionary *dict6 = [NSDictionary dictionaryWithObjectsAndKeys:@"rhl",@"name",@"大数据测试，长数据测试，大数据测试，长数据测试，大数据测试，长数据测试，大数据测试，长数据测试，大数据测试，长数据测试，大数据测试，长数据测试。",@"content", nil];
     
@@ -42,7 +45,7 @@
     
     //计算大小
     UIFont *font = [UIFont systemFontOfSize:14];
-	CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(180.0f, 20000.0f) lineBreakMode:NSLineBreakByWordWrapping];
+	CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(screenWidth/2, 20000.0f) lineBreakMode:NSLineBreakByWordWrapping];
     
 	// build single chat bubble cell with given text
 	UIView *returnView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -66,7 +69,7 @@
 	bubbleImageView.frame = CGRectMake(0.0f, 14.0f, bubbleText.frame.size.width+30.0f, bubbleText.frame.size.height+20.0f);
     
 	if(fromSelf)
-		returnView.frame = CGRectMake(320-position-(bubbleText.frame.size.width+30.0f), 0.0f, bubbleText.frame.size.width+30.0f, bubbleText.frame.size.height+30.0f);
+		returnView.frame = CGRectMake(screenWidth-position-(bubbleText.frame.size.width+30.0f), 0.0f, bubbleText.frame.size.width+30.0f, bubbleText.frame.size.height+30.0f);
 	else
 		returnView.frame = CGRectMake(position, 0.0f, bubbleText.frame.size.width+30.0f, bubbleText.frame.size.height+30.0f);
 	
@@ -85,7 +88,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.tag = indexRow;
     if(fromSelf)
-		button.frame =CGRectMake(320-position-yuyinwidth, 10, yuyinwidth, 54);
+		button.frame =CGRectMake(screenWidth-position-yuyinwidth, 10, yuyinwidth, 54);
 	else
 		button.frame =CGRectMake(position, 10, yuyinwidth, 54);
     
@@ -152,7 +155,8 @@
     //创建头像
     UIImageView *photo ;
     if ([[dict objectForKey:@"name"]isEqualToString:@"rhl"]) {
-        photo = [[UIImageView alloc]initWithFrame:CGRectMake(320-60, 10, 50, 50)];
+        // width = 320? iPhone6,7 is 367
+        photo = [[UIImageView alloc]initWithFrame:CGRectMake(screenWidth-60, 10, 50, 50)];
         [cell addSubview:photo];
         photo.image = [UIImage imageNamed:@"photo1"];
         

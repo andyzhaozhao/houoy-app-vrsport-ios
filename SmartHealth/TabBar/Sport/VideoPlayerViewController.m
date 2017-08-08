@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    self.navigationController.navigationBarHidden = NO;
 
   // Build source attribution text view.
   NSString *sourceText = @"Source: ";
