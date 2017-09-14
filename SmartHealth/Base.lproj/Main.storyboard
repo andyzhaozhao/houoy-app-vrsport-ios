@@ -71,32 +71,27 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="blue_cell" id="gEl-lu-q82" customClass="GLCell">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="find_cell" id="gEl-lu-q82" customClass="FindCollectionViewCell" customModule="SmartHealth" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25" width="378" height="150"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-1S-KJC">
-                                                            <rect key="frame" x="0.0" y="65" width="378" height="21"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="21" id="qBr-Jq-iyP"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6g-jZ-ajj">
+                                                            <rect key="frame" x="8" y="8" width="362" height="134"/>
+                                                        </imageView>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" red="0.095566224389999996" green="0.19258855729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="2hD-1S-KJC" secondAttribute="trailing" id="Jgl-Zn-Ai4"/>
-                                                    <constraint firstItem="2hD-1S-KJC" firstAttribute="centerY" secondItem="gEl-lu-q82" secondAttribute="centerY" id="fPa-qs-p6R"/>
-                                                    <constraint firstItem="2hD-1S-KJC" firstAttribute="leading" secondItem="gEl-lu-q82" secondAttribute="leading" id="qVw-qS-K8i"/>
+                                                    <constraint firstItem="A6g-jZ-ajj" firstAttribute="top" secondItem="gEl-lu-q82" secondAttribute="topMargin" id="3ay-9K-h9w"/>
+                                                    <constraint firstAttribute="trailingMargin" secondItem="A6g-jZ-ajj" secondAttribute="trailing" id="MQb-gy-8aV"/>
+                                                    <constraint firstAttribute="bottomMargin" secondItem="A6g-jZ-ajj" secondAttribute="bottom" id="ioq-D1-sDt"/>
+                                                    <constraint firstItem="A6g-jZ-ajj" firstAttribute="leading" secondItem="gEl-lu-q82" secondAttribute="leadingMargin" id="jDu-Hs-u4t"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="lblName" destination="2hD-1S-KJC" id="gHW-8f-N76"/>
+                                                    <outlet property="imageView" destination="A6g-jZ-ajj" id="8af-Va-Ls2"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -199,6 +194,7 @@
                     <navigationItem key="navigationItem" id="hJX-hn-TFq"/>
                     <connections>
                         <outlet property="collectionView" destination="idH-p8-ksZ" id="UbS-b6-sna"/>
+                        <outlet property="collectionViewFlowLayout" destination="7Us-DN-0SU" id="5LT-Za-w2y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -331,6 +327,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Zc9-KN-axO" kind="relationship" relationship="viewControllers" id="WCT-Nm-i8Q"/>
                         <segue destination="edf-zV-Sby" kind="relationship" relationship="viewControllers" id="34C-pO-i6c"/>
