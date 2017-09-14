@@ -32,6 +32,7 @@
 		1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */; };
 		1D3E9F3F1F391E3B006CDD87 /* congo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */; };
 		1D3E9F441F3B2BBF006CDD87 /* GLCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F411F3B2BBF006CDD87 /* GLCell.m */; };
+		1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = congo.mp4; sourceTree = "<group>"; };
 		1D3E9F401F3B2BBF006CDD87 /* GLCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLCell.h; sourceTree = "<group>"; };
 		1D3E9F411F3B2BBF006CDD87 /* GLCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLCell.m; sourceTree = "<group>"; };
+		1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPwdViewController.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +194,7 @@
 				1D3E9F071F3286CE006CDD87 /* RegisterViewController.swift */,
 				1D3E9F0A1F35A35B006CDD87 /* LoginNavigationController.swift */,
 				1D3E9F0C1F35A3CA006CDD87 /* TestViewController.swift */,
+				1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */,
 			);
 			path = login;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
+				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
 				1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */,

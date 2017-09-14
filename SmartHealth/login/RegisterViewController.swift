@@ -65,8 +65,9 @@ class RegisterViewController: CommanViewController {
 //            self.present(alert, animated: true, completion: nil)
 //        } else {
             //API
-            performSegue(withIdentifier: "toMainTab", sender: nil)
+ //           performSegue(withIdentifier: "toMainTab", sender: nil)
 //        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Navigation
