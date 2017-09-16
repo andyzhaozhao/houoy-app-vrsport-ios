@@ -33,6 +33,7 @@
 		1D3E9F3F1F391E3B006CDD87 /* congo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */; };
 		1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */; };
 		1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */; };
+		1DC116661F6D0DB0002FBB60 /* SerringInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116651F6D0DB0002FBB60 /* SerringInfoViewController.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = congo.mp4; sourceTree = "<group>"; };
 		1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPwdViewController.swift; sourceTree = "<group>"; };
 		1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
+		1DC116651F6D0DB0002FBB60 /* SerringInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerringInfoViewController.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +217,7 @@
 			children = (
 				1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */,
 				1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */,
+				1DC116651F6D0DB0002FBB60 /* SerringInfoViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
 				1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */,
 				1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */,
+				1DC116661F6D0DB0002FBB60 /* SerringInfoViewController.swift in Sources */,
 				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,

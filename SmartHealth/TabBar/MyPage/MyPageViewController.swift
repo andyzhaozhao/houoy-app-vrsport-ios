@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyPageViewController: CommanViewController {
+class MyPageViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var photoImage: UIImageView!
@@ -42,6 +42,15 @@ class MyPageViewController: CommanViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
 
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = "运动历史记录"
+        cell.accessoryType =  UITableViewCellAccessoryType.disclosureIndicator
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
 }
 

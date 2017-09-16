@@ -16,7 +16,7 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        versionLabel.text = "V 0.0"
+        versionLabel.text = "V1.0"
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +27,12 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
     // MARK: - UITable Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("num: \(indexPath.row)")
+        if (indexPath.row == 0){
+           performSegue(withIdentifier: "settingInfo", sender: nil)
+        } else if (indexPath.row == 1){
+            performSegue(withIdentifier: "detail", sender: nil)
+        }
+        
     }
     
     // MARK: - UITable DataSource
