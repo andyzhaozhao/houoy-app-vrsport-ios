@@ -115,6 +115,9 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: nil)
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "find_cell", for: indexPath) as! FindCollectionViewCell
@@ -136,8 +139,12 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
+        if (segue.identifier == "showDetail") {
+            if let nextViewController = segue.destination as? DetailViewController{
+                nextViewController.urlLink = "详细信息！"
+                nextViewController.title = "详细信息"
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -1,5 +1,5 @@
 //
-//  SerringInfoViewController.swift
+//  SettingInfoViewController.swift
 //  SmartHealth
 //
 //  Created by laoniu on 2017/09/16.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SerringInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UIGestureRecognizerDelegate {
+class SettingInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var iconImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let iconRecognize = UITapGestureRecognizer.init(target: self, action: #selector(SerringInfoViewController.iconEventClick))
+        let iconRecognize = UITapGestureRecognizer.init(target: self, action: #selector(SettingInfoViewController.iconEventClick))
         iconImageView.addGestureRecognizer(iconRecognize)
     }
     

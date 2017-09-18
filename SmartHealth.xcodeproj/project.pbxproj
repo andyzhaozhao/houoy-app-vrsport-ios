@@ -31,9 +31,14 @@
 		1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F381F39185B006CDD87 /* ChatViewController.m */; };
 		1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */; };
 		1D3E9F3F1F391E3B006CDD87 /* congo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */; };
+		1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C21F6F3AD400EAE44D /* Constants.swift */; };
+		1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */; };
+		1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */; };
 		1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */; };
 		1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */; };
-		1DC116661F6D0DB0002FBB60 /* SerringInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116651F6D0DB0002FBB60 /* SerringInfoViewController.swift */; };
+		1DC116661F6D0DB0002FBB60 /* SettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116651F6D0DB0002FBB60 /* SettingInfoViewController.swift */; };
+		1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */; };
+		1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,9 +94,15 @@
 		1D3E9F3A1F391CB1006CDD87 /* VideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayerViewController.h; sourceTree = "<group>"; };
 		1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerViewController.m; sourceTree = "<group>"; };
 		1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = congo.mp4; sourceTree = "<group>"; };
+		1D9AF8C21F6F3AD400EAE44D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportDetailViewController.swift; sourceTree = "<group>"; };
+		1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSettingViewController.swift; sourceTree = "<group>"; };
 		1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPwdViewController.swift; sourceTree = "<group>"; };
 		1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
-		1DC116651F6D0DB0002FBB60 /* SerringInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerringInfoViewController.swift; sourceTree = "<group>"; };
+		1DC116651F6D0DB0002FBB60 /* SettingInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingInfoViewController.swift; sourceTree = "<group>"; };
+		1DC116691F6D472F002FBB60 /* SportCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportCollectionViewCell.h; sourceTree = "<group>"; };
+		1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportCollectionViewCell.m; sourceTree = "<group>"; };
+		1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +168,7 @@
 		1D3E9ECD1F3209BD006CDD87 /* SmartHealth */ = {
 			isa = PBXGroup;
 			children = (
+				1D9AF8C11F6F3AC200EAE44D /* Utils */,
 				1D3E9F361F39185B006CDD87 /* SmartHealth-Bridging-Header.h */,
 				1D3E9F151F35D877006CDD87 /* TabBar */,
 				1D3E9F041F3286B4006CDD87 /* login */,
@@ -217,7 +229,9 @@
 			children = (
 				1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */,
 				1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */,
-				1DC116651F6D0DB0002FBB60 /* SerringInfoViewController.swift */,
+				1DC116651F6D0DB0002FBB60 /* SettingInfoViewController.swift */,
+				1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */,
+				1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -228,6 +242,9 @@
 				1D3E9F3A1F391CB1006CDD87 /* VideoPlayerViewController.h */,
 				1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */,
 				1D3E9F1A1F35D877006CDD87 /* SportViewController.swift */,
+				1DC116691F6D472F002FBB60 /* SportCollectionViewCell.h */,
+				1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */,
+				1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */,
 			);
 			path = Sport;
 			sourceTree = "<group>";
@@ -262,6 +279,14 @@
 			);
 			name = Resources;
 			path = SmartHealth/Resources;
+			sourceTree = "<group>";
+		};
+		1D9AF8C11F6F3AC200EAE44D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1D9AF8C21F6F3AD400EAE44D /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F576B1CF48E58D43FA2EF813 /* Frameworks */ = {
@@ -478,19 +503,24 @@
 			files = (
 				1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */,
 				1D3E9F061F3286B4006CDD87 /* LoginViewController.swift in Sources */,
+				1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */,
 				1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */,
 				1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */,
 				1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */,
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
 				1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */,
 				1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */,
-				1DC116661F6D0DB0002FBB60 /* SerringInfoViewController.swift in Sources */,
+				1DC116661F6D0DB0002FBB60 /* SettingInfoViewController.swift in Sources */,
 				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
+				1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */,
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
+				1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */,
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
+				1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */,
+				1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */,
 				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
@@ -649,6 +679,7 @@
 			baseConfigurationReference = F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 878799TLB4;
 				INFOPLIST_FILE = SmartHealth/Info.plist;
@@ -666,6 +697,7 @@
 			baseConfigurationReference = 0D7FEC4C06CA67E826B5A6B7 /* Pods-SmartHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 878799TLB4;
 				INFOPLIST_FILE = SmartHealth/Info.plist;

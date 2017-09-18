@@ -22,10 +22,10 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bgImage.image = UIImage(named: "login_main.jpeg")
-        photoImage.image = UIImage(named: "login_main.jpeg")
-        nameLabel.text = "MyName"
-        descriptionLabel.text = "Who am I?"
+//        bgImage.image = UIImage(named: "login_main.jpeg")
+//        photoImage.image = UIImage(named: "login_main.jpeg")
+        nameLabel.text = "张三"
+        descriptionLabel.text = "我是谁？我从哪里来？"
         ageLabel.text = "40"
         sportTimeLabel.text = "2015/04/12 13:00"
         distanceLabel.text = "12"
@@ -42,6 +42,11 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
         self.navigationController?.isNavigationBarHidden = true
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.row == 0) {
+            performSegue(withIdentifier: "showSportDetail", sender: nil)
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = "运动历史记录"
@@ -50,7 +55,7 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
 }
 

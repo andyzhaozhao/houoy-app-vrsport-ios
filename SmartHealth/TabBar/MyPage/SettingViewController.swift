@@ -12,11 +12,11 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var settingTable: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
-    var setArray: Array = ["基本设置","帮助和关于","版本更新"]
+    var setArray: Array = ["用户设置","设备设置","帮助和关于","版本更新"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        versionLabel.text = "V1.0"
+        versionLabel.text = String.init(format: "%@%@", "V",(Bundle.main.infoDictionary?["CFBundleVersion"]  as? String)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,9 +30,12 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
         if (indexPath.row == 0){
            performSegue(withIdentifier: "settingInfo", sender: nil)
         } else if (indexPath.row == 1){
+            performSegue(withIdentifier: "showDeviceSetting", sender: nil)
+        } else if (indexPath.row == 2){
             performSegue(withIdentifier: "detail", sender: nil)
+        }  else if (indexPath.row == 3){
+            UIApplication.shared.open( URL.init(fileURLWithPath: Constants.iTunesLink) , options: [:], completionHandler: nil)
         }
-        
     }
     
     // MARK: - UITable DataSource
@@ -51,14 +54,16 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
     
     }
 
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "detail") {
+            if let nextViewController = segue.destination as? DetailViewController{
+                nextViewController.urlLink = "帮助说明！"
+                nextViewController.title = "帮助和关于"
+            }
+        }
     }
-    */
+
 
 }
