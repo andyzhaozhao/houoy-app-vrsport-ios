@@ -11,6 +11,6 @@
 @implementation SportCollectionViewCell
 
 -(void)loadImage{
-    self.image.image = [UIImage imageNamed:@"login_main"];
+    self.image.image = [UIImage imageNamed:@"setting_sport_bg"];
 }
 @end

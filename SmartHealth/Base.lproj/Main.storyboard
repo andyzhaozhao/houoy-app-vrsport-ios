@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-ht-HcJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_sport_bg" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-ht-HcJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="nGw-3O-XOe"/>
@@ -272,12 +272,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_main" translatesAutoresizingMaskIntoConstraints="NO" id="A6g-jZ-ajj">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A6g-jZ-ajj">
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                                         </imageView>
                                                     </subviews>
                                                 </view>
-                                                <color key="backgroundColor" red="0.095566224389999996" green="0.19258855729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="A6g-jZ-ajj" firstAttribute="top" secondItem="gEl-lu-q82" secondAttribute="top" id="3ay-9K-h9w"/>
                                                     <constraint firstAttribute="right" secondItem="A6g-jZ-ajj" secondAttribute="right" id="MQb-gy-8aV"/>
@@ -455,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-818" y="-794"/>
+            <point key="canvasLocation" x="-818.39999999999998" y="-794.75262368815595"/>
         </scene>
         <!--教学中心-->
         <scene sceneID="2wc-Tk-VQE">
@@ -1290,7 +1290,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_main" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-Bb-pfJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_sport_bg" translatesAutoresizingMaskIntoConstraints="NO" id="LRO-Bb-pfJ">
                                 <rect key="frame" x="10" y="50" width="355" height="258"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LRO-Bb-pfJ" secondAttribute="height" multiplier="355:258" id="ue4-qJ-1IB"/>
@@ -1736,12 +1736,12 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_main" translatesAutoresizingMaskIntoConstraints="NO" id="bFz-kp-CdQ">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bFz-kp-CdQ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="150"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
-                                                        <color key="backgroundColor" red="0.095566224389999996" green="0.19258855729999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottomMargin" secondItem="bFz-kp-CdQ" secondAttribute="bottomMargin" id="EOz-t4-Nun"/>
                                                             <constraint firstItem="bFz-kp-CdQ" firstAttribute="top" secondItem="cQl-Px-d07" secondAttribute="top" id="GjU-jc-VY5"/>
@@ -1893,13 +1893,11 @@
         <image name="first" width="30" height="30"/>
         <image name="healthicon" width="512" height="512"/>
         <image name="learning_center" width="50" height="50"/>
-        <image name="login_main" width="585" height="427"/>
         <image name="second" width="30" height="30"/>
         <image name="setting_selected_icon" width="1600" height="1600"/>
         <image name="setting_sport_bg" width="750" height="281"/>
         <image name="settingicon" width="25" height="25"/>
-        <image name="share" width="711" height="404"/>
-        <image name="tab_find" width="40" height="40"/>
+        <image name="tab_find" width="30" height="30"/>
         <image name="tab_me" width="40" height="40"/>
         <image name="tab_vr" width="40" height="40"/>
     </resources>

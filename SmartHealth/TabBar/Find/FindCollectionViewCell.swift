@@ -12,6 +12,6 @@ class FindCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     func addImage()  {
-        imageView.image = UIImage(named: "login_main")
+        imageView.image = UIImage(named: "setting_sport_bg")
     }
 }
