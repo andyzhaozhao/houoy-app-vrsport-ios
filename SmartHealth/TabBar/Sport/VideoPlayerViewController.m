@@ -3,10 +3,14 @@
 #import "VideoPlayerViewController.h"
 
 #import "GVRVideoView.h"
+#import "SportCollectionViewCell.h"
 
 @interface VideoPlayerViewController () <GVRVideoViewDelegate>
 @property(nonatomic) IBOutlet GVRVideoView *videoView;
-@property(nonatomic) IBOutlet UITextView *attributionTextView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewLayout;
+
+
 @end
 
 @implementation VideoPlayerViewController {
@@ -20,18 +24,9 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    self.navigationController.navigationBarHidden = NO;
-
+    self.collectionView.dataSource = self;
+    self.collectionView.showsHorizontalScrollIndicator = NO;
   // Build source attribution text view.
-  NSString *sourceText = @"Source: ";
-  NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc]
-      initWithString:[sourceText stringByAppendingString:@"Wikipedia"]];
-  [attributedText
-      addAttribute:NSLinkAttributeName
-             value:@"https://en.wikipedia.org/wiki/Gorilla"
-             range:NSMakeRange(sourceText.length, attributedText.length - sourceText.length)];
-
-  _attributionTextView.attributedText = attributedText;
 
   _videoView.delegate = self;
   _videoView.enableFullscreenButton = YES;
@@ -52,6 +47,21 @@
 
 }
 
+-( void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+        self.navigationController.navigationBarHidden = YES;
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    self.collectionViewLayout.itemSize = CGSizeMake(self.view.frame.size.width, 250);
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    if (!_isPaused) {
+        [_videoView pause];
+    }
+}
 #pragma mark - GVRVideoViewDelegate
 
 - (void)widgetViewDidTap:(GVRWidgetView *)widgetView {
@@ -78,9 +88,31 @@
 - (void)videoView:(GVRVideoView*)videoView didUpdatePosition:(NSTimeInterval)position {
   // Loop the video when it reaches the end.
   if (position == videoView.duration) {
-    [_videoView seekTo:0];
-    [_videoView play];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确定结束本次运动！" preferredStyle:UIAlertControllerStyleAlert];
+      UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+
+      }];
+      UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self performSegueWithIdentifier:@"shareSport" sender:nil];
+      }];
+      [alertController addAction:cancelAction];
+      [alertController addAction:okAction];
+      [self presentViewController:alertController animated:YES completion:nil];
   }
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 5;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    SportCollectionViewCell * cell = (SportCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:@"sport_cell" forIndexPath:indexPath];
+    [cell loadImage];
+    return cell;
+}
 @end

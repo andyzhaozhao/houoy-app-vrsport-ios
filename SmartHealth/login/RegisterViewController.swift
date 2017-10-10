@@ -67,7 +67,7 @@ class RegisterViewController: CommanViewController {
             //API
  //           performSegue(withIdentifier: "toMainTab", sender: nil)
 //        }
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Navigation

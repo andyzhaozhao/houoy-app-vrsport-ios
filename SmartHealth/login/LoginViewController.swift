@@ -57,6 +57,9 @@ class LoginViewController: CommanViewController{
         Answers.logLogin(withMethod: "iOS", success: true, customAttributes: [:])
     }
     
+    @IBAction func noLoginClick(_ sender: Any) {
+        
+    }
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation

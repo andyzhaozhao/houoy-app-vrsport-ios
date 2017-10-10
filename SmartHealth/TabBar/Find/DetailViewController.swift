@@ -11,10 +11,12 @@ import UIKit
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailText: UITextView!
+    var urlLink: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-
+        self.detailText.text = urlLink
         // Do any additional setup after loading the view.
     }
 

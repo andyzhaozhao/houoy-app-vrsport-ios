@@ -12,7 +12,7 @@ class FindPwdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +23,7 @@ class FindPwdViewController: UIViewController {
     
 
     @IBAction func findPwdClick(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 
     /*
