@@ -40,6 +40,12 @@
 		1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */; };
 		1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
+		7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F33F1F937E970008E688 /* GLKit.framework */; };
+		7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3411F937E9D0008E688 /* CoreMotion.framework */; };
+		7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3431F937EA40008E688 /* libz.tbd */; };
+		7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3461F9380020008E688 /* UtoVRPlayer.framework */; };
+		7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */; };
+		7E35F34B1F9380840008E688 /* wu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F34A1F9380840008E688 /* wu.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +109,12 @@
 		1DC116691F6D472F002FBB60 /* SportCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportCollectionViewCell.h; sourceTree = "<group>"; };
 		1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportCollectionViewCell.m; sourceTree = "<group>"; };
 		1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		7E35F33F1F937E970008E688 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		7E35F3411F937E9D0008E688 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7E35F3431F937EA40008E688 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		7E35F3461F9380020008E688 /* UtoVRPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UtoVRPlayer.framework; sourceTree = "<group>"; };
+		7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UtoVRPlayerResouces.bundle; sourceTree = "<group>"; };
+		7E35F34A1F9380840008E688 /* wu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wu.mp4; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +124,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */,
+				7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */,
+				7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */,
+				7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */,
 				66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +161,7 @@
 		1D3E9EC21F3209BD006CDD87 = {
 			isa = PBXGroup;
 			children = (
+				7E35F3451F9380020008E688 /* UtoVRPlayerSDK */,
 				1D3E9F3D1F391E3B006CDD87 /* Resources */,
 				1D3E9ECD1F3209BD006CDD87 /* SmartHealth */,
 				1D3E9EE41F3209BD006CDD87 /* SmartHealthTests */,
@@ -275,6 +292,7 @@
 		1D3E9F3D1F391E3B006CDD87 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7E35F34A1F9380840008E688 /* wu.mp4 */,
 				1D3E9F3E1F391E3B006CDD87 /* congo.mp4 */,
 			);
 			name = Resources;
@@ -289,9 +307,22 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7E35F3451F9380020008E688 /* UtoVRPlayerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7E35F3461F9380020008E688 /* UtoVRPlayer.framework */,
+				7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */,
+			);
+			name = UtoVRPlayerSDK;
+			path = SmartHealth/Libs/UtoVRPlayerSDK;
+			sourceTree = "<group>";
+		};
 		F576B1CF48E58D43FA2EF813 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E35F3431F937EA40008E688 /* libz.tbd */,
+				7E35F3411F937E9D0008E688 /* CoreMotion.framework */,
+				7E35F33F1F937E970008E688 /* GLKit.framework */,
 				C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */,
 			);
 			name = Frameworks;
@@ -412,10 +443,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */,
 				1D3E9EDB1F3209BD006CDD87 /* LaunchScreen.storyboard in Resources */,
 				1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */,
 				1D3E9F3F1F391E3B006CDD87 /* congo.mp4 in Resources */,
 				1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */,
+				7E35F34B1F9380840008E688 /* wu.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,13 +503,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartHealth-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		822799FC0AEB3E330175268A /* [CP] Embed Pods Frameworks */ = {
@@ -682,8 +718,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 878799TLB4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHealth/Libs/UtoVRPlayerSDK",
+				);
 				INFOPLIST_FILE = SmartHealth/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks -all_load -ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = health.smart.gov.SmartHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartHealth/TabBar/Message/SmartHealth-Bridging-Header.h";
@@ -700,8 +740,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 878799TLB4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SmartHealth/Libs/UtoVRPlayerSDK",
+				);
 				INFOPLIST_FILE = SmartHealth/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks -all_load -ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = health.smart.gov.SmartHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartHealth/TabBar/Message/SmartHealth-Bridging-Header.h";
