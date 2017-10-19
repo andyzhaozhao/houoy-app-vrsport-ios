@@ -10,7 +10,7 @@ import UIKit
 
 class SportDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var tableView: UITableView!
-    var mArray: Array = ["运动历史记录"]
+    var mArray: Array = ["运动历史记录","我的关注"]
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {

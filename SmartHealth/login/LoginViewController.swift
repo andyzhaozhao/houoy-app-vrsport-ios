@@ -13,13 +13,8 @@ class LoginViewController: CommanViewController{
     
     @IBOutlet weak var userIDText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
     
     override func viewWillAppear(_ animated: Bool) {

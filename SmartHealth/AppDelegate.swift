@@ -54,6 +54,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask{
+        var orientation = UIInterfaceOrientationMask.portrait
+        let presented = self.topViewController()
+        if let thepresented = presented {
+            if thepresented.isKind(of: VideoPlayerViewController.classForCoder())  {
+                orientation = thepresented.supportedInterfaceOrientations
+            }
+        }
+        return orientation
+    }
+    
+    func topViewController(base: UIViewController? = (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return topViewController(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            if let selected = tab.selectedViewController {
+                return topViewController(base: selected)
+            }
+        }
+        if let presented = base?.presentedViewController {
+            return topViewController(base: presented)
+        }
+        return base
+    }
 
 }
 

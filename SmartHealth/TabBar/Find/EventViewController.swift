@@ -29,11 +29,6 @@ class EventViewController: CommanViewController, UITableViewDelegate, UITableVie
         // ここに通信処理などデータフェッチの処理を書く
         // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - UITable Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

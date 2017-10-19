@@ -12,10 +12,6 @@
 
 @property (nonatomic,strong) NSString *localPath;
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewLayout;
-
-
 @end
 
 @implementation VideoPlayerViewController {
@@ -44,7 +40,9 @@
     return _itemsToPlay;
 }
 
-
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAll;
+}
 
 - (instancetype)init {
   self = [super initWithNibName:nil bundle:nil];
@@ -53,9 +51,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    self.collectionView.dataSource = self;
-    self.collectionView.showsHorizontalScrollIndicator = NO;
-    
     NSMutableArray *items = [NSMutableArray array];
     UVPlayerItem *item1 = [[UVPlayerItem alloc] initWithPath:self.localPath type:UVPlayerItemTypeLocalVideo];
     [items addObject:item1];
@@ -81,19 +76,17 @@
 
 -( void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-        self.navigationController.navigationBarHidden = YES;
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.collectionViewLayout.itemSize = CGSizeMake(self.view.frame.size.width, 250);
-    
-    
     //调整frame。你可以使用任何其它布局方式保证播放视图是你期望的大小
     CGRect frame;
     
     if (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+        self.navigationController.navigationBarHidden = YES;
         frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     } else {
+        self.navigationController.navigationBarHidden = NO;
         frame = CGRectMake(0, 0, self.playerView.bounds.size.width, self.playerView.bounds.size.height );
     }
     
@@ -137,20 +130,5 @@
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
     
-}
-
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    SportCollectionViewCell * cell = (SportCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:@"sport_cell" forIndexPath:indexPath];
-    [cell loadImage];
-    return cell;
 }
 @end

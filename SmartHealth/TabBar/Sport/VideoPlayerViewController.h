@@ -1,4 +1,4 @@
 #import <UIKit/UIKit.h>
 
-@interface VideoPlayerViewController : UIViewController<UICollectionViewDataSource>
+@interface VideoPlayerViewController : UIViewController
 @end

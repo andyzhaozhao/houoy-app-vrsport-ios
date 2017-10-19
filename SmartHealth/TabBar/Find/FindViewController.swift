@@ -48,8 +48,9 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     func sportEventClick() {
         performSegue(withIdentifier: "sportCenter", sender: nil)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     override func viewWillLayoutSubviews() {

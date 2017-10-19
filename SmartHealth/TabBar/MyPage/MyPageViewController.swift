@@ -31,10 +31,9 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
         distanceLabel.text = "12"
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     override func viewWillAppear(_ animated: Bool) {

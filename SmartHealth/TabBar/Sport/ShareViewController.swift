@@ -10,6 +10,7 @@ import UIKit
 
 class ShareViewController: UIViewController {
 
+    @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -20,11 +21,31 @@ class ShareViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textView.resignFirstResponder()
+    }
 
     @IBAction func confirmeClick(_ sender: Any) {
-        let arrays = ["Share","I  like Sport."]
-        let activity = UIActivityViewController.init(activityItems: arrays, applicationActivities: nil)
+//        let arrays = ["Share","I  like Sport."]
+//        let activity = UIActivityViewController.init(activityItems: arrays, applicationActivities: nil)
+//        // 使用しないアクティビティタイプ
+//        let excludedActivityTypes = [
+//            UIActivityType.print,
+//            UIActivityType.copyToPasteboard,
+//            UIActivityType.assignToContact,
+//            UIActivityType.addToReadingList,
+//            UIActivityType.airDrop,
+//            UIActivityType.postToWeibo,
+//            UIActivityType.postToTencentWeibo,
+//            UIActivityType.message
+//        ]
+//
+//        activity.excludedActivityTypes = excludedActivityTypes
+        let textToShare = "我是且行且珍惜_iOS，欢迎关注我！"
+        let imageToShare = UIImage.init(named: "AppIcon.png")
+        let urlToShare = NSURL.init(string: "https://github.com")
+        let activityItems = [urlToShare,textToShare,imageToShare] as [Any]
+        let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
         self.present(activity, animated: true, completion: nil)
     }
     @IBOutlet weak var cancelClick: NSLayoutConstraint!
