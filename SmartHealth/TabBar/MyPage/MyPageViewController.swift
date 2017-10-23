@@ -19,7 +19,7 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var sportTimeLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var myTable: UITableView!
-    
+    var mArray: Array = ["运动历史记录","我的关注"]
     override func viewDidLoad() {
         super.viewDidLoad()
 //        bgImage.image = UIImage(named: "login_main.jpeg")
@@ -44,17 +44,19 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (indexPath.row == 0) {
             performSegue(withIdentifier: "showSportDetail", sender: nil)
+        } else if (indexPath.row == 1) {
+            performSegue(withIdentifier: "showMyLikeDetail", sender: nil)
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "运动历史记录"
+        cell.textLabel?.text = mArray[indexPath.row]
         cell.accessoryType =  UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return mArray.count
     }
 }
 

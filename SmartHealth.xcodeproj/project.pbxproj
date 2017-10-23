@@ -39,6 +39,9 @@
 		1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */; };
 		1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */; };
 		1DCCE3C51F98CB1D000E5106 /* SportListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCE3C41F98CB1C000E5106 /* SportListViewController.swift */; };
+		1DCCE3C71F9B2C86000E5106 /* MyLikesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCE3C61F9B2C85000E5106 /* MyLikesViewController.swift */; };
+		1DCCE3C91F9B2F64000E5106 /* SportDetailConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCE3C81F9B2F64000E5106 /* SportDetailConditionViewController.swift */; };
+		1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
 		7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F33F1F937E970008E688 /* GLKit.framework */; };
 		7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3411F937E9D0008E688 /* CoreMotion.framework */; };
@@ -109,6 +112,9 @@
 		1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportCollectionViewCell.m; sourceTree = "<group>"; };
 		1DC1166C1F6E0676002FBB60 /* ShareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		1DCCE3C41F98CB1C000E5106 /* SportListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportListViewController.swift; sourceTree = "<group>"; };
+		1DCCE3C61F9B2C85000E5106 /* MyLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLikesViewController.swift; sourceTree = "<group>"; };
+		1DCCE3C81F9B2F64000E5106 /* SportDetailConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDetailConditionViewController.swift; sourceTree = "<group>"; };
+		1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
 		7E35F33F1F937E970008E688 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7E35F3411F937E9D0008E688 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7E35F3431F937EA40008E688 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -244,11 +250,13 @@
 		1D3E9F171F35D877006CDD87 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				1DCCE3C61F9B2C85000E5106 /* MyLikesViewController.swift */,
 				1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */,
 				1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */,
 				1DC116651F6D0DB0002FBB60 /* SettingInfoViewController.swift */,
 				1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */,
 				1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */,
+				1DCCE3C81F9B2F64000E5106 /* SportDetailConditionViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 			isa = PBXGroup;
 			children = (
 				1D9AF8C21F6F3AD400EAE44D /* Constants.swift */,
+				1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -543,14 +552,17 @@
 				1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */,
 				1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */,
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
+				1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */,
 				1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */,
 				1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */,
+				1DCCE3C91F9B2F64000E5106 /* SportDetailConditionViewController.swift in Sources */,
 				1DC116661F6D0DB0002FBB60 /* SettingInfoViewController.swift in Sources */,
 				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
 				1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */,
 				1DCCE3C51F98CB1D000E5106 /* SportListViewController.swift in Sources */,
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
+				1DCCE3C71F9B2C86000E5106 /* MyLikesViewController.swift in Sources */,
 				1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */,
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 class SportDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     @IBOutlet weak var tableView: UITableView!
-    var mArray: Array = ["运动历史记录","我的关注"]
+    var mArray: Array = ["运动历史记录"]
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -19,6 +19,17 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.isNavigationBarHidden = false
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(SportDetailViewController.refresh(sender:)), for: .valueChanged)
+        let rightButton = UIButton()
+        rightButton.frame = CGRect.init(x: 0, y: 0, width: 100, height: 44)
+        rightButton.setTitle("选择条件", for: .normal)
+        rightButton.setTitleColor(UIColor.black, for: .normal)
+        rightButton.addTarget(self, action: #selector(didTapOnRightButton), for: UIControlEvents.touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: rightButton)
+        self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    
+    func didTapOnRightButton() {
+        performSegue(withIdentifier: "showConditionView", sender: nil)
     }
     
     func refresh(sender: UIRefreshControl) {
