@@ -33,6 +33,7 @@
 		1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C21F6F3AD400EAE44D /* Constants.swift */; };
 		1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */; };
 		1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */; };
+		1DBAA9C41F9F63FC00406445 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAA9C31F9F63FC00406445 /* ApiHelper.swift */; };
 		1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */; };
 		1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */; };
 		1DC116661F6D0DB0002FBB60 /* SettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC116651F6D0DB0002FBB60 /* SettingInfoViewController.swift */; };
@@ -105,6 +106,7 @@
 		1D9AF8C21F6F3AD400EAE44D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportDetailViewController.swift; sourceTree = "<group>"; };
 		1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSettingViewController.swift; sourceTree = "<group>"; };
+		1DBAA9C31F9F63FC00406445 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		1DC1165F1F6AA737002FBB60 /* FindPwdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPwdViewController.swift; sourceTree = "<group>"; };
 		1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindCollectionViewCell.swift; sourceTree = "<group>"; };
 		1DC116651F6D0DB0002FBB60 /* SettingInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingInfoViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			children = (
 				1D9AF8C21F6F3AD400EAE44D /* Constants.swift */,
 				1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */,
+				1DBAA9C31F9F63FC00406445 /* ApiHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -520,7 +523,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		822799FC0AEB3E330175268A /* [CP] Embed Pods Frameworks */ = {
@@ -553,6 +556,7 @@
 				1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */,
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
 				1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */,
+				1DBAA9C41F9F63FC00406445 /* ApiHelper.swift in Sources */,
 				1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */,
 				1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */,
 				1DCCE3C91F9B2F64000E5106 /* SportDetailConditionViewController.swift in Sources */,
