@@ -7,17 +7,44 @@
 //
 
 import UIKit
-
+import Alamofire
+import Toast_Swift
 class SportAreaViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var mArray: Array = [["image":"login_main.jpeg", "title":"中山公园", "detail":"详细内容"]]
+    var mPlaceList :[SHPlaceModel] = []
+    
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(MessageViewController.refresh(sender:)), for: .valueChanged)
+        self.loadData()
+    }
+    func loadData(){
+        let request = Alamofire.request(Constants.PlaceRetrieve,method: .get, parameters: nil, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
+        self.view.isUserInteractionEnabled = false
+        request.responseJSON { response in
+            self.view.isUserInteractionEnabled = true
+            switch response.result {
+            case .success(let data):
+                Utils.printMsg(msg:"JSON: \(data)")
+                let dic = data as! NSDictionary
+                let resultData = dic[Constants.Place_Retrieve_ResultData_Key] as! NSDictionary
+                let notes = resultData[Constants.Place_Retrieve_Nodes_Key] as! NSArray
+                for note in notes {
+                    let noteDic = note as! NSDictionary
+                    let model = SHPlaceModel()
+                    model.placeCode = noteDic["place_code"] as! String
+                    model.placeCode = noteDic["place_name"] as! String
+                    self.mPlaceList.append(model)
+                }
+            case .failure:
+                self.view.makeToast("获取信息失败")
+            }
+        }
     }
     
     func refresh(sender: UIRefreshControl) {

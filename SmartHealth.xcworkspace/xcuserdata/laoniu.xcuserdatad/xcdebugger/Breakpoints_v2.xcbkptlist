@@ -58,13 +58,61 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SmartHealth/login/LoginViewController.swift"
-            timestampString = "530575836.687305"
+            timestampString = "530630465.045264"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "noLoginClick(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartHealth/TabBar/Sport/SportAreaViewController.swift"
+            timestampString = "530630494.581895"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SmartHealth.SportAreaViewController.loadData() -&gt; ()"
+                  moduleName = "SmartHealth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laoniu/Documents/2017/SRC/iOS/houoy-app-vrsport-ios/SmartHealth/TabBar/Sport/SportAreaViewController.swift"
+                  timestampString = "530630494.587114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "571">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in SmartHealth.SportAreaViewController.loadData() -&gt; ()"
+                  moduleName = "SmartHealth"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laoniu/Documents/2017/SRC/iOS/houoy-app-vrsport-ios/SmartHealth/TabBar/Sport/SportAreaViewController.swift"
+                  timestampString = "530630494.589841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "6378">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
