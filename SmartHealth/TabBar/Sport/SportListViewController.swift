@@ -33,10 +33,10 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func loadData(){
         let parameters: Parameters = [
-            Constants.Video_List_Start: videPage,
-            Constants.Video_List_Length: Constants.Video_List_Length_Value,
-            Constants.Video_List_OrderColumnName: Constants.Video_List_OrderColumnName_Value,
-            Constants.Video_List_OrderDir: Constants.Video_List_OrderDir_Desc,
+            Constants.List_Start: videPage,
+            Constants.List_Length: Constants.List_Length_Value,
+            Constants.List_OrderColumnName: Constants.Video_List_OrderColumnName_Value,
+            Constants.List_OrderDir: Constants.List_OrderDir_Desc,
         ]
         let request = Alamofire.request(Constants.VideoRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
@@ -92,7 +92,13 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == self.videoListNotesModel.count - 1 {
+        guard let theTotal = self.videoListModel?.total else {
+            return
+        }
+        guard let totle = Int(theTotal) else {
+            return
+        }
+        if indexPath.row == self.videoListNotesModel.count - 1 && self.videoListNotesModel.count < totle{
             self.videPage = self.videPage + 1
             self.loadData()
         }

@@ -11,6 +11,10 @@
 		1D2D0CD81FA5868A004ED20A /* SportPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CD71FA5868A004ED20A /* SportPlaceCell.swift */; };
 		1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */; };
 		1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CDD1FA5A850004ED20A /* SportVideoListCell.swift */; };
+		1D2D0CE01FA5C422004ED20A /* SHEssayInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CDF1FA5C422004ED20A /* SHEssayInfoModel.swift */; };
+		1D2D0CE31FA5CAF0004ED20A /* FindEventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CE21FA5CAF0004ED20A /* FindEventListCell.swift */; };
+		1D2D0CE51FA5DC0F004ED20A /* FindDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CE41FA5DC0E004ED20A /* FindDetailViewController.swift */; };
+		1D2D0CE81FA5EA9C004ED20A /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CE71FA5EA9C004ED20A /* StringExtension.swift */; };
 		1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */; };
 		1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED41F3209BD006CDD87 /* Main.storyboard */; };
 		1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED71F3209BD006CDD87 /* Assets.xcassets */; };
@@ -37,6 +41,7 @@
 		1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C21F6F3AD400EAE44D /* Constants.swift */; };
 		1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */; };
 		1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */; };
+		1DB688101FA5EFBC00BA7087 /* SHFindPersonFollow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB6880F1FA5EFBC00BA7087 /* SHFindPersonFollow.swift */; };
 		1DBAA9C41F9F63FC00406445 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAA9C31F9F63FC00406445 /* ApiHelper.swift */; };
 		1DBAA9C61FA0BDE300406445 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAA9C51FA0BDE300406445 /* Utils.swift */; };
 		1DBAA9CB1FA1439400406445 /* SHPlaceModelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DBAA9CA1FA1439400406445 /* SHPlaceModelMap.swift */; };
@@ -81,6 +86,10 @@
 		1D2D0CD71FA5868A004ED20A /* SportPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPlaceCell.swift; sourceTree = "<group>"; };
 		1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHVideoListModelMap.swift; sourceTree = "<group>"; };
 		1D2D0CDD1FA5A850004ED20A /* SportVideoListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportVideoListCell.swift; sourceTree = "<group>"; };
+		1D2D0CDF1FA5C422004ED20A /* SHEssayInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHEssayInfoModel.swift; sourceTree = "<group>"; };
+		1D2D0CE21FA5CAF0004ED20A /* FindEventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindEventListCell.swift; sourceTree = "<group>"; };
+		1D2D0CE41FA5DC0E004ED20A /* FindDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindDetailViewController.swift; sourceTree = "<group>"; };
+		1D2D0CE71FA5EA9C004ED20A /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1D3E9ECB1F3209BD006CDD87 /* SmartHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D3E9ED51F3209BD006CDD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +125,7 @@
 		1D9AF8C21F6F3AD400EAE44D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1D9AF8C41F6F4DB800EAE44D /* SportDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportDetailViewController.swift; sourceTree = "<group>"; };
 		1D9AF8C61F6F51E200EAE44D /* DeviceSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceSettingViewController.swift; sourceTree = "<group>"; };
+		1DB6880F1FA5EFBC00BA7087 /* SHFindPersonFollow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHFindPersonFollow.swift; sourceTree = "<group>"; };
 		1DBAA9C31F9F63FC00406445 /* ApiHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
 		1DBAA9C51FA0BDE300406445 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		1DBAA9CA1FA1439400406445 /* SHPlaceModelMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHPlaceModelMap.swift; sourceTree = "<group>"; };
@@ -187,6 +197,22 @@
 				1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		1D2D0CE11FA5CAF0004ED20A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1D2D0CE21FA5CAF0004ED20A /* FindEventListCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1D2D0CE61FA5EA92004ED20A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1D2D0CE71FA5EA9C004ED20A /* StringExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		1D3E9EC21F3209BD006CDD87 = {
@@ -313,11 +339,13 @@
 		1D3E9F2B1F36A9A2006CDD87 /* Find */ = {
 			isa = PBXGroup;
 			children = (
+				1D2D0CE11FA5CAF0004ED20A /* Cell */,
 				1D3E9F2C1F36A9A2006CDD87 /* DetailTableViewCell.swift */,
 				1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */,
+				1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */,
+				1D2D0CE41FA5DC0E004ED20A /* FindDetailViewController.swift */,
 				1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */,
 				1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */,
-				1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */,
 				1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */,
 			);
 			path = Find;
@@ -335,6 +363,7 @@
 		1D9AF8C11F6F3AC200EAE44D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1D2D0CE61FA5EA92004ED20A /* Extension */,
 				1D9AF8C21F6F3AD400EAE44D /* Constants.swift */,
 				1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */,
 				1DBAA9C31F9F63FC00406445 /* ApiHelper.swift */,
@@ -346,9 +375,11 @@
 		1DBAA9C71FA0C1F400406445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1DB6880F1FA5EFBC00BA7087 /* SHFindPersonFollow.swift */,
 				1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */,
 				1DBAA9CA1FA1439400406445 /* SHPlaceModelMap.swift */,
 				1D2D0CD41FA5705B004ED20A /* SHLoginModel.swift */,
+				1D2D0CDF1FA5C422004ED20A /* SHEssayInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,6 +631,8 @@
 				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
 				1DBAA9CB1FA1439400406445 /* SHPlaceModelMap.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
+				1D2D0CE31FA5CAF0004ED20A /* FindEventListCell.swift in Sources */,
+				1D2D0CE01FA5C422004ED20A /* SHEssayInfoModel.swift in Sources */,
 				1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */,
 				1DCCE3C51F98CB1D000E5106 /* SportListViewController.swift in Sources */,
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
@@ -608,14 +641,17 @@
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
 				1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,
+				1D2D0CE51FA5DC0F004ED20A /* FindDetailViewController.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				1DBAA9C61FA0BDE300406445 /* Utils.swift in Sources */,
+				1DB688101FA5EFBC00BA7087 /* SHFindPersonFollow.swift in Sources */,
 				1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */,
 				1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */,
 				1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */,
 				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
+				1D2D0CE81FA5EA9C004ED20A /* StringExtension.swift in Sources */,
 				1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */,
 				1D3E9F1D1F35D877006CDD87 /* SportAreaViewController.swift in Sources */,
 				1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */,

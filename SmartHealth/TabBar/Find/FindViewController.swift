@@ -42,11 +42,15 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
         // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
     }
     
-    func learningEventClick() {
-        performSegue(withIdentifier: "learningCenter", sender: nil)
+    func learningEventClick(sender: Any?) {
+        let gesture = sender as! UITapGestureRecognizer
+        gesture.view?.tag = Constants.Essay_List_Type_32
+        performSegue(withIdentifier: "sportCenter", sender: sender)
     }
-    func sportEventClick() {
-        performSegue(withIdentifier: "sportCenter", sender: nil)
+    func sportEventClick(sender: Any?) {
+        let gesture = sender as! UITapGestureRecognizer
+        gesture.view?.tag = Constants.Essay_List_Type_33
+        performSegue(withIdentifier: "sportCenter", sender: sender)
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -144,6 +148,15 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
             if let nextViewController = segue.destination as? DetailViewController{
                 nextViewController.urlLink = "详细信息！"
                 nextViewController.title = "详细信息"
+            }
+        } else if (segue.identifier == "sportCenter") {
+            let gesture = sender as! UITapGestureRecognizer
+            if let nextViewController = segue.destination as? EventViewController{
+                guard let tag = gesture.view?.tag else {
+                    return
+                }
+                nextViewController.title = "消息"
+                nextViewController.type = tag
             }
         }
     }
