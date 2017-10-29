@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import Alamofire
 class SportListViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var mArray: Array = [["image":"login_main.jpeg", "title":"中山公园", "detail":"详细内容"]]
+    private var videoListModel: SHVideoListModelMap?
+    private var videoListNotesModel: [SHVideoresultDataModel]  = []
+    private var videPage: Int = 0
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -26,6 +28,40 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
         self.navigationItem.rightBarButtonItem = barButtonItem
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(MessageViewController.refresh(sender:)), for: .valueChanged)
+        self.loadData()
+    }
+    
+    func loadData(){
+        let parameters: Parameters = [
+            Constants.Video_List_Start: videPage,
+            Constants.Video_List_Length: Constants.Video_List_Length_Value,
+            Constants.Video_List_OrderColumnName: Constants.Video_List_OrderColumnName_Value,
+            Constants.Video_List_OrderDir: Constants.Video_List_OrderDir_Desc,
+        ]
+        let request = Alamofire.request(Constants.VideoRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
+        self.view.isUserInteractionEnabled = false
+        request.responseJSON { response in
+            self.view.isUserInteractionEnabled = true
+            switch response.result {
+            case .success(let data):
+                Utils.printMsg(msg:"JSON: \(data)")
+                let dic = data as! NSDictionary
+                self.videoListModel = SHVideoListModelMap(JSON: dic as! [String : Any])
+                if let page = self.videoListModel?.start {
+                     self.videPage = page
+                }
+                let videoList = self.videoListModel?.resultData
+                guard let theVideoList = videoList else {
+                    return
+                }
+                for video in theVideoList {
+                    self.videoListNotesModel.append(video)
+                }
+                self.tableView.reloadData()
+            case .failure:
+                self.view.makeToast("获取信息失败")
+            }
+        }
     }
     
     func didTapOnRightButton() {
@@ -34,11 +70,9 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
-        mArray.append(mArray[0])
+        self.loadData()
         tableView.reloadData()
         refreshControl.endRefreshing()
-        // ここに通信処理などデータフェッチの処理を書く
-        // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
     }
     
     // MARK: - UITable Delegate
@@ -48,21 +82,19 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     // MARK: - UITable DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mArray.count
+        return videoListNotesModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
-        cell.dataDic = mArray[indexPath.row]
-        cell .initUI()
-        //        cell.textLabel?.text = "\(mArray[indexPath.row])"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SportVideoListCell
+        cell.initUI(model:self.videoListNotesModel[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == mArray.count - 1 {
-            mArray.append(mArray[0])
-            tableView.reloadData()
+        if indexPath.row == self.videoListNotesModel.count - 1 {
+            self.videPage = self.videPage + 1
+            self.loadData()
         }
     }
     /*

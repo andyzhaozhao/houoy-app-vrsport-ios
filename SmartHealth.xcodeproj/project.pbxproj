@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D2D0CD51FA5705B004ED20A /* SHLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CD41FA5705B004ED20A /* SHLoginModel.swift */; };
 		1D2D0CD81FA5868A004ED20A /* SportPlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CD71FA5868A004ED20A /* SportPlaceCell.swift */; };
+		1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */; };
+		1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2D0CDD1FA5A850004ED20A /* SportVideoListCell.swift */; };
 		1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */; };
 		1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED41F3209BD006CDD87 /* Main.storyboard */; };
 		1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D3E9ED71F3209BD006CDD87 /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		0D7FEC4C06CA67E826B5A6B7 /* Pods-SmartHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.release.xcconfig"; sourceTree = "<group>"; };
 		1D2D0CD41FA5705B004ED20A /* SHLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHLoginModel.swift; sourceTree = "<group>"; };
 		1D2D0CD71FA5868A004ED20A /* SportPlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportPlaceCell.swift; sourceTree = "<group>"; };
+		1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHVideoListModelMap.swift; sourceTree = "<group>"; };
+		1D2D0CDD1FA5A850004ED20A /* SportVideoListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportVideoListCell.swift; sourceTree = "<group>"; };
 		1D3E9ECB1F3209BD006CDD87 /* SmartHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D3E9ECE1F3209BD006CDD87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D3E9ED51F3209BD006CDD87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		1D2D0CD61FA58665004ED20A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				1D2D0CDD1FA5A850004ED20A /* SportVideoListCell.swift */,
 				1D2D0CD71FA5868A004ED20A /* SportPlaceCell.swift */,
 				1DC116691F6D472F002FBB60 /* SportCollectionViewCell.h */,
 				1DC1166A1F6D472F002FBB60 /* SportCollectionViewCell.m */,
@@ -341,6 +346,7 @@
 		1DBAA9C71FA0C1F400406445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */,
 				1DBAA9CA1FA1439400406445 /* SHPlaceModelMap.swift */,
 				1D2D0CD41FA5705B004ED20A /* SHLoginModel.swift */,
 			);
@@ -600,11 +606,13 @@
 				1DCCE3C71F9B2C86000E5106 /* MyLikesViewController.swift in Sources */,
 				1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */,
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
+				1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				1DBAA9C61FA0BDE300406445 /* Utils.swift in Sources */,
 				1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */,
 				1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */,
+				1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */,
 				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,

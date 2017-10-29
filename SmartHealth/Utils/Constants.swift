@@ -24,10 +24,23 @@ struct Constants {
     public static let Login_User_Name = "user_name"
     public static let Login_User_PK = "user_id"
     
+    //video list parmater.
+    public static let Video_List_Start = "start"
+    public static let Video_List_Length = "length"
+    public static let Video_List_Length_Value = 10
+    public static let Video_List_OrderColumnName = "orderColumnName"
+    public static let Video_List_OrderColumnName_Value = "video_name"
+    public static let Video_List_OrderDir = "orderDir"
+    public static let Video_List_OrderDir_Desc = "desc"
+    public static let Video_List_OrderDir_Asc = "asc"
+
+    
     //URL
-    private static let BaseUrl = "http://182.92.128.240:8889/api"
-    public static let SigninSystemMobile = BaseUrl+"/login/signinSystemMobile"
-    public static let PlaceRetrieve = BaseUrl+"/place/retrieve"
+    private static let BaseUrl8889 = "http://182.92.128.240:8889/api"
+    private static let BaseUrl8888 = "http://182.92.128.240:8888/api"
+    public static let SigninSystemMobile = BaseUrl8889+"/login/signinSystemMobile"
+    public static let PlaceRetrieve = BaseUrl8889+"/place/retrieve"
+    public static let VideoRetrieve = BaseUrl8888+"/video/retrieveMobile"
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"
 }
