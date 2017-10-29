@@ -13,4 +13,11 @@ class Utils {
             print(msg)
         }
     }
+    
+    class func isEmpty(string : String?) -> Bool {
+        guard let theString = string else {
+            return true
+        }
+        return theString.isEmpty
+    }
 }

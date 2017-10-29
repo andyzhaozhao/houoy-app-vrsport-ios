@@ -53,7 +53,7 @@ class LoginViewController: CommanViewController{
             Constants.Login_User_Code: username,
             Constants.Login_User_PWD: password
         ]
-        let request = Alamofire.request(Constants.UserLogin,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
+        let request = Alamofire.request(Constants.SigninSystemMobile,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
         request.responseJSON { response in
             self.view.isUserInteractionEnabled = true
@@ -61,25 +61,26 @@ class LoginViewController: CommanViewController{
             case .success(let data):
                 Utils.printMsg(msg:"JSON: \(data)")
                 let dic = data as! NSDictionary
-                if let success = dic[Constants.Login_Status_Key] as? Bool {
-                    if (success) {
-                        //FIXME save login Token
-                        self.performSegue(withIdentifier: "toMainTab", sender: nil)
-                        return
-                    }
+                let model = SHLoginModel(JSON: dic as! [String : Any])
+                guard let themodel = model else {
+                    return
+                }
+                if (themodel.success) {
+                    //FIXME save login Token
+                    UserDefaults.standard.setValue(model?.resultData?.pk_user, forKey: Constants.Login_User_PK)
+                    UserDefaults.standard.setValue(model?.resultData?.user_name, forKey: Constants.Login_User_Name)
+                    self.performSegue(withIdentifier: "toMainTab", sender: nil)
+                    return
                 }
                 self.view.makeToast("登陆失败")
             case .failure:
                 self.view.makeToast("登陆失败")
             }
-            //                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-            //                    print("Data: \(utf8Text)") // original server data as UTF8 string
-            //                }
+
             //            let alert: UIAlertController = UIAlertController(title: "请输入用户名密码", message: "请输入用户名密码", preferredStyle: UIAlertControllerStyle.alert)
             //            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             //            })
             //            alert .addAction(defaultAction)
-            //            self.present(alert, animated: true, completion: nil)
         }
     }
     

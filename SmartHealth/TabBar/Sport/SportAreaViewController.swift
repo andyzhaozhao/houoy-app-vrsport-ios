@@ -12,9 +12,8 @@ import Toast_Swift
 class SportAreaViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var mArray: Array = [["image":"login_main.jpeg", "title":"中山公园", "detail":"详细内容"]]
-    var mPlaceList :[SHPlaceModel] = []
-    
+    var placeModel: SHPlaceModelMap?
+    var placeNotesModel: [SHPlaceresultDataModel]  = []
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -32,28 +31,37 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
             case .success(let data):
                 Utils.printMsg(msg:"JSON: \(data)")
                 let dic = data as! NSDictionary
-                let resultData = dic[Constants.Place_Retrieve_ResultData_Key] as! NSDictionary
-                let notes = resultData[Constants.Place_Retrieve_Nodes_Key] as! NSArray
-                for note in notes {
-                    let noteDic = note as! NSDictionary
-                    let model = SHPlaceModel()
-                    model.placeCode = noteDic["place_code"] as! String
-                    model.placeCode = noteDic["place_name"] as! String
-                    self.mPlaceList.append(model)
+                self.placeModel = SHPlaceModelMap(JSON: dic as! [String : Any])
+                let nodes = self.placeModel?.resultData?.nodes
+                guard let theNodes = nodes else {
+                    return
                 }
+                self.getNodesList(nodes: theNodes)
+                self.tableView.reloadData()
             case .failure:
                 self.view.makeToast("获取信息失败")
             }
         }
     }
     
+    func getNodesList(nodes : [SHPlaceresultDataModel]?){
+        guard let theNodes = nodes else {
+            return
+        }
+        for node in theNodes {
+            if (node.nodes.count == 0){
+                self.placeNotesModel.append(node)
+            } else {
+                getNodesList(nodes: node.nodes)
+            }
+        }
+    }
+    
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
-        mArray.append(mArray[0])
+        self.loadData()
         tableView.reloadData()
         refreshControl.endRefreshing()
-        // ここに通信処理などデータフェッチの処理を書く
-        // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
     }
     
     // MARK: - UITable Delegate
@@ -63,21 +71,19 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
     
     // MARK: - UITable DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mArray.count
+        return self.placeNotesModel.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
-        cell.dataDic = mArray[indexPath.row]
-        cell .initUI()
-        //        cell.textLabel?.text = "\(mArray[indexPath.row])"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SportPlaceCell
+        cell .initUI(model: self.placeNotesModel[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == mArray.count - 1 {
-            mArray.append(mArray[0])
-            tableView.reloadData()
+        if indexPath.row == self.placeNotesModel.count - 1 {
+            //FIXME add pagenumber.
+            //self.loadData()
         }
     }
     /*

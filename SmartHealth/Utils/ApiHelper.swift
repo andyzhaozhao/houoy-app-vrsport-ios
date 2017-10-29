@@ -17,4 +17,13 @@ class ApiHelper {
         ]
         return header
     }
+    
+    class func isLogin() -> Bool {
+        let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK)
+        return !Utils.isEmpty(string: pk)
+    }
+    
+    class func loginOut(){
+        UserDefaults.standard.setValue("", forKey:Constants.Login_User_PK)
+    }
 }

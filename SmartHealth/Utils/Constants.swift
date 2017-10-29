@@ -16,22 +16,18 @@ struct Constants {
     public static let ContentTypeJson = "application/json"
     public static let Accept = "Accept"
     
-    //login
+    //login parmater.
     public static let Login_User_Code = "user_code"
     public static let Login_User_PWD = "user_password"
-    public static let Login_Status_Key = "success"
     
-    //place
-    public static let Place_Retrieve_ResultData_Key = "resultData"
-    public static let Place_Retrieve_Nodes_Key = "nodes"
+    //login userdefault
+    public static let Login_User_Name = "user_name"
+    public static let Login_User_PK = "user_id"
     
-    
+    //URL
     private static let BaseUrl = "http://182.92.128.240:8889/api"
-    public static let UserLogin = BaseUrl+"/login/signinMobile"
+    public static let SigninSystemMobile = BaseUrl+"/login/signinSystemMobile"
     public static let PlaceRetrieve = BaseUrl+"/place/retrieve"
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"
-    
-    
-    
 }
