@@ -38,7 +38,8 @@ struct Constants {
     public static let Essay_List_Type = "pk_type"
     public static let Essay_List_Type_32 = 32
     public static let Essay_List_Type_33 = 33
-
+    //attention list parmater.
+    public static let Attention_List_OrderColumnName_Value = "ts"
     //attention parmater.
     public static let Follow_Person_Name = "follow_person_name"
     public static let Follow_Person_PK = "follow_pk_person"
@@ -49,6 +50,7 @@ struct Constants {
     public static let SigninSystemMobile = BaseUrl8889+"/login/signinSystemMobile"
     public static let PlaceRetrieve = BaseUrl8889+"/place/retrieve"
     public static let VideoRetrieve = BaseUrl8888+"/video/retrieveMobile"
+    public static let RecordShareRetrieve = BaseUrl8889+"/recordShare/retrieveMobile"
     public static let EssayRetrieve = BaseUrl8888+"/essay/retrieveMobile"
     public static let PersonFollow = BaseUrl8889+"/personFollow/save"
     

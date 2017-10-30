@@ -11,6 +11,8 @@ import Alamofire
 class FindDetailViewController: UIViewController {
 
     var noteModel: SHEssayListInfoModel?
+    var recordShareModel: SHAttentionListInfoModel?
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var detailText: UITextView!
@@ -19,10 +21,17 @@ class FindDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     self.navigationController?.isNavigationBarHidden = false
+        
+        if (noteModel != nil){
         self.titleLabel.text = noteModel?.essay_name
         self.subTitleLabel.text = noteModel?.essay_subname
-        self.detailText.text = noteModel?.essay_content
         self.detailText.attributedText = noteModel?.essay_content?.htmlAttributedString()
+        } else if (recordShareModel != nil){
+            self.titleLabel.text = recordShareModel?.record_share_name
+            self.subTitleLabel.text = recordShareModel?.record_share_code
+            self.detailText.attributedText = recordShareModel?.record_share_desc?.htmlAttributedString()
+            self.attentionButton.isHidden = true
+        }
         
         // Do any additional setup after loading the view.
     }

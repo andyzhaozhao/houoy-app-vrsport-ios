@@ -393,7 +393,7 @@
                                         <rect key="frame" x="0.0" y="300.5" width="375" height="297.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="ihL-4l-4P1" customClass="DetailTableViewCell" customModule="SmartHealth" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="ihL-4l-4P1" customClass="FindAttentionTableViewCell" customModule="SmartHealth" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ihL-4l-4P1" id="R7C-3b-lAD">
@@ -435,6 +435,7 @@
                                                     <outlet property="mDetailLabel" destination="mkI-A0-rx6" id="Bw3-mj-IXB"/>
                                                     <outlet property="mImageView" destination="xUX-0E-l6b" id="nkR-pt-b9g"/>
                                                     <outlet property="mTitleLabel" destination="G8I-P6-Y8b" id="Tvz-RW-DoY"/>
+                                                    <segue destination="Gf7-hV-7ce" kind="show" identifier="toAttentionList" id="5VV-Mu-qKs"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -486,8 +487,6 @@
                         <outlet property="sportEvent" destination="M4t-gw-ZdT" id="mkO-97-UGu"/>
                         <outlet property="tableView" destination="ibs-bC-LbG" id="FF2-Xo-gI1"/>
                         <segue destination="g2e-qR-YnC" kind="show" identifier="sportCenter" id="opm-Sm-0MB"/>
-                        <segue destination="Gf7-hV-7ce" kind="show" identifier="learningCenter" id="208-pG-pBq"/>
-                        <segue destination="cMP-m5-Dod" kind="show" identifier="showDetail" id="Pej-Sf-Shy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -497,7 +496,7 @@
         <!--教学中心-->
         <scene sceneID="2wc-Tk-VQE">
             <objects>
-                <viewController title="教学中心" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Gf7-hV-7ce" customClass="KnowledgeViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="教学中心" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Gf7-hV-7ce" customClass="AttentionViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N7g-X6-E0b"/>
                         <viewControllerLayoutGuide type="bottom" id="gsg-Qa-ofP"/>
@@ -510,7 +509,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="KnowledgeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="hjo-Id-NTf" customClass="DetailTableViewCell" customModule="SmartHealth" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="KnowledgeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="hjo-Id-NTf" customClass="FindAttentionListCell" customModule="SmartHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjo-Id-NTf" id="d9H-nx-uRm">
@@ -552,6 +551,7 @@
                                             <outlet property="mDetailLabel" destination="Ryu-xf-NPw" id="czF-nO-FsI"/>
                                             <outlet property="mImageView" destination="3nh-go-o9u" id="7H3-wm-bxH"/>
                                             <outlet property="mTitleLabel" destination="wYY-RI-eKg" id="xOO-tu-6sB"/>
+                                            <segue destination="vXp-XN-GW8" kind="show" identifier="toAttentionDetail" id="luM-pA-u5c"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -571,12 +571,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="XoU-BC-QET" id="DT2-bf-pQT"/>
+                        <outlet property="tableView" destination="XoU-BC-QET" id="L4I-KO-8ll"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9da-GZ-5Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159" y="-1409"/>
+            <point key="canvasLocation" x="-10" y="-1338"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ib0-0K-9BP">
@@ -1647,7 +1647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Thu-6l-gdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="-663"/>
+            <point key="canvasLocation" x="-10" y="-689"/>
         </scene>
         <!--MyPageNavigation-->
         <scene sceneID="hUE-Ec-Zcw">
@@ -2224,7 +2224,8 @@
         <image name="tab_vr" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Pej-Sf-Shy"/>
+        <segue reference="luM-pA-u5c"/>
+        <segue reference="Bc7-Db-YV3"/>
         <segue reference="0gX-kR-mEh"/>
     </inferredMetricsTieBreakers>
 </document>

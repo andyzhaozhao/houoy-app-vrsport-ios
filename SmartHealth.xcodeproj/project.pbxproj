@@ -35,7 +35,6 @@
 		1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */; };
 		1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */; };
 		1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */; };
-		1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */; };
 		1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F381F39185B006CDD87 /* ChatViewController.m */; };
 		1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3E9F3B1F391CB1006CDD87 /* VideoPlayerViewController.m */; };
 		1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9AF8C21F6F3AD400EAE44D /* Constants.swift */; };
@@ -61,6 +60,10 @@
 		7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3461F9380020008E688 /* UtoVRPlayer.framework */; };
 		7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */; };
 		7E35F34B1F9380840008E688 /* wu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F34A1F9380840008E688 /* wu.mp4 */; };
+		7EF608761FA75A6200C33DFF /* FindAttentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608751FA75A6100C33DFF /* FindAttentionTableViewCell.swift */; };
+		7EF608781FA75F3100C33DFF /* SHAttentionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */; };
+		7EF6087A1FA7619F00C33DFF /* AttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608791FA7619F00C33DFF /* AttentionViewController.swift */; };
+		7EF6087C1FA7627C00C33DFF /* FindAttentionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6087B1FA7627C00C33DFF /* FindAttentionListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,7 +119,6 @@
 		1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
-		1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowledgeViewController.swift; sourceTree = "<group>"; };
 		1D3E9F361F39185B006CDD87 /* SmartHealth-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SmartHealth-Bridging-Header.h"; path = "TabBar/Message/SmartHealth-Bridging-Header.h"; sourceTree = "<group>"; };
 		1D3E9F371F39185B006CDD87 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		1D3E9F381F39185B006CDD87 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
@@ -145,6 +147,10 @@
 		7E35F3461F9380020008E688 /* UtoVRPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UtoVRPlayer.framework; sourceTree = "<group>"; };
 		7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UtoVRPlayerResouces.bundle; sourceTree = "<group>"; };
 		7E35F34A1F9380840008E688 /* wu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wu.mp4; sourceTree = "<group>"; };
+		7EF608751FA75A6100C33DFF /* FindAttentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAttentionTableViewCell.swift; sourceTree = "<group>"; };
+		7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttentionInfoModel.swift; sourceTree = "<group>"; };
+		7EF608791FA7619F00C33DFF /* AttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewController.swift; sourceTree = "<group>"; };
+		7EF6087B1FA7627C00C33DFF /* FindAttentionListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAttentionListCell.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,6 +208,8 @@
 		1D2D0CE11FA5CAF0004ED20A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				7EF6087B1FA7627C00C33DFF /* FindAttentionListCell.swift */,
+				7EF608751FA75A6100C33DFF /* FindAttentionTableViewCell.swift */,
 				1D2D0CE21FA5CAF0004ED20A /* FindEventListCell.swift */,
 			);
 			path = Cell;
@@ -342,9 +350,9 @@
 				1D2D0CE11FA5CAF0004ED20A /* Cell */,
 				1D3E9F2C1F36A9A2006CDD87 /* DetailTableViewCell.swift */,
 				1D3E9F2D1F36A9A2006CDD87 /* DetailViewController.swift */,
-				1D3E9F301F36A9A2006CDD87 /* KnowledgeViewController.swift */,
 				1D2D0CE41FA5DC0E004ED20A /* FindDetailViewController.swift */,
 				1D3E9F2E1F36A9A2006CDD87 /* EventViewController.swift */,
+				7EF608791FA7619F00C33DFF /* AttentionViewController.swift */,
 				1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */,
 				1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */,
 			);
@@ -375,6 +383,7 @@
 		1DBAA9C71FA0C1F400406445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */,
 				1DB6880F1FA5EFBC00BA7087 /* SHFindPersonFollow.swift */,
 				1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */,
 				1DBAA9CA1FA1439400406445 /* SHPlaceModelMap.swift */,
@@ -477,7 +486,7 @@
 				TargetAttributes = {
 					1D3E9ECA1F3209BD006CDD87 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 878799TLB4;
+						DevelopmentTeam = 9H7A4LGR64;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -629,6 +638,7 @@
 				1DCCE3C91F9B2F64000E5106 /* SportDetailConditionViewController.swift in Sources */,
 				1DC116661F6D0DB0002FBB60 /* SettingInfoViewController.swift in Sources */,
 				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
+				7EF6087C1FA7627C00C33DFF /* FindAttentionListCell.swift in Sources */,
 				1DBAA9CB1FA1439400406445 /* SHPlaceModelMap.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
 				1D2D0CE31FA5CAF0004ED20A /* FindEventListCell.swift in Sources */,
@@ -636,11 +646,13 @@
 				1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */,
 				1DCCE3C51F98CB1D000E5106 /* SportListViewController.swift in Sources */,
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
+				7EF608781FA75F3100C33DFF /* SHAttentionInfoModel.swift in Sources */,
 				1DCCE3C71F9B2C86000E5106 /* MyLikesViewController.swift in Sources */,
 				1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */,
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
 				1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,
+				7EF608761FA75A6200C33DFF /* FindAttentionTableViewCell.swift in Sources */,
 				1D2D0CE51FA5DC0F004ED20A /* FindDetailViewController.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				1DBAA9C61FA0BDE300406445 /* Utils.swift in Sources */,
@@ -648,13 +660,13 @@
 				1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */,
 				1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */,
 				1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */,
+				7EF6087A1FA7619F00C33DFF /* AttentionViewController.swift in Sources */,
 				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
 				1D2D0CE81FA5EA9C004ED20A /* StringExtension.swift in Sources */,
 				1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */,
 				1D3E9F1D1F35D877006CDD87 /* SportAreaViewController.swift in Sources */,
-				1D3E9F351F36A9A2006CDD87 /* KnowledgeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,14 +821,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 878799TLB4;
+				DEVELOPMENT_TEAM = 9H7A4LGR64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SmartHealth/Libs/UtoVRPlayerSDK",
 				);
 				INFOPLIST_FILE = SmartHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks -all_load -ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = health.smart.gov.SmartHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = health01.smart.gov.SmartHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartHealth/TabBar/Message/SmartHealth-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -831,14 +843,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 878799TLB4;
+				DEVELOPMENT_TEAM = 9H7A4LGR64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SmartHealth/Libs/UtoVRPlayerSDK",
 				);
 				INFOPLIST_FILE = SmartHealth/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks -all_load -ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = health.smart.gov.SmartHealth;
+				PRODUCT_BUNDLE_IDENTIFIER = health01.smart.gov.SmartHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SmartHealth/TabBar/Message/SmartHealth-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
