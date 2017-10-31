@@ -53,7 +53,7 @@ class FindDetailViewController: UIViewController {
             Constants.Follow_Person_Name: theNoteModel.person_name,
             Constants.Follow_Person_PK: theNoteModel.pk_person,
         ]
-        let request = Alamofire.request(Constants.PersonFollow,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
+        let request = Alamofire.request(Constants.PersonFollowSave,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
         request.responseJSON { response in
             self.view.isUserInteractionEnabled = true

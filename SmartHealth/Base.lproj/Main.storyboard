@@ -1479,7 +1479,7 @@
                                 <accessibility key="accessibilityConfiguration" identifier="telText"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                                 <connections>
                                     <outlet property="delegate" destination="mV3-4K-FMp" id="EHO-Ol-NB2"/>
                                 </connections>
@@ -1499,7 +1499,7 @@
                                 <accessibility key="accessibilityConfiguration" identifier="passwordText"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="mV3-4K-FMp" id="rQM-pD-XiP"/>
                                 </connections>
@@ -1509,7 +1509,7 @@
                                 <accessibility key="accessibilityConfiguration" identifier="confirmPasswordText"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                 <connections>
                                     <outlet property="delegate" destination="mV3-4K-FMp" id="rPQ-Lb-mWt"/>
                                 </connections>
@@ -1990,7 +1990,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="KnowledgeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="rli-xM-Pcw" customClass="DetailTableViewCell" customModule="SmartHealth" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="KnowledgeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="rli-xM-Pcw" customClass="MyLikeAttentionListCell" customModule="SmartHealth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rli-xM-Pcw" id="7Az-Dq-D3x">

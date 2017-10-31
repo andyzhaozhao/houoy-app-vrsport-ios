@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Crashlytics
 import Alamofire
 import Toast_Swift
 class LoginViewController: CommanViewController{

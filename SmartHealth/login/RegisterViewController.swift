@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import Toast_Swift
 class RegisterViewController: CommanViewController {
     
     @IBOutlet weak var userIDText: UITextField!
@@ -57,17 +58,50 @@ class RegisterViewController: CommanViewController {
         self.view.endEditing(true)
         
         // User register
-//        if (userIDText.text?.isEmpty)! || (telText.text?.isEmpty)! || (codeText.text?.isEmpty)! || (passwordText.text?.isEmpty)! || (confirmPasswordText.text?.isEmpty)!{
-//            let alert: UIAlertController = UIAlertController(title: "信息不完整", message: "请输入完整信息", preferredStyle: UIAlertControllerStyle.alert)
-//            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
-//            })
-//            alert .addAction(defaultAction)
-//            self.present(alert, animated: true, completion: nil)
-//        } else {
+        if (userIDText.text?.isEmpty)! || (telText.text?.isEmpty)! || (passwordText.text?.isEmpty)! || (confirmPasswordText.text?.isEmpty)!{
+            let alert: UIAlertController = UIAlertController(title: "信息不完整", message: "请输入完整信息", preferredStyle: UIAlertControllerStyle.alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            })
+            alert .addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        } else if passwordText.text != confirmPasswordText.text {
+            let alert: UIAlertController = UIAlertController(title: "", message: "两次密码不匹配", preferredStyle: UIAlertControllerStyle.alert)
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            })
+            alert .addAction(defaultAction)
+            self.present(alert, animated: true, completion: nil)
+        } else {
             //API
- //           performSegue(withIdentifier: "toMainTab", sender: nil)
-//        }
-        self.navigationController?.popViewController(animated: true)
+            let parameters: Parameters = [
+                Constants.Register_Person_Code: userIDText.text!,
+                Constants.Register_Person_name: userIDText.text!,
+                Constants.Register_Password: passwordText.text!,
+                Constants.Register_Mobile: telText.text!
+            ]
+            let request = Alamofire.request(Constants.PersonSave,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
+            self.view.isUserInteractionEnabled = false
+            request.responseJSON { response in
+                self.view.isUserInteractionEnabled = true
+                switch response.result {
+                case .success(let data):
+                    Utils.printMsg(msg:"JSON: \(data)")
+                    let dic = data as! NSDictionary
+                    let model = SHRegisterModel(JSON: dic as! [String : Any])
+                    guard let themodel = model else {
+                        return
+                    }
+                    if (themodel.success) {
+                        self.view.makeToast("注册成功")
+                        self.navigationController?.popViewController(animated: true)
+                        return
+                    }
+                    self.view.makeToast("注册失败")
+                case .failure:
+                    self.view.makeToast("登陆失败")
+                }
+                
+            }
+        }
     }
     
     // MARK: - Navigation

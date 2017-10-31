@@ -64,6 +64,10 @@
 		7EF608781FA75F3100C33DFF /* SHAttentionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */; };
 		7EF6087A1FA7619F00C33DFF /* AttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608791FA7619F00C33DFF /* AttentionViewController.swift */; };
 		7EF6087C1FA7627C00C33DFF /* FindAttentionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF6087B1FA7627C00C33DFF /* FindAttentionListCell.swift */; };
+		7EF608821FA7D3BF00C33DFF /* SHLikeAttentionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608811FA7D3BE00C33DFF /* SHLikeAttentionInfoModel.swift */; };
+		7EF608841FA7D56600C33DFF /* MyLikeAttentionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608831FA7D56600C33DFF /* MyLikeAttentionListCell.swift */; };
+		7EF608861FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608851FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift */; };
+		7EF608881FA8B21200C33DFF /* SHRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608871FA8B21200C33DFF /* SHRegisterModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +155,10 @@
 		7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttentionInfoModel.swift; sourceTree = "<group>"; };
 		7EF608791FA7619F00C33DFF /* AttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewController.swift; sourceTree = "<group>"; };
 		7EF6087B1FA7627C00C33DFF /* FindAttentionListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAttentionListCell.swift; sourceTree = "<group>"; };
+		7EF608811FA7D3BE00C33DFF /* SHLikeAttentionInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHLikeAttentionInfoModel.swift; sourceTree = "<group>"; };
+		7EF608831FA7D56600C33DFF /* MyLikeAttentionListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLikeAttentionListCell.swift; sourceTree = "<group>"; };
+		7EF608851FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHLikeRecordHistoryInfoModel.swift; sourceTree = "<group>"; };
+		7EF608871FA8B21200C33DFF /* SHRegisterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRegisterModel.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -310,6 +318,7 @@
 		1D3E9F171F35D877006CDD87 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				7EF608801FA7D3BE00C33DFF /* Cell */,
 				1DCCE3C61F9B2C85000E5106 /* MyLikesViewController.swift */,
 				1D3E9F181F35D877006CDD87 /* MyPageViewController.swift */,
 				1D3E9F1E1F35D963006CDD87 /* SettingViewController.swift */,
@@ -383,12 +392,15 @@
 		1DBAA9C71FA0C1F400406445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7EF608871FA8B21200C33DFF /* SHRegisterModel.swift */,
 				7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */,
 				1DB6880F1FA5EFBC00BA7087 /* SHFindPersonFollow.swift */,
 				1D2D0CDB1FA5A1D8004ED20A /* SHVideoListModelMap.swift */,
 				1DBAA9CA1FA1439400406445 /* SHPlaceModelMap.swift */,
 				1D2D0CD41FA5705B004ED20A /* SHLoginModel.swift */,
 				1D2D0CDF1FA5C422004ED20A /* SHEssayInfoModel.swift */,
+				7EF608811FA7D3BE00C33DFF /* SHLikeAttentionInfoModel.swift */,
+				7EF608851FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,6 +413,14 @@
 			);
 			name = UtoVRPlayerSDK;
 			path = SmartHealth/Libs/UtoVRPlayerSDK;
+			sourceTree = "<group>";
+		};
+		7EF608801FA7D3BE00C33DFF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7EF608831FA7D56600C33DFF /* MyLikeAttentionListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F576B1CF48E58D43FA2EF813 /* Frameworks */ = {
@@ -629,6 +649,7 @@
 				1D2D0CD81FA5868A004ED20A /* SportPlaceCell.swift in Sources */,
 				1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */,
 				1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */,
+				7EF608861FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift in Sources */,
 				1D2D0CD51FA5705B004ED20A /* SHLoginModel.swift in Sources */,
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
 				1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */,
@@ -653,6 +674,7 @@
 				1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,
 				7EF608761FA75A6200C33DFF /* FindAttentionTableViewCell.swift in Sources */,
+				7EF608841FA7D56600C33DFF /* MyLikeAttentionListCell.swift in Sources */,
 				1D2D0CE51FA5DC0F004ED20A /* FindDetailViewController.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				1DBAA9C61FA0BDE300406445 /* Utils.swift in Sources */,
@@ -660,7 +682,9 @@
 				1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */,
 				1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */,
 				1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */,
+				7EF608881FA8B21200C33DFF /* SHRegisterModel.swift in Sources */,
 				7EF6087A1FA7619F00C33DFF /* AttentionViewController.swift in Sources */,
+				7EF608821FA7D3BF00C33DFF /* SHLikeAttentionInfoModel.swift in Sources */,
 				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
