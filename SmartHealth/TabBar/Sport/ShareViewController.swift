@@ -22,6 +22,11 @@ class ShareViewController: UIViewController , UITextViewDelegate{
         // Dispose of any resources that can be recreated.
     }
 
+    func sendSportData(){
+        
+    }
+    
+    
     @IBAction func confirmeClick(_ sender: Any) {
 //        let arrays = ["Share","I  like Sport."]
 //        let activity = UIActivityViewController.init(activityItems: arrays, applicationActivities: nil)
