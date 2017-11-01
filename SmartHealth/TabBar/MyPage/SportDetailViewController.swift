@@ -89,10 +89,9 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //as! MyLikeAttentionListCell
-        //cell.initUI(model: self.listNotesModel[indexPath.row])
-        //cell.tag = indexPath.row
-        cell.textLabel?.text = self.listNotesModel[indexPath.row].person_name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MySportListListCell
+        cell.initUI(model: self.listNotesModel[indexPath.row])
+        cell.tag = indexPath.row
         return cell
     }
     

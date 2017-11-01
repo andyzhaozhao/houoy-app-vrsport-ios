@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MyPageViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -15,20 +16,45 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var sportTimeLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var myTable: UITableView!
     var mArray: Array = ["运动历史记录","我的关注"]
     override func viewDidLoad() {
         super.viewDidLoad()
 //        bgImage.image = UIImage(named: "login_main.jpeg")
 //        photoImage.image = UIImage(named: "login_main.jpeg")
-        nameLabel.text = "张三"
-        descriptionLabel.text = "我是谁？我从哪里来？"
-        ageLabel.text = "40"
-        sportTimeLabel.text = "2015/04/12 13:00"
-        distanceLabel.text = "12"
-        
+        self.loadData()
+    }
+    
+    func loadData(){
+        let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK) ?? ""
+        let parameters: Parameters = [
+            Constants.Person_Pk_Person: pk
+        ]
+        let request = Alamofire.request(Constants.PersonRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
+        self.view.isUserInteractionEnabled = false
+        request.responseJSON { response in
+            self.view.isUserInteractionEnabled = true
+            switch response.result {
+            case .success(let data):
+                Utils.printMsg(msg:"JSON: \(data)")
+                let dic = data as! NSDictionary
+                let model = SHPersoninfoModel(JSON: dic as! [String : Any])
+                let list = model?.resultData
+                guard let theList = list else {
+                    return
+                }
+                let personInfoModel = theList.last
+                
+                guard let thePersonInfoModel = personInfoModel else {
+                    return
+                }
+                self.nameLabel.text = thePersonInfoModel.person_name
+                self.descriptionLabel.text = (thePersonInfoModel.memo == nil) ? "我什么都不想说" : thePersonInfoModel.memo
+                self.ageLabel.text = (thePersonInfoModel.age == nil) ? "秘密" : thePersonInfoModel.age
+            case .failure:
+                self.view.makeToast("获取信息失败")
+            }
+        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

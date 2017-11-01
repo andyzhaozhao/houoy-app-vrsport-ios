@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShareViewController: UIViewController {
+class ShareViewController: UIViewController , UITextViewDelegate{
 
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
@@ -20,9 +20,6 @@ class ShareViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        textView.resignFirstResponder()
     }
 
     @IBAction func confirmeClick(_ sender: Any) {
@@ -48,7 +45,14 @@ class ShareViewController: UIViewController {
         let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
         self.present(activity, animated: true, completion: nil)
     }
-    @IBOutlet weak var cancelClick: NSLayoutConstraint!
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
     /*
     // MARK: - Navigation
 

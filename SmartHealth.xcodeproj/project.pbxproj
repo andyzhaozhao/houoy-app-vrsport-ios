@@ -54,6 +54,8 @@
 		1DCCE3C91F9B2F64000E5106 /* SportDetailConditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCE3C81F9B2F64000E5106 /* SportDetailConditionViewController.swift */; };
 		1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */; };
 		66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */; };
+		7E2131E31FA9EBF9002D7143 /* SHPersonPortraitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2131E21FA9EBF9002D7143 /* SHPersonPortraitModel.swift */; };
+		7E2131E51FA9EE64002D7143 /* MySportListListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2131E41FA9EE64002D7143 /* MySportListListCell.swift */; };
 		7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F33F1F937E970008E688 /* GLKit.framework */; };
 		7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3411F937E9D0008E688 /* CoreMotion.framework */; };
 		7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3431F937EA40008E688 /* libz.tbd */; };
@@ -68,6 +70,7 @@
 		7EF608841FA7D56600C33DFF /* MyLikeAttentionListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608831FA7D56600C33DFF /* MyLikeAttentionListCell.swift */; };
 		7EF608861FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608851FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift */; };
 		7EF608881FA8B21200C33DFF /* SHRegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608871FA8B21200C33DFF /* SHRegisterModel.swift */; };
+		7EF6088A1FA8BB9400C33DFF /* SHPersoninfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608891FA8BB9400C33DFF /* SHPersoninfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,8 @@
 		1DCCE3C61F9B2C85000E5106 /* MyLikesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLikesViewController.swift; sourceTree = "<group>"; };
 		1DCCE3C81F9B2F64000E5106 /* SportDetailConditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportDetailConditionViewController.swift; sourceTree = "<group>"; };
 		1DCCE3CA1F9E2C6F000E5106 /* DataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
+		7E2131E21FA9EBF9002D7143 /* SHPersonPortraitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHPersonPortraitModel.swift; sourceTree = "<group>"; };
+		7E2131E41FA9EE64002D7143 /* MySportListListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySportListListCell.swift; sourceTree = "<group>"; };
 		7E35F33F1F937E970008E688 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7E35F3411F937E9D0008E688 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7E35F3431F937EA40008E688 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -159,6 +164,7 @@
 		7EF608831FA7D56600C33DFF /* MyLikeAttentionListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyLikeAttentionListCell.swift; sourceTree = "<group>"; };
 		7EF608851FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHLikeRecordHistoryInfoModel.swift; sourceTree = "<group>"; };
 		7EF608871FA8B21200C33DFF /* SHRegisterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHRegisterModel.swift; sourceTree = "<group>"; };
+		7EF608891FA8BB9400C33DFF /* SHPersoninfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHPersoninfoModel.swift; sourceTree = "<group>"; };
 		C243213FA4A4A9F2FB210CF3 /* Pods_SmartHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B9456C5E2070FB28B77401 /* Pods-SmartHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartHealth/Pods-SmartHealth.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -392,6 +398,8 @@
 		1DBAA9C71FA0C1F400406445 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7E2131E21FA9EBF9002D7143 /* SHPersonPortraitModel.swift */,
+				7EF608891FA8BB9400C33DFF /* SHPersoninfoModel.swift */,
 				7EF608871FA8B21200C33DFF /* SHRegisterModel.swift */,
 				7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */,
 				1DB6880F1FA5EFBC00BA7087 /* SHFindPersonFollow.swift */,
@@ -418,6 +426,7 @@
 		7EF608801FA7D3BE00C33DFF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				7E2131E41FA9EE64002D7143 /* MySportListListCell.swift */,
 				7EF608831FA7D56600C33DFF /* MyLikeAttentionListCell.swift */,
 			);
 			path = Cell;
@@ -644,12 +653,15 @@
 			files = (
 				1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */,
 				1D3E9F061F3286B4006CDD87 /* LoginViewController.swift in Sources */,
+				7E2131E51FA9EE64002D7143 /* MySportListListCell.swift in Sources */,
 				1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */,
 				1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */,
 				1D2D0CD81FA5868A004ED20A /* SportPlaceCell.swift in Sources */,
+				7EF6088A1FA8BB9400C33DFF /* SHPersoninfoModel.swift in Sources */,
 				1D3E9F341F36A9A2006CDD87 /* FindViewController.swift in Sources */,
 				1D3E9F081F3286CE006CDD87 /* RegisterViewController.swift in Sources */,
 				7EF608861FA7D83900C33DFF /* SHLikeRecordHistoryInfoModel.swift in Sources */,
+				7E2131E31FA9EBF9002D7143 /* SHPersonPortraitModel.swift in Sources */,
 				1D2D0CD51FA5705B004ED20A /* SHLoginModel.swift in Sources */,
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
 				1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */,

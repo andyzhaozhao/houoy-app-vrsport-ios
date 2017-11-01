@@ -54,6 +54,10 @@ struct Constants {
     public static let Register_Person_Code = "person_code"
     public static let Register_Person_name = "person_name"
     public static let Register_Mobile = "mobile"
+    // person parameter
+    public static let Person_Pk = "pk"
+    public static let Person_Pk_Person = "pk_person"
+    public static let Person_Person_File = "file"
     //URL
     private static let BaseUrl8889 = "http://182.92.128.240:8889/api"
     private static let BaseUrl8888 = "http://182.92.128.240:8888/api"
@@ -66,6 +70,10 @@ struct Constants {
     public static let PersonFollowRetrieve = BaseUrl8889+"/personFollow/retrieveMobile"
     public static let PersonFollowSave = BaseUrl8889+"/personFollow/save"
     public static let PersonSave = BaseUrl8889+"/person/save"
+    public static let PersonRetrieve = BaseUrl8889+"/person/retrieveMobile"
+    public static let PersonPortrait = BaseUrl8889+"/person/portrait"
+    public static let PersonUpload = BaseUrl8889+"/person/upload"
+    
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"
 }
