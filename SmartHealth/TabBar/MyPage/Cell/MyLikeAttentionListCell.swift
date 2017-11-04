@@ -20,7 +20,7 @@ class MyLikeAttentionListCell: UITableViewCell {
     }
     
     func initUI(model: SHLikeAttentionListModel?) {
-        mImageView.image = UIImage(named:"login_main.jpeg")
+        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.follow_person_name
         mDetailLabel.text = model?.follow_pk_person
     }

@@ -20,7 +20,7 @@ class MySportListListCell: UITableViewCell {
     }
     
     func initUI(model: SHLikeRecordHistoryListModel?) {
-        mImageView.image = UIImage(named:"login_main.jpeg")
+        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.heart_rate
         mDetailLabel.text = model?.heart_rate_max
     }

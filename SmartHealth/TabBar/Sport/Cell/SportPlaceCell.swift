@@ -20,7 +20,7 @@ class SportPlaceCell: UITableViewCell {
     }
     
     func initUI(model: SHPlaceresultDataModel?) {
-        mImageView.image = UIImage(named:"login_main.jpeg")
+        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.place_name
         mDetailLabel.text = model?.place_desc
     }

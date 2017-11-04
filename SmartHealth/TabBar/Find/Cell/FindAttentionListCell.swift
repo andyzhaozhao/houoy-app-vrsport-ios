@@ -20,7 +20,7 @@ class FindAttentionListCell: UITableViewCell {
     }
     
     func initUI(model: SHAttentionListInfoModel?) {
-        mImageView.image = UIImage(named:"login_main.jpeg")
+        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.record_share_name
         mDetailLabel.text = model?.person_name
     }

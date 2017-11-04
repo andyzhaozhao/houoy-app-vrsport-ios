@@ -2,26 +2,20 @@
 
 #import "VideoPlayerViewController.h"
 #import <UtoVRPlayer/UtoVRPlayer.h>
-
 #import "SportCollectionViewCell.h"
+#import "SmartHealth-Swift.h"
 
 @interface VideoPlayerViewController () <UVPlayerDelegate>
 @property (nonatomic,strong) UVPlayer *player;
 @property (nonatomic,strong) NSMutableArray *itemsToPlay;
 @property (weak, nonatomic) IBOutlet UIView *playerView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
-@property (nonatomic,strong) NSString *localPath;
+@property (nonatomic,strong) SHVideoresultDataModel *model;
 
 @end
 
 @implementation VideoPlayerViewController {
-}
-
--(NSString *)localPath {
-    if (_localPath == nil) {
-        _localPath = [[NSBundle mainBundle] pathForResource:@"wu" ofType:@"mp4"];
-    }
-    return _localPath;
 }
 
 #pragma mark - Getters
@@ -51,27 +45,26 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+    self.model = (SHVideoresultDataModel *)self.modelObject;
     NSMutableArray *items = [NSMutableArray array];
+    NSString *preVideoPath = [[NSBundle mainBundle] pathForResource:@"wu" ofType:@"mp4"];
+    UVPlayerItem *itemPre = [[UVPlayerItem alloc] initWithPath:preVideoPath type:UVPlayerItemTypeLocalVideo];
     UVPlayerItem *item1 = [[UVPlayerItem alloc] initWithPath:self.localPath type:UVPlayerItemTypeLocalVideo];
+
+    [items addObject:itemPre];
     [items addObject:item1];
     [self setItemsToPlay:items];
     
-    
-    //将播放视图添加到当前界面
+    self.descriptionLabel.text = self.model.video_desc;
+     //将播放视图添加到当前界面
     [self.playerView addSubview:self.player.playerView];
-    
     if (self.player.viewStyle == UVPlayerViewStyleDefault) {
         //默认界面。设置竖屏返回按钮动作
         [self.player setPortraitBackButtonTarget:self selector:@selector(back:)];
     }
-    
     //把要播放的内容添加到播放器
     [self.player appendItems:self.itemsToPlay];
-
-
-  // Load the sample 360 video, which is of type stereo-over-under.
-  //NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"congo" ofType:@"mp4"];
-
+    [self.player pause];
 }
 
 -( void)viewWillAppear:(BOOL)animated{
@@ -113,15 +106,14 @@
 -(void)player:(UVPlayer *)player willBeginPlayItem:(UVPlayerItem *)item {
     if (player.viewStyle == UVPlayerViewStyleDefault) {
         //设置横屏显示的title为当前播放资源的路径。你可以设置为其它的任何内容
-        [player setTitleText:item.path];
+        [player setTitleText:self.model.video_name];
     }
 }
 
--(void)player:(UVPlayer*)player finishedPlayingItem:(UVPlayerItem*)item{
+-(void)playerFinished:(UVPlayer *)player{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确定结束本次运动！" preferredStyle:UIAlertControllerStyleAlert];
-
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        [self.player replayLast ];
     }];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self performSegueWithIdentifier:@"shareSport" sender:nil];
@@ -129,6 +121,5 @@
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
 @end

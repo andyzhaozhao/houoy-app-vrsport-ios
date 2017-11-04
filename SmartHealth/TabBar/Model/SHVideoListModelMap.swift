@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-class SHVideoListModelMap: Mappable {
+class SHVideoListModelMap: NSObject, Mappable{
     var msg: String?
     var success: Bool = false
     var detailMessage: String?
@@ -51,7 +51,7 @@ class SHVideoListModelMap: Mappable {
     }
 }
 
-class SHVideoresultDataModel: Mappable {
+class SHVideoresultDataModel: NSObject, Mappable {
     var memo: String?
     var def1: String?
     var def2: String?
@@ -65,16 +65,18 @@ class SHVideoresultDataModel: Mappable {
     var length: String?
     var pk_video: String?
     var video_code: String?
-    var video_name: String?
+    var video_name: String = ""
     var video_desc: String?
     var video_length: String?
-    var path: String?
+    var path: String = ""
     var pk_folder: String?
     var orderColumnName: String?
     var orderDir: String?
     var pkvalue: String?
     var tableName: String?
     var pkfield: String?
+    
+    var download: DownladStatus = DownladStatus.NoDownlaod
     
     required init?(map: Map) {
         

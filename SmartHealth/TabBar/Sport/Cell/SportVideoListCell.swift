@@ -14,13 +14,14 @@ class SportVideoListCell: UITableViewCell {
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!
     
+    @IBOutlet weak var mStatus: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
     func initUI(model: SHVideoresultDataModel?) {
-        mImageView.image = UIImage(named:"login_main.jpeg")
+        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.video_name
         mDetailLabel.text = model?.video_desc
     }

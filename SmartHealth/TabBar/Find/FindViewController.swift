@@ -10,7 +10,7 @@ import UIKit
 
 class FindViewController: CommanViewController ,UICollectionViewDataSource, UICollectionViewDelegate , UITableViewDelegate ,UITableViewDataSource{
     var timer: Timer!
-    var mArray: Array = [["image":"login_main.jpeg", "title":"最新消息", "detail":"您关注的人有动态啦"]]
+    var mArray: Array = [["image":"item_default", "title":"最新消息", "detail":"您关注的人有动态啦"]]
     
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()

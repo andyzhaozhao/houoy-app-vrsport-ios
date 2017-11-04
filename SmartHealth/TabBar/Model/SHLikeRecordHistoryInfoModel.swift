@@ -73,7 +73,7 @@ class SHLikeRecordHistoryListModel: Mappable {
     var pk_place: String?
     var place_name: String?
     var pk_video: String?
-    var video_name: String?
+    var video_name: String = ""
     var time_start: String?
     var time_end: String?
     var time_length: String?

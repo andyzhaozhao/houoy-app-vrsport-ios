@@ -8,11 +8,17 @@
 
 import UIKit
 import Alamofire
+enum DownladStatus: Int {
+    case NoDownlaod = 0
+    case Downlaoding = 1
+    case DownlaodOver = 2
+}
 class SportListViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     private var videoListModel: SHVideoListModelMap?
     private var videoListNotesModel: [SHVideoresultDataModel]  = []
+    private var selectModel: SHVideoresultDataModel?
     private var videPage: Int = 0
     private let refreshControl = UIRefreshControl()
     
@@ -55,6 +61,13 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
                     return
                 }
                 for video in theVideoList {
+                    let targetURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + video.video_name)
+                    if FileManager.default.fileExists(atPath: targetURL.path) {
+                        video.download = DownladStatus.DownlaodOver
+                    } else {
+                        // file does not exist
+                        video.download = DownladStatus.NoDownlaod
+                    }
                     self.videoListNotesModel.append(video)
                 }
                 self.tableView.reloadData()
@@ -74,10 +87,59 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
+    func downloadVideo(model: SHVideoresultDataModel){
+        model.download = DownladStatus.Downlaoding
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let tempURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Temp + model.video_name)
+            return (tempURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        //"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+        let linkpath = Constants.Download_Base_Link + model.path + Constants.Download_File_Divide + model.video_name
+        print(linkpath)
+        Alamofire.download(linkpath, to: destination)
+            .downloadProgress { (progress) in
+                print("Download Progress: \(progress.fractionCompleted)")
+                model.download = DownladStatus.Downlaoding
+                self.tableView.reloadData()
+            }
+            .responseData { response in
+                do {
+                    let targetPathURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download)
+                    
+                    try FileManager.default.createDirectory(at: targetPathURL, withIntermediateDirectories: true, attributes: nil)
+                    
+                    if FileManager.default.fileExists(atPath: targetPathURL.appendingPathComponent(model.video_name).path) {
+                        try FileManager.default.removeItem(at: targetPathURL.appendingPathComponent(model.video_name))
+                    }
+                    try! FileManager.default.moveItem(at: response.destinationURL! , to: targetPathURL.appendingPathComponent(model.video_name))
+                    
+                    self.view.makeToast("视频下载成功", duration: 3.0, position: .center)
+                    model.download = DownladStatus.DownlaodOver
+                } catch {
+                    print(error)
+                    self.view.makeToast("视频下载失败", duration: 3.0, position: .center)
+                    model.download = DownladStatus.NoDownlaod
+                }
+
+                self.tableView.reloadData()
+        }
+        self.tableView.reloadData()
+    }
     
     // MARK: - UITable Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //performSegue(withIdentifier: "toVRDetail", sender: nil)
+        let model = self.videoListNotesModel[indexPath.row]
+        if(model.download == DownladStatus.Downlaoding ){
+            return
+        }
+        self.selectModel = model
+        let targetURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + model.video_name)
+        if(!FileManager.default.fileExists(atPath: targetURL.path)){
+            self.downloadVideo(model: model)
+        } else {
+            performSegue(withIdentifier: "toVRDetail", sender: nil)
+        }
     }
     
     // MARK: - UITable DataSource
@@ -87,7 +149,17 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SportVideoListCell
-        cell.initUI(model:self.videoListNotesModel[indexPath.row])
+
+        let model = self.videoListNotesModel[indexPath.row]
+        cell.initUI(model:model)
+        if(model.download == DownladStatus.NoDownlaod ){
+                cell.mStatus.text = "未下载"
+        } else if(model.download == DownladStatus.DownlaodOver ){
+                cell.mStatus.text = "已下载"
+        } else if(model.download == DownladStatus.Downlaoding ){
+                cell.mStatus.text = "正在下载"
+        }
+    
         return cell
     }
     
@@ -103,13 +175,21 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
             self.loadData()
         }
     }
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toVRDetail") {
+            if let nextViewController = segue.destination as? VideoPlayerViewController{
+                guard let model = self.selectModel else {
+                    return
+                }
+                let targetURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + model.video_name)
+                nextViewController.localPath = targetURL.path;
+                nextViewController.modelObject = model
+            }
+        }
+    }
+     
 }

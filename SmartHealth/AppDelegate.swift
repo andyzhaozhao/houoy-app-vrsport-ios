@@ -18,16 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
-        if (!ApiHelper.isLogin()) {
+        
+        let isSpash = UserDefaults.standard.bool(forKey: Constants.SH_Splash)
+        if(!isSpash){
+            showView(name: "SHSplashPageViewController")
+        } else if (!ApiHelper.isLogin()) {
             self.showLoginView()
         }
-        
         return true
     }
 
     func showLoginView(){
+        self.showView(name: "LoginNavigationController")
+    }
+    
+    func showView(name:String){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: name)
         window?.rootViewController = initialViewController
         //表示
         window?.makeKeyAndVisible()

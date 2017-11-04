@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Utils {
+class Utils :NSObject{
     class func printMsg(msg :String){
         if(Constants.Debug){
             print(msg)
@@ -19,5 +19,10 @@ class Utils {
             return true
         }
         return theString.isEmpty
+    }
+    
+    class func getFileMangetr() -> URL {
+        let url = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        return url
     }
 }

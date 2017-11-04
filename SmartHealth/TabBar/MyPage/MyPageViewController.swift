@@ -11,6 +11,7 @@ import Alamofire
 
 class MyPageViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -20,8 +21,9 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     var mArray: Array = ["运动历史记录","我的关注"]
     override func viewDidLoad() {
         super.viewDidLoad()
-//        bgImage.image = UIImage(named: "login_main.jpeg")
-//        photoImage.image = UIImage(named: "login_main.jpeg")
+//        bgImage.image = UIImage(named: "item_default")
+//        photoImage.image = UIImage(named: "item_default")
+        self.settingBtn .setImage(UIImage.init(named: "settinginfos"), for: .highlighted)
         self.loadData()
     }
     

@@ -13,7 +13,7 @@ class MessageViewController: CommanViewController, UITableViewDelegate, UITableV
     
     private let refreshControl = UIRefreshControl()
     
-    var mArray: Array = [["image":"login_main.jpeg", "title":"标题", "detail":"详细内容"]]
+    var mArray: Array = [["image":"item_default", "title":"标题", "detail":"详细内容"]]
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.refreshControl = refreshControl
