@@ -9,7 +9,8 @@
 import UIKit
 import Alamofire
 class ShareViewController: UIViewController , UITextViewDelegate{
-
+    var selectModel: SHVideoresultDataModel?
+    
     @IBOutlet weak var textView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class ShareViewController: UIViewController , UITextViewDelegate{
     }
 
     func sendSportData(){
+        let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK)
+        let name = UserDefaults.standard.string(forKey:Constants.Login_User_Name)
         let parameters: Parameters = [
             Constants.Record_VRSport_Save_calorie : "555",
             Constants.Record_VRSport_Save_heart_rate : "100",
@@ -32,11 +35,11 @@ class ShareViewController: UIViewController , UITextViewDelegate{
             Constants.Record_VRSport_Save_Pk_Person : "1",
             Constants.Record_VRSport_Save_Person_Name : "person_name",
         
-            Constants.Record_VRSport_Save_Pk_Place : "1",
-            Constants.Record_VRSport_Save_Place_Name : "place_name",
+            Constants.Record_VRSport_Save_Pk_Place : pk ?? "",
+            Constants.Record_VRSport_Save_Place_Name : name ?? "",
         
-            Constants.Record_VRSport_Save_Pk_Video : "1",
-            Constants.Record_VRSport_Save_Video_Name : "video_name",
+            Constants.Record_VRSport_Save_Pk_Video : selectModel?.pk_video ?? "",
+            Constants.Record_VRSport_Save_Video_Name : selectModel?.video_name ?? "",
         
             Constants.Record_VRSport_Save_Record_Sport_Code : "1",
             Constants.Record_VRSport_Save_Record_Sport_name : "record_sport_name",

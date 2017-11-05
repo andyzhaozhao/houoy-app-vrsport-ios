@@ -13,7 +13,7 @@ class RegisterViewController: CommanViewController {
     
     @IBOutlet weak var userIDText: UITextField!
     @IBOutlet weak var telText: UITextField!
-    @IBOutlet weak var codeText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var confirmPasswordText: UITextField!
     
@@ -37,7 +37,7 @@ class RegisterViewController: CommanViewController {
         case "userIDText":
             telText.becomeFirstResponder()
         case "telText":
-            codeText.becomeFirstResponder()
+            emailText.becomeFirstResponder()
         case "codeText":
             passwordText.becomeFirstResponder()
         case "passwordText":
@@ -76,7 +76,8 @@ class RegisterViewController: CommanViewController {
                 Constants.Register_Person_Code: userIDText.text!,
                 Constants.Register_Person_name: userIDText.text!,
                 Constants.Register_Password: passwordText.text!,
-                Constants.Register_Mobile: telText.text!
+                Constants.Register_Mobile: telText.text!,
+                Constants.Register_Email: emailText.text!
             ]
             let request = Alamofire.request(Constants.PersonSave,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
             self.view.isUserInteractionEnabled = false

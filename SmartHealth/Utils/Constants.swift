@@ -33,6 +33,10 @@ struct Constants {
     
     //splash parameter
     public static let SH_Splash = "splash"
+    //reset pwd
+    
+    public static let Password_Email = "email"
+    public static let Password_User_PK = "pk_person"
     
     //login parameter.
     public static let Login_User_Code = "user_code"
@@ -64,6 +68,7 @@ struct Constants {
     public static let Register_Person_Code = "person_code"
     public static let Register_Person_name = "person_name"
     public static let Register_Mobile = "mobile"
+    public static let Register_Email = "email"
     // person parameter
     public static let Person_Pk = "pk"
     public static let Person_Pk_Person = "pk_person"
@@ -112,7 +117,7 @@ struct Constants {
     public static let PersonRetrieve = BaseUrl8889+"/person/retrieveMobile"
     public static let PersonPortrait = BaseUrl8889+"/person/portrait"
     public static let PersonUpload = BaseUrl8889+"/person/upload"
-    
+    public static let ForgetPassword = BaseUrl8889+"/login/forgetPassword"
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"
 }

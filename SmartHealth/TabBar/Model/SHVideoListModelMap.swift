@@ -63,7 +63,7 @@ class SHVideoresultDataModel: NSObject, Mappable {
     var dr: String?
     var start: String?
     var length: String?
-    var pk_video: String?
+    var pk_video: String = ""
     var video_code: String?
     var video_name: String = ""
     var video_desc: String?

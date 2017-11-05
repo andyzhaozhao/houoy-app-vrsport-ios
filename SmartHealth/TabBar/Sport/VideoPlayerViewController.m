@@ -102,6 +102,15 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"shareSport"]) {
+        ShareViewController *share = (ShareViewController* )segue.destinationViewController;
+        share.selectModel = self.model;
+    }
+    
+}
+
 #pragma mark - PanoPlayerDelegate
 -(void)player:(UVPlayer *)player willBeginPlayItem:(UVPlayerItem *)item {
     if (player.viewStyle == UVPlayerViewStyleDefault) {
