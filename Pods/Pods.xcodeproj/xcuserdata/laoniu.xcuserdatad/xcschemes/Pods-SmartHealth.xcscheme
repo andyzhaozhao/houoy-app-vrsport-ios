@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCDAE9720ADC87046C02678BC869F112"
+               BlueprintIdentifier = "D4C66F743F231A76008940A4371B11F4"
                BuildableName = "Pods_SmartHealth.framework"
                BlueprintName = "Pods-SmartHealth"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BCDAE9720ADC87046C02678BC869F112"
+            BlueprintIdentifier = "D4C66F743F231A76008940A4371B11F4"
             BuildableName = "Pods_SmartHealth.framework"
             BlueprintName = "Pods-SmartHealth"
             ReferencedContainer = "container:Pods.xcodeproj">

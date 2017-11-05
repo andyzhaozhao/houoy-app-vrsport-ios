@@ -10,7 +10,7 @@ import UIKit
 
 class DetailTableViewCell: UITableViewCell {
 
-    var dataDic: [String: String] = ["image":"login_main.jpeg", "title":"标题", "detail":"详细内容"]
+    var dataDic: [String: String] = ["image":"item_default", "title":"标题", "detail":"详细内容"]
     @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!

@@ -1,27 +1,25 @@
 PODS:
+  - Alamofire (4.5.0)
   - Crashlytics (3.8.5):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.12)
-  - GoogleToolboxForMac/Defines (2.1.0)
-  - GoogleToolboxForMac/Logger (2.1.0):
-    - GoogleToolboxForMac/Defines (= 2.1.0)
-  - GTMSessionFetcher/Core (1.1.6)
-  - GVRSDK (1.70.0):
-    - GoogleToolboxForMac/Logger (= 2.1.0)
-    - GTMSessionFetcher/Core (= 1.1.6)
+  - ObjectMapper (2.2.8)
+  - Toast-Swift (2.0.0)
 
 DEPENDENCIES:
+  - Alamofire (= 4.5.0)
   - Crashlytics (= 3.8.5)
   - Fabric (= 1.6.12)
-  - GVRSDK (= 1.70.0)
+  - ObjectMapper (~> 2.2)
+  - Toast-Swift (= 2.0.0)
 
 SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   Crashlytics: dfbae35ef22ca189240d230ad501feea4ee85d2d
   Fabric: f050464eac45a2ce5a8e6e6a07e977c0df32fe28
-  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
-  GTMSessionFetcher: 6aacd0ab48ddf0c3633ab2642d792abfcad1b08a
-  GVRSDK: c57fd98678bd879904768607b88d3a00935e4e15
+  ObjectMapper: 3d571bb5af471c779e1160828cd9ad5c4ef90958
+  Toast-Swift: 5b2f8f720f7e78e48511f693df1f9c9a6e38a25a
 
-PODFILE CHECKSUM: f6c182f7ab29fd0197c6b803673c4dd82cc5035a
+PODFILE CHECKSUM: 30fc16f7beb68bc5a66e02a9a3360568ff61d97c
 
 COCOAPODS: 1.2.1

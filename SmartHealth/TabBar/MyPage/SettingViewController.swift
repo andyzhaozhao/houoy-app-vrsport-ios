@@ -51,7 +51,9 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
     
     // MARK: - Button Click
     @IBAction func exitBtnClick(_ sender: Any) {
-    
+        ApiHelper.loginOut()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.showLoginView()
     }
 
 

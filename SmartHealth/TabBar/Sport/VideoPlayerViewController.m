@@ -1,20 +1,41 @@
 #import <UIKit/UIKit.h>
 
 #import "VideoPlayerViewController.h"
-
-#import "GVRVideoView.h"
+#import <UtoVRPlayer/UtoVRPlayer.h>
 #import "SportCollectionViewCell.h"
+#import "SmartHealth-Swift.h"
 
-@interface VideoPlayerViewController () <GVRVideoViewDelegate>
-@property(nonatomic) IBOutlet GVRVideoView *videoView;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *collectionViewLayout;
+@interface VideoPlayerViewController () <UVPlayerDelegate>
+@property (nonatomic,strong) UVPlayer *player;
+@property (nonatomic,strong) NSMutableArray *itemsToPlay;
+@property (weak, nonatomic) IBOutlet UIView *playerView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 
+@property (nonatomic,strong) SHVideoresultDataModel *model;
 
 @end
 
 @implementation VideoPlayerViewController {
-  BOOL _isPaused;
+}
+
+#pragma mark - Getters
+-(UVPlayer *)player {
+    if (_player == nil) {
+        _player = [[UVPlayer alloc] initWithConfiguration:nil];
+        _player.delegate = self;
+    }
+    return _player;
+}
+
+-(NSMutableArray *)itemsToPlay {
+    if (_itemsToPlay == nil) {
+        _itemsToPlay = [[NSMutableArray alloc]init];
+    }
+    return _itemsToPlay;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAll;
 }
 
 - (instancetype)init {
@@ -24,95 +45,90 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    self.collectionView.dataSource = self;
-    self.collectionView.showsHorizontalScrollIndicator = NO;
-  // Build source attribution text view.
+    self.model = (SHVideoresultDataModel *)self.modelObject;
+    NSMutableArray *items = [NSMutableArray array];
+    NSString *preVideoPath = [[NSBundle mainBundle] pathForResource:@"wu" ofType:@"mp4"];
+    UVPlayerItem *itemPre = [[UVPlayerItem alloc] initWithPath:preVideoPath type:UVPlayerItemTypeLocalVideo];
+    UVPlayerItem *item1 = [[UVPlayerItem alloc] initWithPath:self.localPath type:UVPlayerItemTypeLocalVideo];
 
-  _videoView.delegate = self;
-  _videoView.enableFullscreenButton = YES;
-  _videoView.enableCardboardButton = YES;
-  _videoView.enableTouchTracking = YES;
-
-  _isPaused = YES;
-
-  // Load the sample 360 video, which is of type stereo-over-under.
-  NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"congo" ofType:@"mp4"];
-  [_videoView loadFromUrl:[[NSURL alloc] initFileURLWithPath:videoPath]
-                   ofType:kGVRVideoTypeStereoOverUnder];
-
-  // Alternatively, this is how to load a video from a URL:
-  //NSURL *videoURL = [NSURL URLWithString:@"https://raw.githubusercontent.com/googlevr/gvr-ios-sdk"
-  //                                       @"/master/Samples/VideoWidgetDemo/resources/congo.mp4"];
-  //[_videoView loadFromUrl:videoURL ofType:kGVRVideoTypeStereoOverUnder];
-
+    [items addObject:itemPre];
+    [items addObject:item1];
+    [self setItemsToPlay:items];
+    
+    self.descriptionLabel.text = self.model.video_desc;
+     //将播放视图添加到当前界面
+    [self.playerView addSubview:self.player.playerView];
+    if (self.player.viewStyle == UVPlayerViewStyleDefault) {
+        //默认界面。设置竖屏返回按钮动作
+        [self.player setPortraitBackButtonTarget:self selector:@selector(back:)];
+    }
+    //把要播放的内容添加到播放器
+    [self.player appendItems:self.itemsToPlay];
+    [self.player pause];
 }
 
 -( void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-        self.navigationController.navigationBarHidden = YES;
 }
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.collectionViewLayout.itemSize = CGSizeMake(self.view.frame.size.width, 250);
+    //调整frame。你可以使用任何其它布局方式保证播放视图是你期望的大小
+    CGRect frame;
+    
+    if (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+        self.navigationController.navigationBarHidden = YES;
+        frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    } else {
+        self.navigationController.navigationBarHidden = NO;
+        frame = CGRectMake(0, 0, self.playerView.bounds.size.width, self.playerView.bounds.size.height );
+    }
+    
+    self.player.playerView.frame = frame;
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    if (!_isPaused) {
-        [_videoView pause];
+    //退出时不要忘记调用prepareToRelease
+    [self.player prepareToRelease];
+
+}
+#pragma mark - Helper
+
+-(void)back:(UIButton*)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"你好" message:@"你可以点击我完成退出页面等操作" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:confirm];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"shareSport"]) {
+        ShareViewController *share = (ShareViewController* )segue.destinationViewController;
+        share.selectModel = self.model;
+    }
+    
+}
+
+#pragma mark - PanoPlayerDelegate
+-(void)player:(UVPlayer *)player willBeginPlayItem:(UVPlayerItem *)item {
+    if (player.viewStyle == UVPlayerViewStyleDefault) {
+        //设置横屏显示的title为当前播放资源的路径。你可以设置为其它的任何内容
+        [player setTitleText:self.model.video_name];
     }
 }
-#pragma mark - GVRVideoViewDelegate
 
-- (void)widgetViewDidTap:(GVRWidgetView *)widgetView {
-  if (_isPaused) {
-    [_videoView play];
-  } else {
-    [_videoView pause];
-  }
-  _isPaused = !_isPaused;
-}
-
-- (void)widgetView:(GVRWidgetView *)widgetView didLoadContent:(id)content {
-  NSLog(@"Finished loading video");
-  [_videoView play];
-  _isPaused = NO;
-}
-
-- (void)widgetView:(GVRWidgetView *)widgetView
-    didFailToLoadContent:(id)content
-        withErrorMessage:(NSString *)errorMessage {
-  NSLog(@"Failed to load video: %@", errorMessage);
-}
-
-- (void)videoView:(GVRVideoView*)videoView didUpdatePosition:(NSTimeInterval)position {
-  // Loop the video when it reaches the end.
-  if (position == videoView.duration) {
+-(void)playerFinished:(UVPlayer *)player{
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确定结束本次运动！" preferredStyle:UIAlertControllerStyleAlert];
-      UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-
-      }];
-      UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self performSegueWithIdentifier:@"shareSport" sender:nil];
-      }];
-      [alertController addAction:cancelAction];
-      [alertController addAction:okAction];
-      [self presentViewController:alertController animated:YES completion:nil];
-  }
-}
-
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 5;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    SportCollectionViewCell * cell = (SportCollectionViewCell *)[self.collectionView dequeueReusableCellWithReuseIdentifier:@"sport_cell" forIndexPath:indexPath];
-    [cell loadImage];
-    return cell;
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self performSegueWithIdentifier:@"shareSport" sender:nil];
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 @end

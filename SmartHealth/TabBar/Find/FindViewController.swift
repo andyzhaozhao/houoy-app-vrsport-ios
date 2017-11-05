@@ -10,7 +10,7 @@ import UIKit
 
 class FindViewController: CommanViewController ,UICollectionViewDataSource, UICollectionViewDelegate , UITableViewDelegate ,UITableViewDataSource{
     var timer: Timer!
-    var mArray: Array = [["image":"login_main.jpeg", "title":"标题", "detail":"详细内容"]]
+    var mArray: Array = [["image":"item_default", "title":"最新消息", "detail":"您关注的人有动态啦"]]
     
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -35,21 +35,34 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
-        mArray.append(mArray[0])
         tableView.reloadData()
         refreshControl.endRefreshing()
         // ここに通信処理などデータフェッチの処理を書く
         // データフェッチが終わったらUIRefreshControl.endRefreshing()を呼ぶ必要がある
     }
+
+    @IBAction func shareClick(_ sender: Any) {
+        let textToShare = "我运动我快乐"
+        let imageToShare = UIImage.init(named: "AppIcon.png")
+        let urlToShare = NSURL.init(string: "https://github.com")
+        let activityItems = [urlToShare,textToShare,imageToShare] as [Any]
+        let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
+        self.present(activity, animated: true, completion: nil)
+    }
     
-    func learningEventClick() {
-        performSegue(withIdentifier: "learningCenter", sender: nil)
+    func learningEventClick(sender: Any?) {
+        let gesture = sender as! UITapGestureRecognizer
+        gesture.view?.tag = Constants.Essay_List_Type_32
+        performSegue(withIdentifier: "sportCenter", sender: sender)
     }
-    func sportEventClick() {
-        performSegue(withIdentifier: "sportCenter", sender: nil)
+    func sportEventClick(sender: Any?) {
+        let gesture = sender as! UITapGestureRecognizer
+        gesture.view?.tag = Constants.Essay_List_Type_33
+        performSegue(withIdentifier: "sportCenter", sender: sender)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
     
     override func viewWillLayoutSubviews() {
@@ -116,7 +129,6 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
         return 5
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -144,11 +156,20 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
                 nextViewController.urlLink = "详细信息！"
                 nextViewController.title = "详细信息"
             }
+        } else if (segue.identifier == "sportCenter") {
+            let gesture = sender as! UITapGestureRecognizer
+            if let nextViewController = segue.destination as? EventViewController{
+                guard let tag = gesture.view?.tag else {
+                    return
+                }
+                nextViewController.title = "消息"
+                nextViewController.type = tag
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FindAttentionTableViewCell
         cell.dataDic = mArray[0]
         cell .initUI()
         cell.accessoryType =  UITableViewCellAccessoryType.disclosureIndicator
@@ -156,7 +177,7 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
 }
 

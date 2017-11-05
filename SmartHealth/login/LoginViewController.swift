@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Crashlytics
-
+import Alamofire
+import Toast_Swift
 class LoginViewController: CommanViewController{
     
     @IBOutlet weak var userIDText: UITextField!
@@ -16,10 +16,10 @@ class LoginViewController: CommanViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        if(Constants.Debug){
+            userIDText.text = "admin"
+            passwordText.text = "1"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,24 +41,46 @@ class LoginViewController: CommanViewController{
     @IBAction func loginBtnClick(_ sender: Any) {
         // Hide the keyboard
         self.view.endEditing(true)
-//        
-//        // User login
-//        if (userIDText.text?.isEmpty)! || (passwordText.text?.isEmpty)! {
-//            let alert: UIAlertController = UIAlertController(title: "请输入用户名密码", message: "请输入用户名密码", preferredStyle: UIAlertControllerStyle.alert)
-//            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
-//            })
-//            alert .addAction(defaultAction)
-//            self.present(alert, animated: true, completion: nil)
-//        } else {
-//        //API
-            performSegue(withIdentifier: "toMainTab", sender: nil)
-//
-//        }
-        Answers.logLogin(withMethod: "iOS", success: true, customAttributes: [:])
-    }
-    
-    @IBAction func noLoginClick(_ sender: Any) {
-        
+        let username = userIDText.text ?? ""
+        let password = passwordText.text ?? ""
+        // User login
+        if (username.isEmpty) || (password.isEmpty) {
+            self.view.makeToast("请输入用户名密码!")
+            return;
+        }
+        let parameters: Parameters = [
+            Constants.Login_User_Code: username,
+            Constants.Login_User_PWD: password
+        ]
+        let request = Alamofire.request(Constants.SigninSystemMobile,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
+        self.view.isUserInteractionEnabled = false
+        request.responseJSON { response in
+            self.view.isUserInteractionEnabled = true
+            switch response.result {
+            case .success(let data):
+                Utils.printMsg(msg:"JSON: \(data)")
+                let dic = data as! NSDictionary
+                let model = SHLoginModel(JSON: dic as! [String : Any])
+                guard let themodel = model else {
+                    return
+                }
+                if (themodel.success) {
+                    //FIXME save login Token
+                    UserDefaults.standard.setValue(model?.resultData?.pk_user, forKey: Constants.Login_User_PK)
+                    UserDefaults.standard.setValue(model?.resultData?.user_name, forKey: Constants.Login_User_Name)
+                    self.performSegue(withIdentifier: "toMainTab", sender: nil)
+                    return
+                }
+                self.view.makeToast("登陆失败")
+            case .failure:
+                self.view.makeToast("登陆失败")
+            }
+
+            //            let alert: UIAlertController = UIAlertController(title: "请输入用户名密码", message: "请输入用户名密码", preferredStyle: UIAlertControllerStyle.alert)
+            //            let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            //            })
+            //            alert .addAction(defaultAction)
+        }
     }
      // MARK: - Navigation
      
