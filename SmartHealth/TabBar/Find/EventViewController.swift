@@ -60,6 +60,7 @@ class EventViewController: CommanViewController, UITableViewDelegate, UITableVie
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
+        self.listNotesModel.removeAll()
         self.loadData()
         tableView.reloadData()
         refreshControl.endRefreshing()

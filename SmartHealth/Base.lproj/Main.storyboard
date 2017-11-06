@@ -432,7 +432,6 @@
                                                     <outlet property="mDetailLabel" destination="mkI-A0-rx6" id="Bw3-mj-IXB"/>
                                                     <outlet property="mImageView" destination="xUX-0E-l6b" id="nkR-pt-b9g"/>
                                                     <outlet property="mTitleLabel" destination="G8I-P6-Y8b" id="Tvz-RW-DoY"/>
-                                                    <segue destination="Gf7-hV-7ce" kind="show" identifier="toAttentionList" id="5VV-Mu-qKs"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -487,16 +486,18 @@
                         <outlet property="sportEvent" destination="M4t-gw-ZdT" id="mkO-97-UGu"/>
                         <outlet property="tableView" destination="ibs-bC-LbG" id="FF2-Xo-gI1"/>
                         <segue destination="g2e-qR-YnC" kind="show" identifier="sportCenter" id="opm-Sm-0MB"/>
+                        <segue destination="Gf7-hV-7ce" kind="show" identifier="toAttentionList" id="B93-ir-FSB"/>
+                        <segue destination="GHi-uR-yJA" kind="show" identifier="toFindList" id="jNx-dr-pMC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-818.39999999999998" y="-794.75262368815595"/>
         </scene>
-        <!--教学中心-->
+        <!--我的关注-->
         <scene sceneID="2wc-Tk-VQE">
             <objects>
-                <viewController title="教学中心" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Gf7-hV-7ce" customClass="AttentionViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="我的关注" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Gf7-hV-7ce" customClass="AttentionViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N7g-X6-E0b"/>
                         <viewControllerLayoutGuide type="bottom" id="gsg-Qa-ofP"/>
@@ -576,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9da-GZ-5Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10" y="-1338"/>
+            <point key="canvasLocation" x="-10" y="-1349"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Ib0-0K-9BP">
@@ -2346,6 +2347,91 @@
             </objects>
             <point key="canvasLocation" x="-801" y="-3836"/>
         </scene>
+        <!--我的发现-->
+        <scene sceneID="JSt-4e-FyL">
+            <objects>
+                <viewController title="我的发现" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="GHi-uR-yJA" customClass="AttentionViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mps-go-hrw"/>
+                        <viewControllerLayoutGuide type="bottom" id="SOG-In-mJI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5E1-Su-S7H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fX4-EW-weR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="KnowledgeCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="cvK-my-cuz" customClass="FindAttentionListCell" customModule="SmartHealth" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cvK-my-cuz" id="iGU-MU-8X4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uCg-yi-3wh">
+                                                    <rect key="frame" x="25" y="21" width="58" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="uCg-yi-3wh" secondAttribute="height" multiplier="1:1" id="C48-Ns-GV2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqX-pa-kzJ">
+                                                    <rect key="frame" x="93" y="21" width="257" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-32-K70">
+                                                    <rect key="frame" x="93" y="52" width="257" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uCg-yi-3wh" firstAttribute="top" secondItem="jqX-pa-kzJ" secondAttribute="top" id="7aV-Ar-Dh5"/>
+                                                <constraint firstItem="p7Q-32-K70" firstAttribute="leading" secondItem="jqX-pa-kzJ" secondAttribute="leading" id="Gtv-bK-p7n"/>
+                                                <constraint firstItem="uCg-yi-3wh" firstAttribute="top" secondItem="iGU-MU-8X4" secondAttribute="topMargin" constant="10" id="YbV-fa-jjR"/>
+                                                <constraint firstItem="uCg-yi-3wh" firstAttribute="leading" secondItem="iGU-MU-8X4" secondAttribute="leadingMargin" constant="10" id="YfG-E2-gWn"/>
+                                                <constraint firstItem="p7Q-32-K70" firstAttribute="trailing" secondItem="jqX-pa-kzJ" secondAttribute="trailing" id="enX-fC-8vv"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="uCg-yi-3wh" secondAttribute="bottom" constant="10" id="kjz-sy-a1k"/>
+                                                <constraint firstItem="p7Q-32-K70" firstAttribute="top" secondItem="jqX-pa-kzJ" secondAttribute="bottom" constant="10" id="nWd-H6-6sk"/>
+                                                <constraint firstItem="jqX-pa-kzJ" firstAttribute="leading" secondItem="uCg-yi-3wh" secondAttribute="trailing" constant="10" id="u5R-Ol-qBh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jqX-pa-kzJ" secondAttribute="trailing" constant="10" id="zUq-Mk-tam"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="mDetailLabel" destination="p7Q-32-K70" id="a8l-Nu-mTO"/>
+                                            <outlet property="mImageView" destination="uCg-yi-3wh" id="06f-gn-Z7A"/>
+                                            <outlet property="mTitleLabel" destination="jqX-pa-kzJ" id="a58-7y-LjB"/>
+                                            <segue destination="vXp-XN-GW8" kind="show" identifier="toFindDetail" id="6UY-Ru-cbF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GHi-uR-yJA" id="xQd-oQ-TEX"/>
+                                    <outlet property="delegate" destination="GHi-uR-yJA" id="SDq-XY-s7h"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fX4-EW-weR" firstAttribute="leading" secondItem="5E1-Su-S7H" secondAttribute="leading" id="4Kf-9i-n8p"/>
+                            <constraint firstAttribute="trailing" secondItem="fX4-EW-weR" secondAttribute="trailing" id="8GU-C7-6oS"/>
+                            <constraint firstItem="SOG-In-mJI" firstAttribute="top" secondItem="fX4-EW-weR" secondAttribute="bottom" id="GUD-NJ-bRN"/>
+                            <constraint firstItem="fX4-EW-weR" firstAttribute="top" secondItem="Mps-go-hrw" secondAttribute="bottom" id="ctv-ek-2g2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fX4-EW-weR" id="DdZ-kn-RHB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrL-sy-Pw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10" y="-2019"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Login_bg" width="1078" height="738"/>
@@ -2367,7 +2453,7 @@
         <image name="tab_yogas" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="luM-pA-u5c"/>
+        <segue reference="6UY-Ru-cbF"/>
         <segue reference="Bc7-Db-YV3"/>
         <segue reference="0gX-kR-mEh"/>
     </inferredMetricsTieBreakers>

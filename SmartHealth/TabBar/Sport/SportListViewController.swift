@@ -83,6 +83,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
+        self.videoListNotesModel.removeAll()
         self.loadData()
         tableView.reloadData()
         refreshControl.endRefreshing()
