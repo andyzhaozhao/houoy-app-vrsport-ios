@@ -189,7 +189,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYj-gF-rVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292" y="-2894"/>
+            <point key="canvasLocation" x="-338" y="-2893"/>
         </scene>
         <!--地点选择-->
         <scene sceneID="hNz-n2-bh7">
@@ -332,6 +332,7 @@
                                         <state key="normal" title="分享"/>
                                         <connections>
                                             <action selector="shareClick:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="CfX-kh-24M"/>
+                                            <segue destination="gwA-MO-Qba" kind="show" identifier="shareMySelf" id="rGb-Ny-QL3"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVB-Gj-vvK" userLabel="教学中心">
@@ -2095,10 +2096,10 @@
             </objects>
             <point key="canvasLocation" x="-818" y="2209"/>
         </scene>
-        <!--My Attention Detail View Controller-->
+        <!--关注详细-->
         <scene sceneID="mDX-7f-BYv">
             <objects>
-                <viewController id="r6x-Xm-wGH" customClass="MyAttentionDetailViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="关注详细" id="r6x-Xm-wGH" customClass="MyAttentionDetailViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="85o-4L-euw"/>
                         <viewControllerLayoutGuide type="bottom" id="dGN-ye-0xJ"/>
@@ -2431,6 +2432,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hrL-sy-Pw6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-10" y="-2019"/>
+        </scene>
+        <!--分享运动-->
+        <scene sceneID="fwW-xg-IxK">
+            <objects>
+                <viewController title="分享运动" hidesBottomBarWhenPushed="YES" id="gwA-MO-Qba" customClass="ShareMySelfViewController" customModule="SmartHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wll-jU-Zyc"/>
+                        <viewControllerLayoutGuide type="bottom" id="uzw-rE-dJK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XVR-g0-X8H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4t-6O-lcY">
+                                <rect key="frame" x="37" y="617" width="62" height="30"/>
+                                <state key="normal" title="确定分享"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJU-94-bRN">
+                                <rect key="frame" x="268" y="617" width="31" height="30"/>
+                                <state key="normal" title="取消"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="把好心情告诉大家！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="b8T-vM-aF8">
+                                <rect key="frame" x="8" y="30" width="359" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gwA-MO-Qba" id="xyN-FJ-Q8c"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b8T-vM-aF8" firstAttribute="leading" secondItem="XVR-g0-X8H" secondAttribute="leadingMargin" constant="-8" id="6ew-fM-7fF"/>
+                            <constraint firstItem="uzw-rE-dJK" firstAttribute="top" secondItem="w4t-6O-lcY" secondAttribute="bottom" constant="20" id="9W1-QR-loJ"/>
+                            <constraint firstItem="mJU-94-bRN" firstAttribute="centerY" secondItem="w4t-6O-lcY" secondAttribute="centerY" id="9km-xT-X30"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="w4t-6O-lcY" secondAttribute="trailingMargin" id="Aqq-pK-s0A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mJU-94-bRN" secondAttribute="trailing" constant="60" id="HCd-qL-ngP"/>
+                            <constraint firstItem="w4t-6O-lcY" firstAttribute="leading" secondItem="XVR-g0-X8H" secondAttribute="leadingMargin" constant="21" id="Kno-u2-4iZ"/>
+                            <constraint firstItem="b8T-vM-aF8" firstAttribute="top" secondItem="wll-jU-Zyc" secondAttribute="bottom" constant="10" id="Lpq-xA-OE7"/>
+                            <constraint firstItem="mJU-94-bRN" firstAttribute="baseline" secondItem="w4t-6O-lcY" secondAttribute="baseline" id="Ryd-Mc-RUo"/>
+                            <constraint firstItem="mJU-94-bRN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="XVR-g0-X8H" secondAttribute="leadingMargin" id="koj-0O-GKq"/>
+                            <constraint firstItem="mJU-94-bRN" firstAttribute="top" secondItem="b8T-vM-aF8" secondAttribute="bottom" constant="20" id="qtG-mw-WkW"/>
+                            <constraint firstItem="b8T-vM-aF8" firstAttribute="centerX" secondItem="XVR-g0-X8H" secondAttribute="centerX" id="uXX-3Z-nhN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hlM-pf-TYr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="937" y="-2019"/>
         </scene>
     </scenes>
     <resources>

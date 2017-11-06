@@ -71,6 +71,7 @@
 		7EE7406F1FB08F3200EB0696 /* MyAttentionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7406E1FB08F3200EB0696 /* MyAttentionDetailViewController.swift */; };
 		7EE740711FB0B04400EB0696 /* FindNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740701FB0B04400EB0696 /* FindNewViewController.swift */; };
 		7EE740731FB0B0B100EB0696 /* FindNewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740721FB0B0B100EB0696 /* FindNewListCell.swift */; };
+		7EE740751FB0B2DC00EB0696 /* ShareMySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740741FB0B2DC00EB0696 /* ShareMySelfViewController.swift */; };
 		7EF608761FA75A6200C33DFF /* FindAttentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608751FA75A6100C33DFF /* FindAttentionTableViewCell.swift */; };
 		7EF608781FA75F3100C33DFF /* SHAttentionInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */; };
 		7EF6087A1FA7619F00C33DFF /* AttentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF608791FA7619F00C33DFF /* AttentionViewController.swift */; };
@@ -174,6 +175,7 @@
 		7EE7406E1FB08F3200EB0696 /* MyAttentionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttentionDetailViewController.swift; sourceTree = "<group>"; };
 		7EE740701FB0B04400EB0696 /* FindNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNewViewController.swift; sourceTree = "<group>"; };
 		7EE740721FB0B0B100EB0696 /* FindNewListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNewListCell.swift; sourceTree = "<group>"; };
+		7EE740741FB0B2DC00EB0696 /* ShareMySelfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMySelfViewController.swift; sourceTree = "<group>"; };
 		7EF608751FA75A6100C33DFF /* FindAttentionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindAttentionTableViewCell.swift; sourceTree = "<group>"; };
 		7EF608771FA75F3100C33DFF /* SHAttentionInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHAttentionInfoModel.swift; sourceTree = "<group>"; };
 		7EF608791FA7619F00C33DFF /* AttentionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +394,7 @@
 				7EE740701FB0B04400EB0696 /* FindNewViewController.swift */,
 				1D3E9F2F1F36A9A2006CDD87 /* FindViewController.swift */,
 				1DC116631F6B36CF002FBB60 /* FindCollectionViewCell.swift */,
+				7EE740741FB0B2DC00EB0696 /* ShareMySelfViewController.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				7EF608761FA75A6200C33DFF /* FindAttentionTableViewCell.swift in Sources */,
 				7E97AB2D1FAD5B40004E5E38 /* ThirdViewController.swift in Sources */,
 				7EF608841FA7D56600C33DFF /* MyLikeAttentionListCell.swift in Sources */,
+				7EE740751FB0B2DC00EB0696 /* ShareMySelfViewController.swift in Sources */,
 				1D2D0CE51FA5DC0F004ED20A /* FindDetailViewController.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				7E7E75471FAEB1FF00FB3595 /* SHResetPasswordModel.swift in Sources */,

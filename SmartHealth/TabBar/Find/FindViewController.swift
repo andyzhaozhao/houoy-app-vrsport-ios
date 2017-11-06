@@ -42,12 +42,13 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     }
 
     @IBAction func shareClick(_ sender: Any) {
-        let textToShare = "我运动我快乐"
-        let imageToShare = UIImage.init(named: "AppIcon.png")
-        let urlToShare = NSURL.init(string: "https://github.com")
-        let activityItems = [urlToShare,textToShare,imageToShare] as [Any]
-        let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
-        self.present(activity, animated: true, completion: nil)
+        
+//        let textToShare = "我运动我快乐"
+//        let imageToShare = UIImage.init(named: "AppIcon.png")
+//        let urlToShare = NSURL.init(string: "https://github.com")
+//        let activityItems = [urlToShare,textToShare,imageToShare] as [Any]
+//        let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
+//        self.present(activity, animated: true, completion: nil)
     }
     
     func learningEventClick(sender: Any?) {
