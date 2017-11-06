@@ -64,7 +64,7 @@ class SettingInfoViewController: UIViewController, UIImagePickerControllerDelega
     
     func uploadImageData(){
         let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK) ?? ""
-        let imageData = UIImagePNGRepresentation(iconImageView.image!) as Data?
+        let imageData = UIImageJPEGRepresentation(iconImageView.image!, 0.2) as Data?
         let parameters: Parameters = [
             //Constants.Person_Person_File:imageData!,
             Constants.Login_User_PK: pk

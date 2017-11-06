@@ -78,6 +78,7 @@ class SHPersonListModel: Mappable {
     var birthday: String?
     var birthplace: String?
     var country: String?
+    var portraitPath: String?
     var province: String?
     var city: String?
     var town: String?
@@ -144,6 +145,7 @@ class SHPersonListModel: Mappable {
         birthday <- map["birthday"]
         birthplace <- map["birthplace"]
         country <- map["country"]
+        portraitPath <- map["portraitPath"]
         province <- map["province"]
         city <- map["city"]
         town <- map["town"]
