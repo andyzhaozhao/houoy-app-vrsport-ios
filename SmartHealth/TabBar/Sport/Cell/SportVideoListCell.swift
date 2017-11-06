@@ -14,6 +14,7 @@ class SportVideoListCell: UITableViewCell {
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!
     
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var mStatus: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,17 @@ class SportVideoListCell: UITableViewCell {
         mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.video_name
         mDetailLabel.text = model?.video_desc
+        if let progress = model?.progress {
+            if(progress > 0){
+                progressView.progress = progress
+                progressView.isHidden = false
+            } else {
+                progressView.isHidden = true
+            }
+        }else {
+            progressView.isHidden = true
+        }
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

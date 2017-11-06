@@ -67,6 +67,16 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
     // MARK: - UITable Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //        performSegue(withIdentifier: "toEventDetail", sender: nil)
+        let alert: UIAlertController = UIAlertController(title: "确认", message: "确定添加这个地点？", preferredStyle: UIAlertControllerStyle.alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            
+        })
+        let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            
+        })
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - UITable DataSource

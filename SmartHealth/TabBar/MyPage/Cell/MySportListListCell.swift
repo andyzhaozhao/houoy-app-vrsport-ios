@@ -10,7 +10,6 @@ import Foundation
 class MySportListListCell: UITableViewCell {
     
     private var model: SHLikeRecordHistoryListModel?
-    @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!
     
@@ -20,7 +19,6 @@ class MySportListListCell: UITableViewCell {
     }
     
     func initUI(model: SHLikeRecordHistoryListModel?) {
-        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.heart_rate
         mDetailLabel.text = model?.heart_rate_max
     }

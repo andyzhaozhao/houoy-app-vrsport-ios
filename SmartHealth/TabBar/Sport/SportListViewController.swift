@@ -27,7 +27,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
         self.navigationController?.isNavigationBarHidden = false
         let rightButton = UIButton()
         rightButton.frame = CGRect.init(x: 0, y: 0, width: 100, height: 44)
-        rightButton.setTitle("选择地点", for: .normal)
+        rightButton.setTitle("地点选择", for: .normal)
         rightButton.setTitleColor(UIColor.black, for: .normal)
         rightButton.addTarget(self, action: #selector(didTapOnRightButton), for: UIControlEvents.touchUpInside)
         let barButtonItem = UIBarButtonItem(customView: rightButton)
@@ -101,28 +101,36 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
             .downloadProgress { (progress) in
                 print("Download Progress: \(progress.fractionCompleted)")
                 model.download = DownladStatus.Downlaoding
+                model.progress = Float(progress.fractionCompleted)
                 self.tableView.reloadData()
             }
             .responseData { response in
-                do {
-                    let targetPathURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download)
-                    
-                    try FileManager.default.createDirectory(at: targetPathURL, withIntermediateDirectories: true, attributes: nil)
-                    
-                    if FileManager.default.fileExists(atPath: targetPathURL.appendingPathComponent(model.video_name).path) {
-                        try FileManager.default.removeItem(at: targetPathURL.appendingPathComponent(model.video_name))
+                switch response.result {
+                case .success(_):
+                    do {
+                        let targetPathURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download)
+                        
+                        try FileManager.default.createDirectory(at: targetPathURL, withIntermediateDirectories: true, attributes: nil)
+                        
+                        if FileManager.default.fileExists(atPath: targetPathURL.appendingPathComponent(model.video_name).path) {
+                            try FileManager.default.removeItem(at: targetPathURL.appendingPathComponent(model.video_name))
+                        }
+                        try! FileManager.default.moveItem(at: response.destinationURL! , to: targetPathURL.appendingPathComponent(model.video_name))
+                        
+                        self.view.makeToast("视频下载成功", duration: 3.0, position: .center)
+                        model.download = DownladStatus.DownlaodOver
+                        model.progress = 0
+                    } catch {
+                        print(error)
+                        self.view.makeToast("视频下载失败", duration: 3.0, position: .center)
+                        model.download = DownladStatus.NoDownlaod
                     }
-                    try! FileManager.default.moveItem(at: response.destinationURL! , to: targetPathURL.appendingPathComponent(model.video_name))
                     
-                    self.view.makeToast("视频下载成功", duration: 3.0, position: .center)
-                    model.download = DownladStatus.DownlaodOver
-                } catch {
-                    print(error)
-                    self.view.makeToast("视频下载失败", duration: 3.0, position: .center)
-                    model.download = DownladStatus.NoDownlaod
+                    self.tableView.reloadData()
+                case .failure:
+                    print("downlaod error")
+                    //self.resumeData = response.resumeData
                 }
-
-                self.tableView.reloadData()
         }
         self.tableView.reloadData()
     }

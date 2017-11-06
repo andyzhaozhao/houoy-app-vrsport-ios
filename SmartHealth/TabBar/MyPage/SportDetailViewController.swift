@@ -43,7 +43,7 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
             Constants.List_Length: Constants.List_Length_Value,
             Constants.List_OrderColumnName: Constants.RecordVRSport_List_OrderColumnName_Value,
             Constants.List_OrderDir:Constants.List_OrderDir_Desc,
-            Constants.List_User_PK: 1 //pk ?? ""
+            Constants.List_User_PK: pk ?? ""
         ]
         let request = Alamofire.request(Constants.RecordVRSportRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
@@ -92,6 +92,7 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MySportListListCell
         cell.initUI(model: self.listNotesModel[indexPath.row])
         cell.tag = indexPath.row
+        cell.isUserInteractionEnabled = false
         return cell
     }
     

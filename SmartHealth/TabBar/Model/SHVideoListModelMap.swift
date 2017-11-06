@@ -77,6 +77,7 @@ class SHVideoresultDataModel: NSObject, Mappable {
     var pkfield: String?
     
     var download: DownladStatus = DownladStatus.NoDownlaod
+    var progress: Float = 0
     
     required init?(map: Map) {
         

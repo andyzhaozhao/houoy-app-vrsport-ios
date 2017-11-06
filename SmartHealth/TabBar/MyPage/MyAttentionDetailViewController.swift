@@ -1,14 +1,14 @@
 //
-//  FirstViewController.swift
+//  MyAttentionDetailViewController.swift
 //  SmartHealth
 //
-//  Created by laoniu on 11/4/17.
+//  Created by laoniu on 11/6/17.
 //  Copyright © 2017 laoniu. All rights reserved.
 //
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MyAttentionDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

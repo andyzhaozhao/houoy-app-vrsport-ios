@@ -2,7 +2,7 @@
 //  AttentionViewController.swift
 //  SmartHealth
 //
-//  Created by RUIQIANG(瑞強) LIU(劉) on 10/30/17.
+//  Created by laoniu on 10/30/17.
 //  Copyright © 2017 laoniu. All rights reserved.
 //
 
