@@ -1,5 +1,5 @@
 //
-//  SHPlaceModelMap.swift
+//  SHFolderModelMap.swift
 //  SmartHealth
 //
 //  Created by laoniu on 2017/10/26.
@@ -8,13 +8,13 @@
 
 import Foundation
 import ObjectMapper
-class SHPlaceModelMap: Mappable {
+class SHFolderModelMap: Mappable {
     var msg: String?
     var success: Bool = false
     var detailMessage: String?
     var statusCode: String?
     var resultDataType: String?
-    var resultData: SHPlaceresultDataModel?
+    var resultData: [SHFolderresultDataModel] = []
     var uploadId: String?
     var def1: String?
     var def2: String?
@@ -40,7 +40,7 @@ class SHPlaceModelMap: Mappable {
     }
 }
 
-class SHPlaceresultDataModel: Mappable {
+class SHFolderresultDataModel: Mappable {
     var memo: String?
     var def1: String?
     var def2: String?
@@ -54,11 +54,11 @@ class SHPlaceresultDataModel: Mappable {
     var length: String?
     var orderColumnName: String?
     var orderDir: String?
-    var nodes: [SHPlaceresultDataModel] = []
-    var pk_place: String?
-    var place_code: String?
-    var place_name: String?
-    var place_desc: String?
+    var nodes: [SHFolderresultDataModel] = []
+    var pk_folder: String?
+    var folder_code: String?
+    var folder_name: String?
+    var folder_desc: String?
     var pk_parent: String?
     var text: String?
 
@@ -86,10 +86,10 @@ class SHPlaceresultDataModel: Mappable {
         orderColumnName <- map["orderColumnName"]
         orderDir <- map["orderDir"]
         nodes <- map["nodes"]
-        pk_place <- map["pk_place"]
-        place_code <- map["place_code"]
-        place_name <- map["place_name"]
-        place_desc <- map["place_desc"]
+        pk_folder <- map["pk_folder"]
+        folder_code <- map["folder_code"]
+        folder_name <- map["folder_name"]
+        folder_desc <- map["folder_desc"]
         pk_parent <- map["pk_parent"]
         text <- map["text"]
         pkvalue <- map["pkvalue"]
@@ -98,176 +98,3 @@ class SHPlaceresultDataModel: Mappable {
         pkfield <- map["pkfield"]
     }
 }
-/*
- {
- "success": true,
- "msg": "查询成功",
- "detailMessage": null,
- "statusCode": null,
- "resultDataType": null,
- "resultData": {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:03:19.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": [
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:10:32.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "2",
- "place_code": "000001",
- "place_name": "海淀区",
- "place_desc": "北京市海淀区",
- "pk_parent": "1",
- "text": "海淀区",
- "pkvalue": "2",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:10:45.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "6",
- "place_code": "000002",
- "place_name": "朝阳区",
- "place_desc": null,
- "pk_parent": "1",
- "text": "朝阳区",
- "pkvalue": "6",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:11:00.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": [
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:11:12.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "8",
- "place_code": "000003001",
- "place_name": "古城公园",
- "place_desc": null,
- "pk_parent": "7",
- "text": "古城公园",
- "pkvalue": "8",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- }
- ],
- "pk_place": "7",
- "place_code": "000003",
- "place_name": "石景山区",
- "place_desc": null,
- "pk_parent": "1",
- "text": "石景山区",
- "pkvalue": "7",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-10-27 19:57:51.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "9",
- "place_code": "000004",
- "place_name": "门头沟区",
- "place_desc": null,
- "pk_parent": "1",
- "text": "门头沟区",
- "pkvalue": "9",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- }
- ],
- "pk_place": "1",
- "place_code": "000",
- "place_name": "root",
- "place_desc": "root",
- "pk_parent": "0",
- "text": "root",
- "pkvalue": "1",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- "uploadId": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null
- }
- */

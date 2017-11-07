@@ -14,12 +14,13 @@ extension Date {
     }
 }
 
-class ShareMySelfViewController: UIViewController {
+class ShareMySelfViewController: UIViewController , UITextViewDelegate{
 
     @IBOutlet weak var titleTextView: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
         self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
@@ -27,6 +28,14 @@ class ShareMySelfViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
     }
     
     @IBAction func sendDataClick(_ sender: Any) {

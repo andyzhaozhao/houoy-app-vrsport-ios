@@ -33,6 +33,9 @@ struct Constants {
     
     //splash parameter
     public static let SH_Splash = "splash"
+    //place parameter
+    public static let List_Pk_Folder = "pk_folder"
+    
     //reset pwd
     
     public static let Password_Email = "email"
@@ -114,7 +117,7 @@ struct Constants {
     private static let BaseUrl8889 = "http://182.92.128.240:8889/api"
     private static let BaseUrl8888 = "http://182.92.128.240:8888/api"
     public static let SigninSystemMobile = BaseUrl8889+"/login/signinSystemMobile"
-    public static let PlaceRetrieve = BaseUrl8889+"/place/retrieve"
+    public static let FolderVideoRetrieve = BaseUrl8888+"/folderVideo/retrieveMobile"
     public static let VideoRetrieve = BaseUrl8888+"/video/retrieveMobile"
     public static let RecordShareRetrieve = BaseUrl8889+"/recordShare/retrieveMobile"
     public static let EssayRetrieve = BaseUrl8888+"/essay/retrieveMobile"

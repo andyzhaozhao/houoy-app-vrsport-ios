@@ -9,7 +9,7 @@
 import Foundation
 class SportPlaceCell: UITableViewCell {
     
-    private var model: SHPlaceresultDataModel?
+    private var model: SHFolderresultDataModel?
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!
     
@@ -18,9 +18,9 @@ class SportPlaceCell: UITableViewCell {
         // Initialization code
     }
     
-    func initUI(model: SHPlaceresultDataModel?) {
-        mTitleLabel.text = model?.place_name
-        mDetailLabel.text = model?.place_desc
+    func initUI(model: SHFolderresultDataModel?) {
+        mTitleLabel.text = model?.folder_code
+        mDetailLabel.text = model?.folder_name
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

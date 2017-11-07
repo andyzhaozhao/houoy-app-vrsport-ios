@@ -21,29 +21,36 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     private var selectModel: SHVideoresultDataModel?
     private var videPage: Int = 0
     private let refreshControl = UIRefreshControl()
+    private var folderModel: SHFolderresultDataModel?
+    private var rightButton :UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
-        let rightButton = UIButton()
-        rightButton.frame = CGRect.init(x: 0, y: 0, width: 100, height: 44)
-        rightButton.setTitle("地点选择", for: .normal)
-        rightButton.setTitleColor(UIColor.black, for: .normal)
-        rightButton.addTarget(self, action: #selector(didTapOnRightButton), for: UIControlEvents.touchUpInside)
-        let barButtonItem = UIBarButtonItem(customView: rightButton)
+        self.rightButton = UIButton()
+        self.rightButton?.frame = CGRect.init(x: 0, y: 0, width: 100, height: 44)
+        self.rightButton?.setTitle("地点选择", for: .normal)
+        self.rightButton?.setTitleColor(UIColor.black, for: .normal)
+        self.rightButton?.addTarget(self, action: #selector(didTapOnRightButton), for: UIControlEvents.touchUpInside)
+        let barButtonItem = UIBarButtonItem(customView: rightButton!)
         self.navigationItem.rightBarButtonItem = barButtonItem
         tableView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(MessageViewController.refresh(sender:)), for: .valueChanged)
-        self.loadData()
+        self.loadData(folderModel: self.folderModel)
     }
     
-    func loadData(){
-        let parameters: Parameters = [
+    func loadData(folderModel: SHFolderresultDataModel?){
+        var parameters: Parameters = [
             Constants.List_Start: videPage,
             Constants.List_Length: Constants.List_Length_Value,
             Constants.List_OrderColumnName: Constants.Video_List_OrderColumnName_Value,
             Constants.List_OrderDir: Constants.List_OrderDir_Desc,
         ]
+        
+        if (self.folderModel != nil){
+            parameters[Constants.List_Pk_Folder] = self.folderModel?.folder_code
+        }
+        
         let request = Alamofire.request(Constants.VideoRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
         request.responseJSON { response in
@@ -84,7 +91,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
         self.videoListNotesModel.removeAll()
-        self.loadData()
+        self.loadData(folderModel: self.folderModel)
         tableView.reloadData()
         refreshControl.endRefreshing()
     }
@@ -181,7 +188,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
         }
         if indexPath.row == self.videoListNotesModel.count - 1 && self.videoListNotesModel.count < totle{
             self.videPage = self.videPage + 1
-            self.loadData()
+            self.loadData(folderModel: self.folderModel)
         }
     }
     
@@ -206,7 +213,10 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     }
     
     //delegate
-    func selectWith(palaceid: String, placeName: String) {
-        print(placeName)
+    func selectWith(model: SHFolderresultDataModel) {
+        self.videoListNotesModel.removeAll()
+        self.rightButton?.setTitle(model.folder_name, for: .normal)
+        self.folderModel = model
+        self.loadData(folderModel: model)
     }
 }

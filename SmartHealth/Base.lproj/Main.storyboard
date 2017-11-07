@@ -999,7 +999,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Bv-LM-Af9">
-                                        <rect key="frame" x="340" y="75" width="25" height="25"/>
+                                        <rect key="frame" x="340" y="21" width="25" height="25"/>
                                         <state key="normal" image="settinginfos"/>
                                         <connections>
                                             <segue destination="VFL-Ot-pDO" kind="show" id="4su-SV-4zi"/>
@@ -1023,7 +1023,7 @@
                                     <constraint firstAttribute="trailing" secondItem="OEq-ag-fhS" secondAttribute="trailing" constant="7" id="jVd-Um-mzL"/>
                                     <constraint firstItem="18r-N3-Ewr" firstAttribute="centerX" secondItem="TFa-ln-UI4" secondAttribute="centerX" id="jW1-vR-Jtt"/>
                                     <constraint firstItem="jCv-iS-Mke" firstAttribute="centerX" secondItem="XHR-fE-SMc" secondAttribute="centerX" id="kEC-LZ-mzu"/>
-                                    <constraint firstItem="0Bv-LM-Af9" firstAttribute="top" secondItem="jCv-iS-Mke" secondAttribute="top" id="kss-vc-df7"/>
+                                    <constraint firstItem="0Bv-LM-Af9" firstAttribute="top" secondItem="jCv-iS-Mke" secondAttribute="top" constant="-54" id="kss-vc-df7"/>
                                     <constraint firstItem="OEq-ag-fhS" firstAttribute="trailing" secondItem="XHR-fE-SMc" secondAttribute="trailing" constant="-10" id="lro-Ex-pfC"/>
                                     <constraint firstItem="X6S-cI-rUF" firstAttribute="centerX" secondItem="TFa-ln-UI4" secondAttribute="centerX" id="nQZ-7U-U0f"/>
                                     <constraint firstItem="clL-by-6KA" firstAttribute="leading" secondItem="TFa-ln-UI4" secondAttribute="leading" id="pPt-Az-t7W"/>
@@ -2458,7 +2458,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                 <connections>
-                                    <outlet property="delegate" destination="gwA-MO-Qba" id="xyN-FJ-Q8c"/>
+                                    <outlet property="delegate" destination="gwA-MO-Qba" id="GPm-4x-mjI"/>
                                 </connections>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入主题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WBt-9P-wet">
@@ -2495,7 +2495,7 @@
     </scenes>
     <resources>
         <image name="Login_bg" width="1078" height="738"/>
-        <image name="Setting_bg" width="1075" height="704"/>
+        <image name="Setting_bg" width="970" height="566"/>
         <image name="centerlearnings" width="50" height="50"/>
         <image name="centersports" width="50" height="50"/>
         <image name="explanation01" width="1080" height="1920"/>
