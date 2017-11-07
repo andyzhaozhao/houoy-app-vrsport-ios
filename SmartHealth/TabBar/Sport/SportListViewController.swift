@@ -13,7 +13,7 @@ enum DownladStatus: Int {
     case Downlaoding = 1
     case DownlaodOver = 2
 }
-class SportListViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
+class SportListViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource,SelectAreaDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     private var videoListModel: SHVideoListModelMap?
@@ -198,7 +198,15 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
                 nextViewController.localPath = targetURL.path;
                 nextViewController.modelObject = model
             }
+        } else if (segue.identifier == "selectPlace") {
+            if let nextViewController = segue.destination as? SportAreaViewController{
+                nextViewController.delete = self
+            }
         }
     }
-     
+    
+    //delegate
+    func selectWith(palaceid: String, placeName: String) {
+        print(placeName)
+    }
 }

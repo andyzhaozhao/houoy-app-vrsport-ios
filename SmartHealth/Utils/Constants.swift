@@ -73,6 +73,8 @@ struct Constants {
     public static let Person_Pk = "pk"
     public static let Person_Pk_Person = "pk_person"
     public static let Person_Person_File = "file"
+    public static let Person_Person_Image = "image"
+    
     //recordVR sport save parameter
     public static let Record_VRSport_Save_calorie = "calorie"
     public static let Record_VRSport_Save_heart_rate = "heart_rate"
@@ -124,7 +126,7 @@ struct Constants {
     public static let PersonSave = BaseUrl8889+"/person/save"
     public static let PersonRetrieve = BaseUrl8889+"/person/retrieveMobile"
     public static let PersonPortrait = BaseUrl8889+"/person/portrait"
-    public static let PersonUpload = BaseUrl8889+"/person/upload"
+    public static let PersonUpload = BaseUrl8889+"/person/uploadMobile"
     public static let ForgetPassword = BaseUrl8889+"/login/forgetPassword"
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"

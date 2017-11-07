@@ -9,8 +9,12 @@
 import UIKit
 import Alamofire
 import Toast_Swift
+protocol SelectAreaDelegate {
+    func selectWith(palaceid : String , placeName: String)
+}
+
 class SportAreaViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var delete:SelectAreaDelegate?
     @IBOutlet weak var tableView: UITableView!
     var placeModel: SHPlaceModelMap?
     var placeNotesModel: [SHPlaceresultDataModel]  = []
@@ -69,7 +73,8 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
         //        performSegue(withIdentifier: "toEventDetail", sender: nil)
         let alert: UIAlertController = UIAlertController(title: "确认", message: "确定添加这个地点？", preferredStyle: UIAlertControllerStyle.alert)
         let defaultAction: UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
-            
+            self.delete?.selectWith(palaceid: "id", placeName: "name")
+            self.navigationController?.popViewController(animated: true)
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             
