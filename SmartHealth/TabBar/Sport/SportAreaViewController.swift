@@ -40,7 +40,11 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
                 guard let theNodes = nodes else {
                     return
                 }
-                self.placeNotesModel = theNodes
+                for node in theNodes {
+                    if (node.folder_code != "000"){
+                        self.placeNotesModel.append(node)
+                    }
+                }
                 //self.getNodesList(nodes: theNodes)
                 self.tableView.reloadData()
             case .failure:
