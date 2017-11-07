@@ -33,6 +33,9 @@ struct Constants {
     
     //splash parameter
     public static let SH_Splash = "splash"
+    //place parameter
+    public static let List_Pk_Folder = "pk_folder"
+    
     //reset pwd
     
     public static let Password_Email = "email"
@@ -73,6 +76,8 @@ struct Constants {
     public static let Person_Pk = "pk"
     public static let Person_Pk_Person = "pk_person"
     public static let Person_Person_File = "file"
+    public static let Person_Person_Image = "image"
+    
     //recordVR sport save parameter
     public static let Record_VRSport_Save_calorie = "calorie"
     public static let Record_VRSport_Save_heart_rate = "heart_rate"
@@ -101,22 +106,30 @@ struct Constants {
     public static let Register_indicator_heart_rate_max_min = "indicator_heart_rate_max_min"
     public static let Register_indicator_heart_rate_min = "indicator_heart_rate_min"
 
+    //record Share
+    public static let Record_Share_Save_Pk_Person = "pk_person"
+    public static let Record_Share_Save_Person_Name = "person_name"
+    public static let Record_Share_Save_Record_Share_Code = "record_share_code"
+    public static let Record_Share_Save_Record_Share_Desc = "record_share_desc"
+    public static let Record_Share_Save_Record_Share_Name = "record_share_name"
+    
     //URL
     private static let BaseUrl8889 = "http://182.92.128.240:8889/api"
     private static let BaseUrl8888 = "http://182.92.128.240:8888/api"
     public static let SigninSystemMobile = BaseUrl8889+"/login/signinSystemMobile"
-    public static let PlaceRetrieve = BaseUrl8889+"/place/retrieve"
+    public static let FolderVideoRetrieve = BaseUrl8888+"/folderVideo/retrieveMobile"
     public static let VideoRetrieve = BaseUrl8888+"/video/retrieveMobile"
     public static let RecordShareRetrieve = BaseUrl8889+"/recordShare/retrieveMobile"
     public static let EssayRetrieve = BaseUrl8888+"/essay/retrieveMobile"
     public static let RecordVRSportRetrieve = BaseUrl8889+"/recordVRSport/retrieveMobile"
     public static let RecordVRSportSave = BaseUrl8889+"/recordVRSport/save"
+    public static let RecordShareSave = BaseUrl8889+"/recordShare/save"
     public static let PersonFollowRetrieve = BaseUrl8889+"/personFollow/retrieveMobile"
     public static let PersonFollowSave = BaseUrl8889+"/personFollow/save"
     public static let PersonSave = BaseUrl8889+"/person/save"
     public static let PersonRetrieve = BaseUrl8889+"/person/retrieveMobile"
     public static let PersonPortrait = BaseUrl8889+"/person/portrait"
-    public static let PersonUpload = BaseUrl8889+"/person/upload"
+    public static let PersonUpload = BaseUrl8889+"/person/uploadMobile"
     public static let ForgetPassword = BaseUrl8889+"/login/forgetPassword"
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"

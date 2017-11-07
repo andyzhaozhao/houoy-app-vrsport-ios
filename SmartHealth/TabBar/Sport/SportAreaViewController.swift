@@ -9,11 +9,15 @@
 import UIKit
 import Alamofire
 import Toast_Swift
+protocol SelectAreaDelegate {
+    func selectWith(model : SHFolderresultDataModel)
+}
+
 class SportAreaViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    var delete:SelectAreaDelegate?
     @IBOutlet weak var tableView: UITableView!
-    var placeModel: SHPlaceModelMap?
-    var placeNotesModel: [SHPlaceresultDataModel]  = []
+    var placeModel: SHFolderModelMap?
+    var placeNotesModel: [SHFolderresultDataModel]  = []
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -23,7 +27,7 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
         self.loadData()
     }
     func loadData(){
-        let request = Alamofire.request(Constants.PlaceRetrieve,method: .get, parameters: nil, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
+        let request = Alamofire.request(Constants.FolderVideoRetrieve,method: .get, parameters: nil, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
         request.responseJSON { response in
             self.view.isUserInteractionEnabled = true
@@ -31,12 +35,17 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
             case .success(let data):
                 Utils.printMsg(msg:"JSON: \(data)")
                 let dic = data as! NSDictionary
-                self.placeModel = SHPlaceModelMap(JSON: dic as! [String : Any])
-                let nodes = self.placeModel?.resultData?.nodes
+                self.placeModel = SHFolderModelMap(JSON: dic as! [String : Any])
+                let nodes = self.placeModel?.resultData
                 guard let theNodes = nodes else {
                     return
                 }
-                self.getNodesList(nodes: theNodes)
+                for node in theNodes {
+                    if (node.folder_code != "000"){
+                        self.placeNotesModel.append(node)
+                    }
+                }
+                //self.getNodesList(nodes: theNodes)
                 self.tableView.reloadData()
             case .failure:
                 self.view.makeToast("获取信息失败")
@@ -44,18 +53,18 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
         }
     }
     
-    func getNodesList(nodes : [SHPlaceresultDataModel]?){
-        guard let theNodes = nodes else {
-            return
-        }
-        for node in theNodes {
-            if (node.nodes.count == 0){
-                self.placeNotesModel.append(node)
-            } else {
-                getNodesList(nodes: node.nodes)
-            }
-        }
-    }
+//    func getNodesList(nodes : [SHFolderresultDataModel]?){
+//        guard let theNodes = nodes else {
+//            return
+//        }
+//        for node in theNodes {
+//            if (node.nodes.count == 0){
+//                self.placeNotesModel.append(node)
+//            } else {
+//                getNodesList(nodes: node.nodes)
+//            }
+//        }
+//    }
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
@@ -69,7 +78,9 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
         //        performSegue(withIdentifier: "toEventDetail", sender: nil)
         let alert: UIAlertController = UIAlertController(title: "确认", message: "确定添加这个地点？", preferredStyle: UIAlertControllerStyle.alert)
         let defaultAction: UIAlertAction = UIAlertAction(title: "确认", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
-            
+            let model = self.placeNotesModel[indexPath.row]
+            self.delete?.selectWith(model: model)
+            self.navigationController?.popViewController(animated: true)
         })
         let cancelAction: UIAlertAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             
@@ -86,7 +97,7 @@ class SportAreaViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SportPlaceCell
-        cell .initUI(model: self.placeNotesModel[indexPath.row])
+        cell.initUI(model: self.placeNotesModel[indexPath.row])
         return cell
     }
     

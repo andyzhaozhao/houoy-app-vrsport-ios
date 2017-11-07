@@ -66,30 +66,30 @@ class SettingInfoViewController: UIViewController, UIImagePickerControllerDelega
         let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK) ?? ""
         let imageData = UIImageJPEGRepresentation(iconImageView.image!, 0.2) as Data?
         let parameters: Parameters = [
-            //Constants.Person_Person_File:imageData!,
+            Constants.Person_Person_Image:imageData?.base64EncodedString(options: .lineLength64Characters) ?? "",
             Constants.Login_User_PK: pk
         ]
-        let header: HTTPHeaders = [
-            Constants.ContentType: "multipart/form-data",
-            Constants.Accept: Constants.ContentTypeJson
-        ]
-        let link = Constants.PersonUpload+"?"+Constants.Login_User_PK+"="+pk
-        Alamofire.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(imageData!, withName: Constants.Person_Person_File)
-            for (key, value) in parameters {
-                multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
-            }
-            
-        }, to: link, method: .post, headers: header, encodingCompletion: { encodingResult in
-            switch encodingResult {
-            case .success(let upload, _, _):
-                upload.responseJSON { response in
-                    debugPrint(response)
-                }
-            case .failure(let encodingError):
-                print(encodingError)
-            }
-        })
+//        let header: HTTPHeaders = [
+//            //Constants.ContentType: "multipart/form-data",
+//            Constants.Accept: Constants.ContentTypeJson
+//        ]
+ //       let link = Constants.PersonUpload+"?"+Constants.Login_User_PK+"="+pk
+//        Alamofire.upload(multipartFormData: { multipartFormData in
+//            multipartFormData.append(imageData!, withName: Constants.Person_Person_File)
+//            for (key, value) in parameters {
+//                multipartFormData.append((value as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
+//            }
+//
+//        }, to: link, method: .post, headers: header, encodingCompletion: { encodingResult in
+//            switch encodingResult {
+//            case .success(let upload, _, _):
+//                upload.responseJSON { response in
+//                    debugPrint(response)
+//                }
+//            case .failure(let encodingError):
+//                print(encodingError)
+//            }
+//        })
         
 //        Alamofire.upload(
 //            multipartFormData: { multipartFormData in
@@ -118,20 +118,20 @@ class SettingInfoViewController: UIViewController, UIImagePickerControllerDelega
       //      debugPrint(response)
       //  }
 //
-//        let request = Alamofire.request(Constants.PersonUpload,method: .post, parameters: parameters, encoding: URLEncoding.default,headers:header)
-//        self.view.isUserInteractionEnabled = false
-//        request.responseJSON { response in
-//            self.view.isUserInteractionEnabled = true
-//            switch response.result {
-//            case .success(let data):
-//                Utils.printMsg(msg:"JSON: \(data)")
-//                let dic = data as! NSDictionary
-//
-//
-//            case .failure:
-//                self.view.makeToast("获取信息失败")
-//            }
-//        }
+        let request = Alamofire.request( Constants.PersonUpload,method: .post, parameters: parameters, encoding: URLEncoding.default,headers:ApiHelper.getDefaultHeader())
+        self.view.isUserInteractionEnabled = false
+        request.responseJSON { response in
+            self.view.isUserInteractionEnabled = true
+            switch response.result {
+            case .success(let data):
+                Utils.printMsg(msg:"JSON: \(data)")
+                let dic = data as! NSDictionary
+
+
+            case .failure:
+                self.view.makeToast("获取信息失败")
+            }
+        }
     }
     
     // MARK: - UIImagePickerControllerDelegate
