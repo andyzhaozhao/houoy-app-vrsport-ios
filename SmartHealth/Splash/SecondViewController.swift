@@ -2,7 +2,7 @@
 //  SecondViewController.swift
 //  SmartHealth
 //
-//  Created by RUIQIANG(瑞強) LIU(劉) on 11/4/17.
+//  Created by laoniu on 11/4/17.
 //  Copyright © 2017 laoniu. All rights reserved.
 //
 

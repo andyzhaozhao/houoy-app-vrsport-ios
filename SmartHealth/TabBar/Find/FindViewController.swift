@@ -10,7 +10,7 @@ import UIKit
 
 class FindViewController: CommanViewController ,UICollectionViewDataSource, UICollectionViewDelegate , UITableViewDelegate ,UITableViewDataSource{
     var timer: Timer!
-    var mArray: Array = [["image":"item_default", "title":"最新消息", "detail":"您关注的人有动态啦"]]
+    var mArray: Array = [["image":"item_default", "title":"最新消息", "detail":"您关注的人有动态啦"],["image":"item_default", "title":"我的发现", "detail":"发现新大陆"]]
     
     @IBOutlet weak var tableView: UITableView!
     private let refreshControl = UIRefreshControl()
@@ -42,12 +42,13 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     }
 
     @IBAction func shareClick(_ sender: Any) {
-        let textToShare = "我运动我快乐"
-        let imageToShare = UIImage.init(named: "AppIcon.png")
-        let urlToShare = NSURL.init(string: "https://github.com")
-        let activityItems = [urlToShare,textToShare,imageToShare] as [Any]
-        let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
-        self.present(activity, animated: true, completion: nil)
+        
+//        let textToShare = "我运动我快乐"
+//        let imageToShare = UIImage.init(named: "AppIcon.png")
+//        let urlToShare = NSURL.init(string: "https://github.com")
+//        let activityItems = [urlToShare,textToShare,imageToShare] as [Any]
+//        let activity = UIActivityViewController.init(activityItems: activityItems, applicationActivities: nil)
+//        self.present(activity, animated: true, completion: nil)
     }
     
     func learningEventClick(sender: Any?) {
@@ -129,6 +130,11 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
         return 5
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            performSegue(withIdentifier: "toAttentionList", sender: nil)
+        } else {
+            performSegue(withIdentifier: "toFindList", sender: nil)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -170,14 +176,14 @@ class FindViewController: CommanViewController ,UICollectionViewDataSource, UICo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FindAttentionTableViewCell
-        cell.dataDic = mArray[0]
+        cell.dataDic = mArray[indexPath.row]
         cell .initUI()
         cell.accessoryType =  UITableViewCellAccessoryType.disclosureIndicator
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return mArray.count
     }
 }
 

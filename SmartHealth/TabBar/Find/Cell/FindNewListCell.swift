@@ -1,5 +1,5 @@
 //
-//  MyLikeAttentionListCell.swift
+//  FindNewListCell.swift
 //  SmartHealth
 //
 //  Created by laoniu on 2017/10/29.
@@ -7,9 +7,10 @@
 //
 
 import Foundation
-class MySportListListCell: UITableViewCell {
+class FindNewListCell: UITableViewCell {
     
-    private var model: SHLikeRecordHistoryListModel?
+    private var model: SHAttentionListInfoModel?
+    @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!
     
@@ -18,9 +19,10 @@ class MySportListListCell: UITableViewCell {
         // Initialization code
     }
     
-    func initUI(model: SHLikeRecordHistoryListModel?) {
-        mTitleLabel.text = model?.heart_rate
-        mDetailLabel.text = model?.heart_rate_max
+    func initUI(model: SHAttentionListInfoModel?) {
+        mImageView.image = UIImage(named:"item_default")
+        mTitleLabel.text = model?.record_share_name
+        mDetailLabel.text = model?.person_name
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

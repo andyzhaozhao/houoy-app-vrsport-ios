@@ -1,51 +1,38 @@
 //
-//  SportDetailViewController.swift
+//  FindNewViewController.swift
 //  SmartHealth
 //
-//  Created by laoniu on 2017/09/18.
-//  Copyright © 2017年 laoniu. All rights reserved.
+//  Created by laoniu on 10/30/17.
+//  Copyright © 2017 laoniu. All rights reserved.
 //
 
 import UIKit
 import Alamofire
-class SportDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class FindNewViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource {
+    var type: Int = Constants.Essay_List_Type_32
     @IBOutlet weak var tableView: UITableView!
-    private var listModel: SHLikeRecordHistoryInfoModel?
-    private var listNotesModel: [SHLikeRecordHistoryListModel]  = []
+    private var listModel: SHAttentionInfoModel?
+    private var listNotesModel: [SHAttentionListInfoModel]  = []
     private var listPage: Int = 0
+    
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.isNavigationBarHidden = false
         tableView.refreshControl = refreshControl
-        refreshControl.addTarget(self, action: #selector(SportDetailViewController.refresh(sender:)), for: .valueChanged)
-        let rightButton = UIButton()
-        rightButton.frame = CGRect.init(x: 0, y: 0, width: 100, height: 44)
-        rightButton.setTitle("选择条件", for: .normal)
-        rightButton.setTitleColor(UIColor.black, for: .normal)
-        rightButton.addTarget(self, action: #selector(didTapOnRightButton), for: UIControlEvents.touchUpInside)
-        let barButtonItem = UIBarButtonItem(customView: rightButton)
-        self.navigationItem.rightBarButtonItem = barButtonItem
+        refreshControl.addTarget(self, action: #selector(AttentionViewController.refresh(sender:)), for: .valueChanged)
         self.loadData()
     }
     
-    func didTapOnRightButton() {
-        performSegue(withIdentifier: "showConditionView", sender: nil)
-    }
-    
-    
     func loadData(){
-        let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK)
         let parameters: Parameters = [
             Constants.List_Start: listPage,
             Constants.List_Length: Constants.List_Length_Value,
-            Constants.List_OrderColumnName: Constants.RecordVRSport_List_OrderColumnName_Value,
-            Constants.List_OrderDir:Constants.List_OrderDir_Desc,
-            Constants.List_User_PK: pk ?? ""
+            Constants.List_OrderColumnName: Constants.Attention_List_OrderColumnName_Value,
+            Constants.List_OrderDir:Constants.List_OrderDir_Desc
         ]
-        let request = Alamofire.request(Constants.RecordVRSportRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
+        let request = Alamofire.request(Constants.RecordShareRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
         self.view.isUserInteractionEnabled = false
         request.responseJSON { response in
             self.view.isUserInteractionEnabled = true
@@ -53,7 +40,7 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
             case .success(let data):
                 Utils.printMsg(msg:"JSON: \(data)")
                 let dic = data as! NSDictionary
-                self.listModel = SHLikeRecordHistoryInfoModel(JSON: dic as! [String : Any])
+                self.listModel = SHAttentionInfoModel(JSON: dic as! [String : Any])
                 if let page = self.listModel?.start {
                     self.listPage = page
                 }
@@ -90,10 +77,9 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MySportListListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FindAttentionListCell
         cell.initUI(model: self.listNotesModel[indexPath.row])
         cell.tag = indexPath.row
-        cell.isUserInteractionEnabled = false
         return cell
     }
     
@@ -114,5 +100,14 @@ class SportDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toAttentionDetail") {
+            let cell = sender as! UITableViewCell
+            if let nextViewController = segue.destination as? FindDetailViewController{
+                nextViewController.recordShareModel = self.listNotesModel[cell.tag]
+            }
+        }
     }
+    
+    
 }
+

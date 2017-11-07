@@ -63,6 +63,7 @@ class MyLikesViewController: CommanViewController, UITableViewDelegate, UITableV
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
+        self.listNotesModel.removeAll()
         self.loadData()
         tableView.reloadData()
         refreshControl.endRefreshing()
@@ -92,7 +93,7 @@ class MyLikesViewController: CommanViewController, UITableViewDelegate, UITableV
         guard let totle = Int(theTotal) else {
             return
         }
-        if indexPath.row == self.listNotesModel.count - 1 && self.listNotesModel.count < totle{
+        if indexPath.row == self.listNotesModel.count - 1 && self.listNotesModel.count < totle && self.listPage * Constants.List_Length_Value < totle {
             self.listPage = self.listPage+1
             self.loadData()
         }

@@ -2,7 +2,7 @@
 //  AttentionViewController.swift
 //  SmartHealth
 //
-//  Created by RUIQIANG(瑞強) LIU(劉) on 10/30/17.
+//  Created by laoniu on 10/30/17.
 //  Copyright © 2017 laoniu. All rights reserved.
 //
 
@@ -60,6 +60,7 @@ class AttentionViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
+        self.listNotesModel.removeAll()
         self.loadData()
         tableView.reloadData()
         refreshControl.endRefreshing()

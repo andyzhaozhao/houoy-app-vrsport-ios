@@ -10,7 +10,6 @@ import Foundation
 class SportPlaceCell: UITableViewCell {
     
     private var model: SHPlaceresultDataModel?
-    @IBOutlet weak var mImageView: UIImageView!
     @IBOutlet weak var mTitleLabel: UILabel!
     @IBOutlet weak var mDetailLabel: UILabel!
     
@@ -20,7 +19,6 @@ class SportPlaceCell: UITableViewCell {
     }
     
     func initUI(model: SHPlaceresultDataModel?) {
-        mImageView.image = UIImage(named:"item_default")
         mTitleLabel.text = model?.place_name
         mDetailLabel.text = model?.place_desc
     }

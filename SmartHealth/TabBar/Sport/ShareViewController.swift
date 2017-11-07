@@ -32,11 +32,11 @@ class ShareViewController: UIViewController , UITextViewDelegate{
             Constants.Record_VRSport_Save_heart_rate : "100",
             Constants.Record_VRSport_Save_heart_rate_max : "128",
         
-            Constants.Record_VRSport_Save_Pk_Person : "1",
-            Constants.Record_VRSport_Save_Person_Name : "person_name",
+            Constants.Record_VRSport_Save_Pk_Person :  pk ?? "",
+            Constants.Record_VRSport_Save_Person_Name : name ?? "",
         
-            Constants.Record_VRSport_Save_Pk_Place : pk ?? "",
-            Constants.Record_VRSport_Save_Place_Name : name ?? "",
+            Constants.Record_VRSport_Save_Pk_Place : "1",
+            Constants.Record_VRSport_Save_Place_Name : "Place" ,
         
             Constants.Record_VRSport_Save_Pk_Video : selectModel?.pk_video ?? "",
             Constants.Record_VRSport_Save_Video_Name : selectModel?.video_name ?? "",

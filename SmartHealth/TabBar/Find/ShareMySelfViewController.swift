@@ -1,18 +1,18 @@
 //
-//  FirstViewController.swift
+//  ShareMySelfViewController.swift
 //  SmartHealth
 //
-//  Created by laoniu on 11/4/17.
+//  Created by laoniu on 11/7/17.
 //  Copyright © 2017 laoniu. All rights reserved.
 //
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class ShareMySelfViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
     }
 

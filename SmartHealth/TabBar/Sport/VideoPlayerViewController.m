@@ -64,7 +64,6 @@
     }
     //把要播放的内容添加到播放器
     [self.player appendItems:self.itemsToPlay];
-    [self.player pause];
 }
 
 -( void)viewWillAppear:(BOOL)animated{
@@ -82,9 +81,7 @@
         self.navigationController.navigationBarHidden = NO;
         frame = CGRectMake(0, 0, self.playerView.bounds.size.width, self.playerView.bounds.size.height );
     }
-    
     self.player.playerView.frame = frame;
-
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
