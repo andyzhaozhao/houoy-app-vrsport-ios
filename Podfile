@@ -7,4 +7,5 @@ target 'SmartHealth' do
   pod 'Alamofire', '4.5.0'
   pod 'Toast-Swift', '2.0.0'
   pod 'ObjectMapper', '2.2.8'
+  pod 'SDWebImage/WebP', '4.1.2'
 end

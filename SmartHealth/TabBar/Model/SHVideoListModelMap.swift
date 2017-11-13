@@ -68,6 +68,9 @@ class SHVideoresultDataModel: NSObject, Mappable {
     var video_name: String = ""
     var video_desc: String?
     var video_length: String?
+    var actor_times: String?
+    var actor_calorie: String?
+    var path_thumbnail: String = ""
     var path: String = ""
     var pk_folder: String?
     var orderColumnName: String?
@@ -102,6 +105,9 @@ class SHVideoresultDataModel: NSObject, Mappable {
         video_name <- map["video_name"]
         video_desc <- map["video_desc"]
         video_length <- map["video_length"]
+        actor_times <- map["actor_times"]
+        actor_calorie <- map["actor_calorie"]
+        path_thumbnail <- map["path_thumbnail"]
         path <- map["path"]
         pk_folder <- map["pk_folder"]
         pkvalue <- map["pkvalue"]
@@ -109,176 +115,3 @@ class SHVideoresultDataModel: NSObject, Mappable {
         pkfield <- map["pkfield"]
     }
 }
-/*
- {
- "success": true,
- "msg": "查询成功",
- "detailMessage": null,
- "statusCode": null,
- "resultDataType": null,
- "resultData": {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:03:19.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": [
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:10:32.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "2",
- "place_code": "000001",
- "place_name": "海淀区",
- "place_desc": "北京市海淀区",
- "pk_parent": "1",
- "text": "海淀区",
- "pkvalue": "2",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:10:45.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "6",
- "place_code": "000002",
- "place_name": "朝阳区",
- "place_desc": null,
- "pk_parent": "1",
- "text": "朝阳区",
- "pkvalue": "6",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:11:00.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": [
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-09-12 21:11:12.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "8",
- "place_code": "000003001",
- "place_name": "古城公园",
- "place_desc": null,
- "pk_parent": "7",
- "text": "古城公园",
- "pkvalue": "8",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- }
- ],
- "pk_place": "7",
- "place_code": "000003",
- "place_name": "石景山区",
- "place_desc": null,
- "pk_parent": "1",
- "text": "石景山区",
- "pkvalue": "7",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- {
- "memo": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null,
- "be_std": null,
- "ts": "2017-10-27 19:57:51.0",
- "dr": null,
- "start": null,
- "length": null,
- "orderColumnName": null,
- "orderDir": null,
- "nodes": null,
- "pk_place": "9",
- "place_code": "000004",
- "place_name": "门头沟区",
- "place_desc": null,
- "pk_parent": "1",
- "text": "门头沟区",
- "pkvalue": "9",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- }
- ],
- "pk_place": "1",
- "place_code": "000",
- "place_name": "root",
- "place_desc": "root",
- "pk_parent": "0",
- "text": "root",
- "pkvalue": "1",
- "tableName": "im_place",
- "parentPKField": "pk_parent",
- "pkfield": "pk_place"
- },
- "uploadId": null,
- "def1": null,
- "def2": null,
- "def3": null,
- "def4": null,
- "def5": null
- }
- */

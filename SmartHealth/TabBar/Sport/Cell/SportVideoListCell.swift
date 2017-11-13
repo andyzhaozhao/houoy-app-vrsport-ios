@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import SDWebImage
+
 class SportVideoListCell: UITableViewCell {
     
     private var model: SHVideoresultDataModel?
@@ -22,7 +24,9 @@ class SportVideoListCell: UITableViewCell {
     }
     
     func initUI(model: SHVideoresultDataModel?) {
-        mImageView.image = UIImage(named:"item_default")
+        if(model != nil){
+            mImageView.sd_setImage(with: URL(string: (model?.path_thumbnail)! ), placeholderImage: UIImage(named: "item_default"))
+        }
         mTitleLabel.text = model?.video_name
         mDetailLabel.text = model?.video_desc
         if let progress = model?.progress {
