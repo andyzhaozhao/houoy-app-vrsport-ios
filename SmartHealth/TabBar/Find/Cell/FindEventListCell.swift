@@ -20,7 +20,9 @@ class FindEventListCell: UITableViewCell {
     }
     
     func initUI(model: SHEssayListInfoModel?) {
-        mImageView.image = UIImage(named:"item_default")
+        if(model != nil){
+            mImageView.sd_setImage(with: URL(string: (model?.path_thumbnail)! ), placeholderImage: UIImage(named: "item_default"))
+        }
         mTitleLabel.text = model?.essay_name
         mDetailLabel.text = model?.essay_subname
     }

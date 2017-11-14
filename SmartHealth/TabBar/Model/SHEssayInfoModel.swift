@@ -74,6 +74,7 @@ class SHEssayListInfoModel: Mappable {
     var ts_start: String?
     var ts_end: String?
     var pk_type: String?
+    var path_thumbnail: String?
     var pk_person: String = ""
     var person_name: String = ""
     var pkvalue: String?
@@ -107,6 +108,7 @@ class SHEssayListInfoModel: Mappable {
         ts_start <- map["ts_start"]
         ts_end <- map["ts_end"]
         pk_type <- map["pk_type"]
+        path_thumbnail <- map["path_thumbnail"]
         pk_person <- map["pk_person"]
         person_name <- map["pk_person"]
         pkvalue <- map["pkvalue"]
