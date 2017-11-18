@@ -79,8 +79,12 @@ class SHVideoresultDataModel: NSObject, Mappable {
     var tableName: String?
     var pkfield: String?
     
-    var download: DownladStatus = DownladStatus.NoDownlaod
-    var progress: Float = 0
+    var downloadTempPath : URL?
+    var downloadPath : URL?
+    var downloadSize : CLongLong = 0
+    var fileSize : CLongLong = 0
+    var cell : SportVideoListCell?
+    var sessionTask : SHURLSessionDownloadTask?
     
     required init?(map: Map) {
         

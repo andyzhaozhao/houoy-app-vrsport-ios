@@ -11,6 +11,8 @@ import Foundation
 struct Constants {
     public static let Debug = true
     
+    //dopwnload
+    public static let ModelKey = "modelkey"
     //common
     public static let ContentType = "Content-Type"
     public static let ContentTypeJson = "application/json"
