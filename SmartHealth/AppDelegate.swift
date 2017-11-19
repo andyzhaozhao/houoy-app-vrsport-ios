@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
-        
+        HCKCentralManager.shared().scanPeripherals(withScanTime: 1) { (error, list) in
+        }
         let isSpash = UserDefaults.standard.bool(forKey: Constants.SH_Splash)
         if(!isSpash){
             showView(name: "SHSplashPageViewController")
