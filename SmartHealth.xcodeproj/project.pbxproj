@@ -60,14 +60,37 @@
 		7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F33F1F937E970008E688 /* GLKit.framework */; };
 		7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3411F937E9D0008E688 /* CoreMotion.framework */; };
 		7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3431F937EA40008E688 /* libz.tbd */; };
-		7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3461F9380020008E688 /* UtoVRPlayer.framework */; };
-		7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */; };
 		7E35F34B1F9380840008E688 /* wu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F34A1F9380840008E688 /* wu.mp4 */; };
 		7E7E75471FAEB1FF00FB3595 /* SHResetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E75461FAEB1FF00FB3595 /* SHResetPasswordModel.swift */; };
 		7E97AB271FAD554C004E5E38 /* SHSplashPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB261FAD554C004E5E38 /* SHSplashPageViewController.swift */; };
 		7E97AB291FAD5569004E5E38 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB281FAD5569004E5E38 /* FirstViewController.swift */; };
 		7E97AB2B1FAD5B31004E5E38 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB2A1FAD5B31004E5E38 /* SecondViewController.swift */; };
 		7E97AB2D1FAD5B40004E5E38 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB2C1FAD5B40004E5E38 /* ThirdViewController.swift */; };
+		7E9F6EF31FBDBBBA0088919D /* DownloadManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F6EF21FBDBBBA0088919D /* DownloadManger.swift */; };
+		7ED32DF51FC0470400DE9E67 /* SHURLSessionDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32DF41FC0470400DE9E67 /* SHURLSessionDownloadTask.swift */; };
+		7ED32DFA1FC1281B00DE9E67 /* UtoVRPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED32DF81FC1281B00DE9E67 /* UtoVRPlayer.framework */; };
+		7ED32DFB1FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ED32DF91FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle */; };
+		7ED32E421FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E0A1FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.m */; };
+		7ED32E431FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E0C1FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.m */; };
+		7ED32E441FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E0E1FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.m */; };
+		7ED32E451FC1293B00DE9E67 /* HCKCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E111FC1293B00DE9E67 /* HCKCentralManager.m */; };
+		7ED32E461FC1293B00DE9E67 /* HCKCommunicationLogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E171FC1293B00DE9E67 /* HCKCommunicationLogFileManager.m */; };
+		7ED32E471FC1293B00DE9E67 /* HCKAlarmClockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E1B1FC1293B00DE9E67 /* HCKAlarmClockModel.m */; };
+		7ED32E481FC1293B00DE9E67 /* HCKCommuDataConvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E1D1FC1293B00DE9E67 /* HCKCommuDataConvModel.m */; };
+		7ED32E491FC1293B00DE9E67 /* HCKCommuDataConversionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E201FC1293B00DE9E67 /* HCKCommuDataConversionTool.m */; };
+		7ED32E4A1FC1293B00DE9E67 /* HCKCommunicationTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E221FC1293B00DE9E67 /* HCKCommunicationTask.m */; };
+		7ED32E4B1FC1293B00DE9E67 /* HCKPeripheralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E241FC1293B00DE9E67 /* HCKPeripheralManager.m */; };
+		7ED32E4C1FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E271FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.m */; };
+		7ED32E4D1FC1293B00DE9E67 /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E2A1FC1293B00DE9E67 /* MASCompositeConstraint.m */; };
+		7ED32E4E1FC1293B00DE9E67 /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E2D1FC1293B00DE9E67 /* MASConstraint.m */; };
+		7ED32E4F1FC1293B00DE9E67 /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E2F1FC1293B00DE9E67 /* MASConstraintMaker.m */; };
+		7ED32E501FC1293B00DE9E67 /* MASLayoutConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E311FC1293B00DE9E67 /* MASLayoutConstraint.m */; };
+		7ED32E511FC1293B00DE9E67 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E351FC1293B00DE9E67 /* MASViewAttribute.m */; };
+		7ED32E521FC1293B00DE9E67 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E371FC1293B00DE9E67 /* MASViewConstraint.m */; };
+		7ED32E531FC1293B00DE9E67 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E391FC1293B00DE9E67 /* NSArray+MASAdditions.m */; };
+		7ED32E541FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E3C1FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.m */; };
+		7ED32E551FC1293B00DE9E67 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E3E1FC1293B00DE9E67 /* View+MASAdditions.m */; };
+		7ED32E561FC1293B00DE9E67 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32E411FC1293B00DE9E67 /* ViewController+MASAdditions.m */; };
 		7EE7406F1FB08F3200EB0696 /* MyAttentionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7406E1FB08F3200EB0696 /* MyAttentionDetailViewController.swift */; };
 		7EE740711FB0B04400EB0696 /* FindNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740701FB0B04400EB0696 /* FindNewViewController.swift */; };
 		7EE740731FB0B0B100EB0696 /* FindNewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740721FB0B0B100EB0696 /* FindNewListCell.swift */; };
@@ -164,14 +187,66 @@
 		7E35F33F1F937E970008E688 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7E35F3411F937E9D0008E688 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7E35F3431F937EA40008E688 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		7E35F3461F9380020008E688 /* UtoVRPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UtoVRPlayer.framework; sourceTree = "<group>"; };
-		7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UtoVRPlayerResouces.bundle; sourceTree = "<group>"; };
 		7E35F34A1F9380840008E688 /* wu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wu.mp4; sourceTree = "<group>"; };
 		7E7E75461FAEB1FF00FB3595 /* SHResetPasswordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHResetPasswordModel.swift; sourceTree = "<group>"; };
 		7E97AB261FAD554C004E5E38 /* SHSplashPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSplashPageViewController.swift; sourceTree = "<group>"; };
 		7E97AB281FAD5569004E5E38 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		7E97AB2A1FAD5B31004E5E38 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7E97AB2C1FAD5B40004E5E38 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		7E9F6EF21FBDBBBA0088919D /* DownloadManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManger.swift; sourceTree = "<group>"; };
+		7ED32DF41FC0470400DE9E67 /* SHURLSessionDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHURLSessionDownloadTask.swift; sourceTree = "<group>"; };
+		7ED32DF81FC1281B00DE9E67 /* UtoVRPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UtoVRPlayer.framework; sourceTree = "<group>"; };
+		7ED32DF91FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UtoVRPlayerResouces.bundle; sourceTree = "<group>"; };
+		7ED32E091FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBPeripheral+HCKAdditionalInfo.h"; sourceTree = "<group>"; };
+		7ED32E0A1FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBPeripheral+HCKAdditionalInfo.m"; sourceTree = "<group>"; };
+		7ED32E0B1FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+HCKBluetoothAdd.h"; sourceTree = "<group>"; };
+		7ED32E0C1FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+HCKBluetoothAdd.m"; sourceTree = "<group>"; };
+		7ED32E0D1FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HCKBluetoothAdd.h"; sourceTree = "<group>"; };
+		7ED32E0E1FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HCKBluetoothAdd.m"; sourceTree = "<group>"; };
+		7ED32E101FC1293B00DE9E67 /* HCKCentralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCentralManager.h; sourceTree = "<group>"; };
+		7ED32E111FC1293B00DE9E67 /* HCKCentralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKCentralManager.m; sourceTree = "<group>"; };
+		7ED32E131FC1293B00DE9E67 /* HCKBluetoothGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKBluetoothGlobal.h; sourceTree = "<group>"; };
+		7ED32E141FC1293B00DE9E67 /* HCKCommunicationDataDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCommunicationDataDefine.h; sourceTree = "<group>"; };
+		7ED32E161FC1293B00DE9E67 /* HCKCommunicationLogFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCommunicationLogFileManager.h; sourceTree = "<group>"; };
+		7ED32E171FC1293B00DE9E67 /* HCKCommunicationLogFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKCommunicationLogFileManager.m; sourceTree = "<group>"; };
+		7ED32E181FC1293B00DE9E67 /* HCKCommunicationGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCommunicationGlobal.h; sourceTree = "<group>"; };
+		7ED32E1A1FC1293B00DE9E67 /* HCKAlarmClockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKAlarmClockModel.h; sourceTree = "<group>"; };
+		7ED32E1B1FC1293B00DE9E67 /* HCKAlarmClockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKAlarmClockModel.m; sourceTree = "<group>"; };
+		7ED32E1C1FC1293B00DE9E67 /* HCKCommuDataConvModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCommuDataConvModel.h; sourceTree = "<group>"; };
+		7ED32E1D1FC1293B00DE9E67 /* HCKCommuDataConvModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKCommuDataConvModel.m; sourceTree = "<group>"; };
+		7ED32E1F1FC1293B00DE9E67 /* HCKCommuDataConversionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCommuDataConversionTool.h; sourceTree = "<group>"; };
+		7ED32E201FC1293B00DE9E67 /* HCKCommuDataConversionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKCommuDataConversionTool.m; sourceTree = "<group>"; };
+		7ED32E211FC1293B00DE9E67 /* HCKCommunicationTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKCommunicationTask.h; sourceTree = "<group>"; };
+		7ED32E221FC1293B00DE9E67 /* HCKCommunicationTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKCommunicationTask.m; sourceTree = "<group>"; };
+		7ED32E231FC1293B00DE9E67 /* HCKPeripheralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKPeripheralManager.h; sourceTree = "<group>"; };
+		7ED32E241FC1293B00DE9E67 /* HCKPeripheralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKPeripheralManager.m; sourceTree = "<group>"; };
+		7ED32E261FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCKConnectionStatusMonitoringManager.h; sourceTree = "<group>"; };
+		7ED32E271FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCKConnectionStatusMonitoringManager.m; sourceTree = "<group>"; };
+		7ED32E291FC1293B00DE9E67 /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
+		7ED32E2A1FC1293B00DE9E67 /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
+		7ED32E2B1FC1293B00DE9E67 /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		7ED32E2C1FC1293B00DE9E67 /* MASConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraint.h; sourceTree = "<group>"; };
+		7ED32E2D1FC1293B00DE9E67 /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		7ED32E2E1FC1293B00DE9E67 /* MASConstraintMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASConstraintMaker.h; sourceTree = "<group>"; };
+		7ED32E2F1FC1293B00DE9E67 /* MASConstraintMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraintMaker.m; sourceTree = "<group>"; };
+		7ED32E301FC1293B00DE9E67 /* MASLayoutConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASLayoutConstraint.h; sourceTree = "<group>"; };
+		7ED32E311FC1293B00DE9E67 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASLayoutConstraint.m; sourceTree = "<group>"; };
+		7ED32E321FC1293B00DE9E67 /* Masonry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Masonry.h; sourceTree = "<group>"; };
+		7ED32E331FC1293B00DE9E67 /* MASUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASUtilities.h; sourceTree = "<group>"; };
+		7ED32E341FC1293B00DE9E67 /* MASViewAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewAttribute.h; sourceTree = "<group>"; };
+		7ED32E351FC1293B00DE9E67 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
+		7ED32E361FC1293B00DE9E67 /* MASViewConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASViewConstraint.h; sourceTree = "<group>"; };
+		7ED32E371FC1293B00DE9E67 /* MASViewConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewConstraint.m; sourceTree = "<group>"; };
+		7ED32E381FC1293B00DE9E67 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASAdditions.h"; sourceTree = "<group>"; };
+		7ED32E391FC1293B00DE9E67 /* NSArray+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MASAdditions.m"; sourceTree = "<group>"; };
+		7ED32E3A1FC1293B00DE9E67 /* NSArray+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		7ED32E3B1FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+MASDebugAdditions.h"; sourceTree = "<group>"; };
+		7ED32E3C1FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
+		7ED32E3D1FC1293B00DE9E67 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
+		7ED32E3E1FC1293B00DE9E67 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
+		7ED32E3F1FC1293B00DE9E67 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		7ED32E401FC1293B00DE9E67 /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		7ED32E411FC1293B00DE9E67 /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		7EE7406E1FB08F3200EB0696 /* MyAttentionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttentionDetailViewController.swift; sourceTree = "<group>"; };
 		7EE740701FB0B04400EB0696 /* FindNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNewViewController.swift; sourceTree = "<group>"; };
 		7EE740721FB0B0B100EB0696 /* FindNewListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNewListCell.swift; sourceTree = "<group>"; };
@@ -196,7 +271,7 @@
 			files = (
 				7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */,
 				7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */,
-				7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */,
+				7ED32DFA1FC1281B00DE9E67 /* UtoVRPlayer.framework in Frameworks */,
 				7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */,
 				66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */,
 			);
@@ -261,7 +336,6 @@
 		1D3E9EC21F3209BD006CDD87 = {
 			isa = PBXGroup;
 			children = (
-				7E35F3451F9380020008E688 /* UtoVRPlayerSDK */,
 				1D3E9F3D1F391E3B006CDD87 /* Resources */,
 				1D3E9ECD1F3209BD006CDD87 /* SmartHealth */,
 				1D3E9EE41F3209BD006CDD87 /* SmartHealthTests */,
@@ -285,6 +359,7 @@
 		1D3E9ECD1F3209BD006CDD87 /* SmartHealth */ = {
 			isa = PBXGroup;
 			children = (
+				7ED32DF61FC1281B00DE9E67 /* Libs */,
 				7E97AB251FAD5515004E5E38 /* Splash */,
 				1D9AF8C11F6F3AC200EAE44D /* Utils */,
 				1D3E9F361F39185B006CDD87 /* SmartHealth-Bridging-Header.h */,
@@ -362,6 +437,7 @@
 		1D3E9F191F35D877006CDD87 /* Sport */ = {
 			isa = PBXGroup;
 			children = (
+				7E9F6EF11FBDBBBA0088919D /* Download */,
 				1D2D0CD61FA58665004ED20A /* Cell */,
 				1DCCE3C41F98CB1C000E5106 /* SportListViewController.swift */,
 				1D3E9F3A1F391CB1006CDD87 /* VideoPlayerViewController.h */,
@@ -440,16 +516,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7E35F3451F9380020008E688 /* UtoVRPlayerSDK */ = {
-			isa = PBXGroup;
-			children = (
-				7E35F3461F9380020008E688 /* UtoVRPlayer.framework */,
-				7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */,
-			);
-			name = UtoVRPlayerSDK;
-			path = SmartHealth/Libs/UtoVRPlayerSDK;
-			sourceTree = "<group>";
-		};
 		7E97AB251FAD5515004E5E38 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +525,162 @@
 				7E97AB2C1FAD5B40004E5E38 /* ThirdViewController.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		7E9F6EF11FBDBBBA0088919D /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				7E9F6EF21FBDBBBA0088919D /* DownloadManger.swift */,
+				7ED32DF41FC0470400DE9E67 /* SHURLSessionDownloadTask.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		7ED32DF61FC1281B00DE9E67 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E061FC1293B00DE9E67 /* BluetoothSDK */,
+				7ED32DF71FC1281B00DE9E67 /* UtoVRPlayerSDK */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		7ED32DF71FC1281B00DE9E67 /* UtoVRPlayerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32DF81FC1281B00DE9E67 /* UtoVRPlayer.framework */,
+				7ED32DF91FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle */,
+			);
+			path = UtoVRPlayerSDK;
+			sourceTree = "<group>";
+		};
+		7ED32E061FC1293B00DE9E67 /* BluetoothSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E071FC1293B00DE9E67 /* BluetoothFuntion */,
+				7ED32E281FC1293B00DE9E67 /* Masonry */,
+			);
+			path = BluetoothSDK;
+			sourceTree = "<group>";
+		};
+		7ED32E071FC1293B00DE9E67 /* BluetoothFuntion */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E081FC1293B00DE9E67 /* category */,
+				7ED32E0F1FC1293B00DE9E67 /* centralManager */,
+				7ED32E121FC1293B00DE9E67 /* defines */,
+				7ED32E151FC1293B00DE9E67 /* fileManager */,
+				7ED32E181FC1293B00DE9E67 /* HCKCommunicationGlobal.h */,
+				7ED32E191FC1293B00DE9E67 /* model */,
+				7ED32E1E1FC1293B00DE9E67 /* peripheralManager */,
+				7ED32E251FC1293B00DE9E67 /* statusMonitoringManager */,
+			);
+			path = BluetoothFuntion;
+			sourceTree = "<group>";
+		};
+		7ED32E081FC1293B00DE9E67 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E091FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.h */,
+				7ED32E0A1FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.m */,
+				7ED32E0B1FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.h */,
+				7ED32E0C1FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.m */,
+				7ED32E0D1FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.h */,
+				7ED32E0E1FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
+		7ED32E0F1FC1293B00DE9E67 /* centralManager */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E101FC1293B00DE9E67 /* HCKCentralManager.h */,
+				7ED32E111FC1293B00DE9E67 /* HCKCentralManager.m */,
+			);
+			path = centralManager;
+			sourceTree = "<group>";
+		};
+		7ED32E121FC1293B00DE9E67 /* defines */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E131FC1293B00DE9E67 /* HCKBluetoothGlobal.h */,
+				7ED32E141FC1293B00DE9E67 /* HCKCommunicationDataDefine.h */,
+			);
+			path = defines;
+			sourceTree = "<group>";
+		};
+		7ED32E151FC1293B00DE9E67 /* fileManager */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E161FC1293B00DE9E67 /* HCKCommunicationLogFileManager.h */,
+				7ED32E171FC1293B00DE9E67 /* HCKCommunicationLogFileManager.m */,
+			);
+			path = fileManager;
+			sourceTree = "<group>";
+		};
+		7ED32E191FC1293B00DE9E67 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E1A1FC1293B00DE9E67 /* HCKAlarmClockModel.h */,
+				7ED32E1B1FC1293B00DE9E67 /* HCKAlarmClockModel.m */,
+				7ED32E1C1FC1293B00DE9E67 /* HCKCommuDataConvModel.h */,
+				7ED32E1D1FC1293B00DE9E67 /* HCKCommuDataConvModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		7ED32E1E1FC1293B00DE9E67 /* peripheralManager */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E1F1FC1293B00DE9E67 /* HCKCommuDataConversionTool.h */,
+				7ED32E201FC1293B00DE9E67 /* HCKCommuDataConversionTool.m */,
+				7ED32E211FC1293B00DE9E67 /* HCKCommunicationTask.h */,
+				7ED32E221FC1293B00DE9E67 /* HCKCommunicationTask.m */,
+				7ED32E231FC1293B00DE9E67 /* HCKPeripheralManager.h */,
+				7ED32E241FC1293B00DE9E67 /* HCKPeripheralManager.m */,
+			);
+			path = peripheralManager;
+			sourceTree = "<group>";
+		};
+		7ED32E251FC1293B00DE9E67 /* statusMonitoringManager */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E261FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.h */,
+				7ED32E271FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.m */,
+			);
+			path = statusMonitoringManager;
+			sourceTree = "<group>";
+		};
+		7ED32E281FC1293B00DE9E67 /* Masonry */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32E291FC1293B00DE9E67 /* MASCompositeConstraint.h */,
+				7ED32E2A1FC1293B00DE9E67 /* MASCompositeConstraint.m */,
+				7ED32E2B1FC1293B00DE9E67 /* MASConstraint+Private.h */,
+				7ED32E2C1FC1293B00DE9E67 /* MASConstraint.h */,
+				7ED32E2D1FC1293B00DE9E67 /* MASConstraint.m */,
+				7ED32E2E1FC1293B00DE9E67 /* MASConstraintMaker.h */,
+				7ED32E2F1FC1293B00DE9E67 /* MASConstraintMaker.m */,
+				7ED32E301FC1293B00DE9E67 /* MASLayoutConstraint.h */,
+				7ED32E311FC1293B00DE9E67 /* MASLayoutConstraint.m */,
+				7ED32E321FC1293B00DE9E67 /* Masonry.h */,
+				7ED32E331FC1293B00DE9E67 /* MASUtilities.h */,
+				7ED32E341FC1293B00DE9E67 /* MASViewAttribute.h */,
+				7ED32E351FC1293B00DE9E67 /* MASViewAttribute.m */,
+				7ED32E361FC1293B00DE9E67 /* MASViewConstraint.h */,
+				7ED32E371FC1293B00DE9E67 /* MASViewConstraint.m */,
+				7ED32E381FC1293B00DE9E67 /* NSArray+MASAdditions.h */,
+				7ED32E391FC1293B00DE9E67 /* NSArray+MASAdditions.m */,
+				7ED32E3A1FC1293B00DE9E67 /* NSArray+MASShorthandAdditions.h */,
+				7ED32E3B1FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.h */,
+				7ED32E3C1FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				7ED32E3D1FC1293B00DE9E67 /* View+MASAdditions.h */,
+				7ED32E3E1FC1293B00DE9E67 /* View+MASAdditions.m */,
+				7ED32E3F1FC1293B00DE9E67 /* View+MASShorthandAdditions.h */,
+				7ED32E401FC1293B00DE9E67 /* ViewController+MASAdditions.h */,
+				7ED32E411FC1293B00DE9E67 /* ViewController+MASAdditions.m */,
+			);
+			path = Masonry;
 			sourceTree = "<group>";
 		};
 		7EF608801FA7D3BE00C33DFF /* Cell */ = {
@@ -596,7 +818,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */,
+				7ED32DFB1FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle in Resources */,
 				1D3E9EDB1F3209BD006CDD87 /* LaunchScreen.storyboard in Resources */,
 				1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */,
 				1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */,
@@ -702,8 +924,11 @@
 			files = (
 				1D3E9F391F39185B006CDD87 /* ChatViewController.m in Sources */,
 				1D3E9F061F3286B4006CDD87 /* LoginViewController.swift in Sources */,
+				7ED32E4A1FC1293B00DE9E67 /* HCKCommunicationTask.m in Sources */,
 				7E2131E51FA9EE64002D7143 /* MySportListListCell.swift in Sources */,
 				1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */,
+				7ED32E4E1FC1293B00DE9E67 /* MASConstraint.m in Sources */,
+				7ED32E431FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.m in Sources */,
 				7E3152041FADD00900205959 /* SHSaveRecordModel.swift in Sources */,
 				1D3E9F321F36A9A2006CDD87 /* DetailViewController.swift in Sources */,
 				1D2D0CD81FA5868A004ED20A /* SportPlaceCell.swift in Sources */,
@@ -717,48 +942,68 @@
 				1D3E9F0D1F35A3CA006CDD87 /* TestViewController.swift in Sources */,
 				7E97AB271FAD554C004E5E38 /* SHSplashPageViewController.swift in Sources */,
 				1DCCE3CB1F9E2C6F000E5106 /* DataUtils.swift in Sources */,
+				7ED32E551FC1293B00DE9E67 /* View+MASAdditions.m in Sources */,
 				7EE740731FB0B0B100EB0696 /* FindNewListCell.swift in Sources */,
 				1DBAA9C41F9F63FC00406445 /* ApiHelper.swift in Sources */,
 				1D3E9F331F36A9A2006CDD87 /* EventViewController.swift in Sources */,
 				1D3E9F1B1F35D877006CDD87 /* MainTabBarController.swift in Sources */,
 				1DCCE3C91F9B2F64000E5106 /* SportDetailConditionViewController.swift in Sources */,
+				7ED32E4D1FC1293B00DE9E67 /* MASCompositeConstraint.m in Sources */,
+				7ED32E481FC1293B00DE9E67 /* HCKCommuDataConvModel.m in Sources */,
 				1DC116661F6D0DB0002FBB60 /* SettingInfoViewController.swift in Sources */,
 				1D3E9F281F369C94006CDD87 /* MessageViewController.swift in Sources */,
 				7EF6087C1FA7627C00C33DFF /* FindAttentionListCell.swift in Sources */,
 				1DBAA9CB1FA1439400406445 /* SHPlaceModelMap.swift in Sources */,
 				1D3E9ECF1F3209BD006CDD87 /* AppDelegate.swift in Sources */,
+				7ED32E461FC1293B00DE9E67 /* HCKCommunicationLogFileManager.m in Sources */,
 				1D2D0CE31FA5CAF0004ED20A /* FindEventListCell.swift in Sources */,
+				7ED32E4C1FC1293B00DE9E67 /* HCKConnectionStatusMonitoringManager.m in Sources */,
 				1D2D0CE01FA5C422004ED20A /* SHEssayInfoModel.swift in Sources */,
+				7ED32E471FC1293B00DE9E67 /* HCKAlarmClockModel.m in Sources */,
 				1D9AF8C31F6F3AD400EAE44D /* Constants.swift in Sources */,
 				7E97AB291FAD5569004E5E38 /* FirstViewController.swift in Sources */,
 				1DCCE3C51F98CB1D000E5106 /* SportListViewController.swift in Sources */,
+				7ED32E501FC1293B00DE9E67 /* MASLayoutConstraint.m in Sources */,
 				1D3E9F1F1F35D963006CDD87 /* SettingViewController.swift in Sources */,
 				7EF608781FA75F3100C33DFF /* SHAttentionInfoModel.swift in Sources */,
 				7EE7406F1FB08F3200EB0696 /* MyAttentionDetailViewController.swift in Sources */,
 				1DCCE3C71F9B2C86000E5106 /* MyLikesViewController.swift in Sources */,
+				7ED32E511FC1293B00DE9E67 /* MASViewAttribute.m in Sources */,
 				1DC1166D1F6E0676002FBB60 /* ShareViewController.swift in Sources */,
 				7E97AB2B1FAD5B31004E5E38 /* SecondViewController.swift in Sources */,
 				1D3E9F311F36A9A2006CDD87 /* DetailTableViewCell.swift in Sources */,
+				7ED32E4F1FC1293B00DE9E67 /* MASConstraintMaker.m in Sources */,
 				1D2D0CDE1FA5A850004ED20A /* SportVideoListCell.swift in Sources */,
 				1DC116641F6B36CF002FBB60 /* FindCollectionViewCell.swift in Sources */,
 				7EF608761FA75A6200C33DFF /* FindAttentionTableViewCell.swift in Sources */,
 				7E97AB2D1FAD5B40004E5E38 /* ThirdViewController.swift in Sources */,
+				7ED32E441FC1293B00DE9E67 /* NSString+HCKBluetoothAdd.m in Sources */,
 				7EF608841FA7D56600C33DFF /* MyLikeAttentionListCell.swift in Sources */,
+				7ED32E4B1FC1293B00DE9E67 /* HCKPeripheralManager.m in Sources */,
 				7EE740751FB0B2DC00EB0696 /* ShareMySelfViewController.swift in Sources */,
+				7E9F6EF31FBDBBBA0088919D /* DownloadManger.swift in Sources */,
 				1D2D0CE51FA5DC0F004ED20A /* FindDetailViewController.swift in Sources */,
 				1D3E9F011F3213AB006CDD87 /* CommanViewController.swift in Sources */,
 				7E7E75471FAEB1FF00FB3595 /* SHResetPasswordModel.swift in Sources */,
 				1DBAA9C61FA0BDE300406445 /* Utils.swift in Sources */,
+				7ED32E521FC1293B00DE9E67 /* MASViewConstraint.m in Sources */,
+				7ED32E531FC1293B00DE9E67 /* NSArray+MASAdditions.m in Sources */,
+				7ED32E561FC1293B00DE9E67 /* ViewController+MASAdditions.m in Sources */,
 				1DB688101FA5EFBC00BA7087 /* SHFindPersonFollow.swift in Sources */,
 				1DC1166B1F6D472F002FBB60 /* SportCollectionViewCell.m in Sources */,
 				1D9AF8C71F6F51E200EAE44D /* DeviceSettingViewController.swift in Sources */,
+				7ED32E421FC1293B00DE9E67 /* CBPeripheral+HCKAdditionalInfo.m in Sources */,
 				1D2D0CDC1FA5A1D8004ED20A /* SHVideoListModelMap.swift in Sources */,
+				7ED32E491FC1293B00DE9E67 /* HCKCommuDataConversionTool.m in Sources */,
+				7ED32DF51FC0470400DE9E67 /* SHURLSessionDownloadTask.swift in Sources */,
 				7EF608881FA8B21200C33DFF /* SHRegisterModel.swift in Sources */,
 				7EF6087A1FA7619F00C33DFF /* AttentionViewController.swift in Sources */,
 				7EF608821FA7D3BF00C33DFF /* SHLikeAttentionInfoModel.swift in Sources */,
+				7ED32E541FC1293B00DE9E67 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				1DC116601F6AA737002FBB60 /* FindPwdViewController.swift in Sources */,
 				1D3E9F0B1F35A35B006CDD87 /* LoginNavigationController.swift in Sources */,
 				1D3E9F1C1F35D877006CDD87 /* MyPageViewController.swift in Sources */,
+				7ED32E451FC1293B00DE9E67 /* HCKCentralManager.m in Sources */,
 				1D2D0CE81FA5EA9C004ED20A /* StringExtension.swift in Sources */,
 				1D3E9F3C1F391CB1006CDD87 /* VideoPlayerViewController.m in Sources */,
 				1D3E9F1D1F35D877006CDD87 /* SportAreaViewController.swift in Sources */,

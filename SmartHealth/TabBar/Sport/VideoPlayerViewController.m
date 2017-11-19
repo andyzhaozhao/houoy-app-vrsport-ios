@@ -4,6 +4,7 @@
 #import <UtoVRPlayer/UtoVRPlayer.h>
 #import "SportCollectionViewCell.h"
 #import "SmartHealth-Swift.h"
+#import "HCKCommunicationGlobal.h"
 
 @interface VideoPlayerViewController () <UVPlayerDelegate>
 @property (nonatomic,strong) UVPlayer *player;

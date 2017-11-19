@@ -4,3 +4,4 @@
 
 #import "ChatViewController.h"
 #import "VideoPlayerViewController.h"
+#import "HCKCommunicationGlobal.h"

@@ -8,11 +8,7 @@
 
 import UIKit
 import Alamofire
-enum DownladStatus: Int {
-    case NoDownlaod = 0
-    case Downlaoding = 1
-    case DownlaodOver = 2
-}
+
 class SportListViewController: CommanViewController, UITableViewDelegate, UITableViewDataSource,SelectAreaDelegate {
     
     @IBOutlet weak var tableView: UITableView!
@@ -68,13 +64,8 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
                     return
                 }
                 for video in theVideoList {
-                    let targetURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + video.video_name)
-                    if FileManager.default.fileExists(atPath: targetURL.path) {
-                        video.download = DownladStatus.DownlaodOver
-                    } else {
-                        // file does not exist
-                        video.download = DownladStatus.NoDownlaod
-                    }
+                    video.downloadTempPath = Utils.getFileMangetr().appendingPathComponent(Constants.Download_Temp + video.video_code! + Constants.Download_File_Divide)
+                    video.downloadPath = Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + video.video_code! + Constants.Download_File_Divide)
                     self.videoListNotesModel.append(video)
                 }
                 self.tableView.reloadData()
@@ -91,68 +82,24 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     func refresh(sender: UIRefreshControl) {
         refreshControl.beginRefreshing()
         self.videoListNotesModel.removeAll()
+        self.videPage = 0
         self.loadData(folderModel: self.folderModel)
         tableView.reloadData()
         refreshControl.endRefreshing()
-    }
-    func downloadVideo(model: SHVideoresultDataModel){
-        model.download = DownladStatus.Downlaoding
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let tempURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Temp + model.video_name)
-            return (tempURL, [.removePreviousFile, .createIntermediateDirectories])
-        }
-        
-        //"http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
-        let linkpath = Constants.Download_Base_Link + model.path + Constants.Download_File_Divide + model.video_name
-        print(linkpath)
-        Alamofire.download(linkpath, to: destination)
-            .downloadProgress { (progress) in
-                print("Download Progress: \(progress.fractionCompleted)")
-                model.download = DownladStatus.Downlaoding
-                model.progress = Float(progress.fractionCompleted)
-                self.tableView.reloadData()
-            }
-            .responseData { response in
-                switch response.result {
-                case .success(_):
-                    do {
-                        let targetPathURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download)
-                        
-                        try FileManager.default.createDirectory(at: targetPathURL, withIntermediateDirectories: true, attributes: nil)
-                        
-                        if FileManager.default.fileExists(atPath: targetPathURL.appendingPathComponent(model.video_name).path) {
-                            try FileManager.default.removeItem(at: targetPathURL.appendingPathComponent(model.video_name))
-                        }
-                        try! FileManager.default.moveItem(at: response.destinationURL! , to: targetPathURL.appendingPathComponent(model.video_name))
-                        
-                        self.view.makeToast("视频下载成功", duration: 3.0, position: .center)
-                        model.download = DownladStatus.DownlaodOver
-                        model.progress = 0
-                    } catch {
-                        print(error)
-                        self.view.makeToast("视频下载失败", duration: 3.0, position: .center)
-                        model.download = DownladStatus.NoDownlaod
-                    }
-                    
-                    self.tableView.reloadData()
-                case .failure:
-                    print("downlaod error")
-                    //self.resumeData = response.resumeData
-                }
-        }
-        self.tableView.reloadData()
     }
     
     // MARK: - UITable Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.videoListNotesModel[indexPath.row]
-        if(model.download == DownladStatus.Downlaoding ){
-            return
-        }
         self.selectModel = model
-        let targetURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + model.video_name)
-        if(!FileManager.default.fileExists(atPath: targetURL.path)){
-            self.downloadVideo(model: model)
+        let targetURL = model.downloadPath?.appendingPathComponent(model.video_name)
+        if(!FileManager.default.fileExists(atPath: (targetURL?.path)!)){
+            let oldSessionTask = DownloadManger.sharedInstance.sessionTaskDictionary[model.video_code!]
+            if (oldSessionTask == nil){
+                DownloadManger.sharedInstance.startDownloadTask(model: model)
+            } else {
+                self.view.makeToast("下载中")
+            }
         } else {
             performSegue(withIdentifier: "toVRDetail", sender: nil)
         }
@@ -165,17 +112,35 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SportVideoListCell
-
         let model = self.videoListNotesModel[indexPath.row]
+        model.cell = cell
         cell.initUI(model:model)
-        if(model.download == DownladStatus.NoDownlaod ){
-                cell.mStatus.text = "未下载"
-        } else if(model.download == DownladStatus.DownlaodOver ){
-                cell.mStatus.text = "已下载"
-        } else if(model.download == DownladStatus.Downlaoding ){
-                cell.mStatus.text = "正在下载"
+        cell.progressView.isHidden = true
+        let targetURL =  model.downloadPath!.appendingPathComponent(model.video_name)
+        let targetTempURL =  model.downloadTempPath!.appendingPathComponent(model.video_name)
+        
+        //TODO resume bug;
+        //https://forums.developer.apple.com/thread/92119
+        do{
+            if FileManager.default.fileExists(atPath: targetTempURL.path) {
+                try FileManager.default.removeItem(at: targetTempURL)
+            }
+        } catch let error as NSError {
+            print("download error: \(error)")
         }
-    
+        
+        if FileManager.default.fileExists(atPath: targetURL.path) {
+            cell.mStatus.text = "已下载"
+        } else if FileManager.default.fileExists(atPath: targetTempURL.path) {
+            cell.mStatus.text = "继续下载"
+        } else{
+            cell.mStatus.text = "未下载"
+        }
+        
+        let oldSessionTask = DownloadManger.sharedInstance.sessionTaskDictionary[model.video_code!]
+        if (oldSessionTask != nil){
+            oldSessionTask?.setModel(model: model)
+        }
         return cell
     }
     
@@ -201,8 +166,8 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
                 guard let model = self.selectModel else {
                     return
                 }
-                let targetURL =  Utils.getFileMangetr().appendingPathComponent(Constants.Download_Download + model.video_name)
-                nextViewController.localPath = targetURL.path;
+                let targetURL = model.downloadPath?.appendingPathComponent(model.video_name)
+                nextViewController.localPath = targetURL?.path;
                 nextViewController.modelObject = model
             }
         } else if (segue.identifier == "selectPlace") {
