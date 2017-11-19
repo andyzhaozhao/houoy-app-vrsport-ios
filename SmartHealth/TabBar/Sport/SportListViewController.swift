@@ -119,6 +119,16 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
         let targetURL =  model.downloadPath!.appendingPathComponent(model.video_name)
         let targetTempURL =  model.downloadTempPath!.appendingPathComponent(model.video_name)
         
+        //TODO resume bug;
+        //https://forums.developer.apple.com/thread/92119
+        do{
+            if FileManager.default.fileExists(atPath: targetTempURL.path) {
+                try FileManager.default.removeItem(at: targetTempURL)
+            }
+        } catch let error as NSError {
+            print("download error: \(error)")
+        }
+        
         if FileManager.default.fileExists(atPath: targetURL.path) {
             cell.mStatus.text = "已下载"
         } else if FileManager.default.fileExists(atPath: targetTempURL.path) {

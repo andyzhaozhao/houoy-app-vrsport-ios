@@ -129,8 +129,8 @@ class SHURLSessionDownloadTask: NSObject,URLSessionDelegate, URLSessionDataDeleg
             self.vodeiModel?.downloadSize = CLongLong(oldData.count)
             DispatchQueue.main.async(execute: {
                 self.vodeiModel?.cell?.mStatus.text = "下载中"
-                let progress = ((self.vodeiModel?.downloadSize)! / (self.vodeiModel?.fileSize)!)
-                self.vodeiModel?.cell?.progressView.setProgress(Float(progress), animated: false)
+                let progress = (Float((self.vodeiModel?.downloadSize)!) / Float((self.vodeiModel?.fileSize)!))
+                self.vodeiModel?.cell?.progressView.setProgress(progress, animated: false)
             })
         } catch let error as NSError {
             print("download error: \(error)")
