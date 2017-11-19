@@ -60,8 +60,6 @@
 		7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F33F1F937E970008E688 /* GLKit.framework */; };
 		7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3411F937E9D0008E688 /* CoreMotion.framework */; };
 		7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3431F937EA40008E688 /* libz.tbd */; };
-		7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3461F9380020008E688 /* UtoVRPlayer.framework */; };
-		7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */; };
 		7E35F34B1F9380840008E688 /* wu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F34A1F9380840008E688 /* wu.mp4 */; };
 		7E7E75471FAEB1FF00FB3595 /* SHResetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E75461FAEB1FF00FB3595 /* SHResetPasswordModel.swift */; };
 		7E97AB271FAD554C004E5E38 /* SHSplashPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB261FAD554C004E5E38 /* SHSplashPageViewController.swift */; };
@@ -70,6 +68,8 @@
 		7E97AB2D1FAD5B40004E5E38 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB2C1FAD5B40004E5E38 /* ThirdViewController.swift */; };
 		7E9F6EF31FBDBBBA0088919D /* DownloadManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9F6EF21FBDBBBA0088919D /* DownloadManger.swift */; };
 		7ED32DF51FC0470400DE9E67 /* SHURLSessionDownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED32DF41FC0470400DE9E67 /* SHURLSessionDownloadTask.swift */; };
+		7ED32DFA1FC1281B00DE9E67 /* UtoVRPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED32DF81FC1281B00DE9E67 /* UtoVRPlayer.framework */; };
+		7ED32DFB1FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7ED32DF91FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle */; };
 		7EE7406F1FB08F3200EB0696 /* MyAttentionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7406E1FB08F3200EB0696 /* MyAttentionDetailViewController.swift */; };
 		7EE740711FB0B04400EB0696 /* FindNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740701FB0B04400EB0696 /* FindNewViewController.swift */; };
 		7EE740731FB0B0B100EB0696 /* FindNewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE740721FB0B0B100EB0696 /* FindNewListCell.swift */; };
@@ -166,8 +166,6 @@
 		7E35F33F1F937E970008E688 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		7E35F3411F937E9D0008E688 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7E35F3431F937EA40008E688 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		7E35F3461F9380020008E688 /* UtoVRPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UtoVRPlayer.framework; sourceTree = "<group>"; };
-		7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UtoVRPlayerResouces.bundle; sourceTree = "<group>"; };
 		7E35F34A1F9380840008E688 /* wu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wu.mp4; sourceTree = "<group>"; };
 		7E7E75461FAEB1FF00FB3595 /* SHResetPasswordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHResetPasswordModel.swift; sourceTree = "<group>"; };
 		7E97AB261FAD554C004E5E38 /* SHSplashPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSplashPageViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +174,8 @@
 		7E97AB2C1FAD5B40004E5E38 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		7E9F6EF21FBDBBBA0088919D /* DownloadManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadManger.swift; sourceTree = "<group>"; };
 		7ED32DF41FC0470400DE9E67 /* SHURLSessionDownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHURLSessionDownloadTask.swift; sourceTree = "<group>"; };
+		7ED32DF81FC1281B00DE9E67 /* UtoVRPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UtoVRPlayer.framework; sourceTree = "<group>"; };
+		7ED32DF91FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UtoVRPlayerResouces.bundle; sourceTree = "<group>"; };
 		7EE7406E1FB08F3200EB0696 /* MyAttentionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAttentionDetailViewController.swift; sourceTree = "<group>"; };
 		7EE740701FB0B04400EB0696 /* FindNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNewViewController.swift; sourceTree = "<group>"; };
 		7EE740721FB0B0B100EB0696 /* FindNewListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindNewListCell.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			files = (
 				7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */,
 				7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */,
-				7E35F3481F9380020008E688 /* UtoVRPlayer.framework in Frameworks */,
+				7ED32DFA1FC1281B00DE9E67 /* UtoVRPlayer.framework in Frameworks */,
 				7E35F3401F937E970008E688 /* GLKit.framework in Frameworks */,
 				66FA8BF5D0D2F4749AB6D55D /* Pods_SmartHealth.framework in Frameworks */,
 			);
@@ -265,7 +265,6 @@
 		1D3E9EC21F3209BD006CDD87 = {
 			isa = PBXGroup;
 			children = (
-				7E35F3451F9380020008E688 /* UtoVRPlayerSDK */,
 				1D3E9F3D1F391E3B006CDD87 /* Resources */,
 				1D3E9ECD1F3209BD006CDD87 /* SmartHealth */,
 				1D3E9EE41F3209BD006CDD87 /* SmartHealthTests */,
@@ -289,6 +288,7 @@
 		1D3E9ECD1F3209BD006CDD87 /* SmartHealth */ = {
 			isa = PBXGroup;
 			children = (
+				7ED32DF61FC1281B00DE9E67 /* Libs */,
 				7E97AB251FAD5515004E5E38 /* Splash */,
 				1D9AF8C11F6F3AC200EAE44D /* Utils */,
 				1D3E9F361F39185B006CDD87 /* SmartHealth-Bridging-Header.h */,
@@ -445,16 +445,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7E35F3451F9380020008E688 /* UtoVRPlayerSDK */ = {
-			isa = PBXGroup;
-			children = (
-				7E35F3461F9380020008E688 /* UtoVRPlayer.framework */,
-				7E35F3471F9380020008E688 /* UtoVRPlayerResouces.bundle */,
-			);
-			name = UtoVRPlayerSDK;
-			path = SmartHealth/Libs/UtoVRPlayerSDK;
-			sourceTree = "<group>";
-		};
 		7E97AB251FAD5515004E5E38 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +463,23 @@
 				7ED32DF41FC0470400DE9E67 /* SHURLSessionDownloadTask.swift */,
 			);
 			path = Download;
+			sourceTree = "<group>";
+		};
+		7ED32DF61FC1281B00DE9E67 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32DF71FC1281B00DE9E67 /* UtoVRPlayerSDK */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		7ED32DF71FC1281B00DE9E67 /* UtoVRPlayerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7ED32DF81FC1281B00DE9E67 /* UtoVRPlayer.framework */,
+				7ED32DF91FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle */,
+			);
+			path = UtoVRPlayerSDK;
 			sourceTree = "<group>";
 		};
 		7EF608801FA7D3BE00C33DFF /* Cell */ = {
@@ -610,7 +617,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E35F3491F9380020008E688 /* UtoVRPlayerResouces.bundle in Resources */,
+				7ED32DFB1FC1281B00DE9E67 /* UtoVRPlayerResouces.bundle in Resources */,
 				1D3E9EDB1F3209BD006CDD87 /* LaunchScreen.storyboard in Resources */,
 				1D3E9ED81F3209BD006CDD87 /* Assets.xcassets in Resources */,
 				1D3E9ED61F3209BD006CDD87 /* Main.storyboard in Resources */,
