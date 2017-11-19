@@ -16,6 +16,14 @@ class ShareViewController: UIViewController , UITextViewDelegate{
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
+        
+        HCKPeripheralManager.shared().requestPeripheralHeartRateData(successBlock: { (returnData) in
+            self.view.makeToast("数据获取：\(returnData.debugDescription)")
+            print("returnData \(returnData.debugDescription)")
+        }) { (error) in
+            self.view.makeToast("数据获取失败：\(error.debugDescription)")
+            print("error \(error.debugDescription)")
+        }
         self.sendSportData()
     }
 

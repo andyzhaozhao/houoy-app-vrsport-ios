@@ -9,10 +9,12 @@
 import UIKit
 
 class DeviceSettingViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
-    var setSectionArray: Array = ["VR眼睛选择","智能手环选择"]
-    var setVRArray: Array = ["暴风小D","暴风魔镜2代"]
-    var setDeviceArray: Array = ["小米手环","专用手环"]
+    var setSectionArray: Array = ["支持的VR眼镜","智能手环选择"]
+    var setVRArray: Array = ["暴风魔镜","暴风魔镜2代"]
+    var setDeviceArray: Array = ["专用手环"]
     @IBOutlet weak var tableView: UITableView!
+    
+    private var peripheralList : Array<CBPeripheral> = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,66 @@ class DeviceSettingViewController: UIViewController , UITableViewDelegate, UITab
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                if let peripheral = HCKPeripheralManager.shared().connectedPeripheral {
+                    HCKCentralManager.shared().disconnectConnectedPeripheral()
+                    self.view.makeToast("断开连接：\(peripheral.name ?? "")")
+                } else {
+                    self.view.isUserInteractionEnabled = false
+                    self.view.makeToastActivity(CGPoint.init(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2))
+                    HCKCentralManager.shared().scanPeripherals(withScanTime: 1, scanPeripheralResultBlock: { (error, peripheralList) in
+                        self.view.isUserInteractionEnabled = true
+                        if error != nil {
+                            self.view.makeToast("请确认蓝牙是否正常开启！")
+                            print(error.debugDescription)
+                        } else {
+                            let alert = UIAlertController.init(title: "", message: "请选择设备", preferredStyle: .alert)
+                            if(peripheralList!.count > 0){
+                                self.peripheralList = peripheralList as! Array<CBPeripheral>
+                                for peripheral in peripheralList! {
+                                    let thePeripheral = peripheral as! CBPeripheral
+                                    print(thePeripheral.debugDescription)
+                                    alert.addAction(UIAlertAction.init(title: thePeripheral.name == nil ? "未知设备" : thePeripheral.name , style: .default, handler: self.selectionDevice))
+                                }
+                                alert.addAction(UIAlertAction.init(title: "取消绑定", style: .cancel, handler: { (action: UIAlertAction) in
+                                }))
+                                self.present(alert, animated: true, completion: nil)
+                            }
+                        }
+                        HCKCentralManager.shared().stopScan()
+                        self.view.hideToastActivity()
+                    })
+                }
+            }
+        }
+    }
+    
+    func selectionDevice(action: UIAlertAction) {
+        //Use action.title
+        if(self.peripheralList == nil){
+            return
+        }
+        for peripheral in self.peripheralList {
+            if(action.title == peripheral.name){
+                self.view.makeToastActivity(CGPoint.init(x: self.view.frame.size.width/2, y: self.view.frame.size.height/2))
+                self.view.isUserInteractionEnabled = false
+                HCKCentralManager.shared().connectPeripheral(withUUID: peripheral.identifier.uuidString, connectSuccessBlock: { (peripheral, uuid, mac) in
+                    self.view.makeToast("绑定成功：\(peripheral?.name ?? "")")
+                    self.view.isUserInteractionEnabled = true
+                    self.view.hideToastActivity()
+                }, connectFailedBlock: { (error) in
+                    self.view.makeToast("绑定失败！")
+                    print(error.debugDescription)
+                    self.view.isUserInteractionEnabled = true
+                    self.view.hideToastActivity()
+                })
+                return
+            }
+        }
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,6 +114,8 @@ class DeviceSettingViewController: UIViewController , UITableViewDelegate, UITab
         }
        
         cell.accessoryType =  UITableViewCellAccessoryType.disclosureIndicator
+        
+        //HCKCentralManager.shared().
         return cell
     }
     /*
