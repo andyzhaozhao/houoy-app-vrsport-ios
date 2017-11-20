@@ -11,9 +11,12 @@
 @property (nonatomic,strong) NSMutableArray *itemsToPlay;
 @property (weak, nonatomic) IBOutlet UIView *playerView;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-
+@property Boolean isStartPlayer;
 @property (nonatomic,strong) SHVideoresultDataModel *model;
-
+@property NSDateFormatter *dateFormatter;
+@property (nonatomic,strong) NSMutableDictionary *heartsDictionary;
+@property (nonatomic,strong) NSMutableDictionary *stepsDictionary;
+@property (nonatomic,strong) SHDataApi *dataApi;
 @end
 
 @implementation VideoPlayerViewController {
@@ -47,6 +50,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
     self.model = (SHVideoresultDataModel *)self.modelObject;
+    self.dataApi = [[SHDataApi alloc] init];
+    self.heartsDictionary = [[NSMutableDictionary alloc] init];
+    self.stepsDictionary = [[NSMutableDictionary alloc] init];
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.dateFormatter.dateFormat = @"yyyy-MM-dd-HH-mm";
     NSMutableArray *items = [NSMutableArray array];
     NSString *preVideoPath = [[NSBundle mainBundle] pathForResource:@"wu" ofType:@"mp4"];
     UVPlayerItem *itemPre = [[UVPlayerItem alloc] initWithPath:preVideoPath type:UVPlayerItemTypeLocalVideo];
@@ -63,23 +71,24 @@
         //默认界面。设置竖屏返回按钮动作
         [self.player setPortraitBackButtonTarget:self selector:@selector(back:)];
     }
+    [self.player rightBarButtonItems];
     //把要播放的内容添加到播放器
     [self.player appendItems:self.itemsToPlay];
 }
 
--( void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
+
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
     //调整frame。你可以使用任何其它布局方式保证播放视图是你期望的大小
     CGRect frame;
-    
+
     if (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
-        self.navigationController.navigationBarHidden = YES;
         frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     } else {
-        self.navigationController.navigationBarHidden = NO;
         frame = CGRectMake(0, 0, self.playerView.bounds.size.width, self.playerView.bounds.size.height );
     }
     self.player.playerView.frame = frame;
@@ -89,24 +98,19 @@
     [super viewWillDisappear:animated];
     //退出时不要忘记调用prepareToRelease
     [self.player prepareToRelease];
-
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
-#pragma mark - Helper
 
+#pragma mark - Helper
 -(void)back:(UIButton*)sender {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"你好" message:@"你可以点击我完成退出页面等操作" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
-    [alert addAction:confirm];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
     if ([segue.identifier isEqualToString:@"shareSport"]) {
         ShareViewController *share = (ShareViewController* )segue.destinationViewController;
         share.selectModel = self.model;
     }
-    
 }
 
 #pragma mark - PanoPlayerDelegate
@@ -115,9 +119,62 @@
         //设置横屏显示的title为当前播放资源的路径。你可以设置为其它的任何内容
         [player setTitleText:self.model.video_name];
     }
+    self.isStartPlayer = false;
+    if (self.itemsToPlay.lastObject == item ){
+        NSDate *date = [NSDate date];
+        self.model.videoStartTime = [self.dateFormatter stringFromDate:date];
+        self.isStartPlayer = YES;
+    }
+}
+
+- (void)player:(UVPlayer *)player playingTimeDidChanged:(Float64)newTime {
+    if (self.isStartPlayer){
+        [self sendDataToAPi];
+    }
+}
+
+- (void)sendDataToAPi {
+    NSDate *date = [NSDate date];
+    NSString *dateString = [self.dateFormatter stringFromDate:date];
+    NSLog(@"%@", dateString);
+    if([self.heartsDictionary objectForKey:dateString] == nil){
+        SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:nil];
+        [self.heartsDictionary setObject:heartmodel forKey:dateString];
+        [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestHeartRateDataWithTime:dateString successBlock:^(id returnData) {
+//            SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:returnData];
+//            [self.dataApi sendHeartSportDataWithModel:heartmodel];
+            [self.view makeToast:returnData];
+            NSLog(@"returnData %@", returnData);
+        } failedBlock:^(NSError *error) {
+            NSLog(@"error %@", error.debugDescription);
+        }];
+    }
+    
+    if([self.stepsDictionary objectForKey:dateString] == nil){
+        SHStepDataModel *stepModel = [self.dataApi createStepModelWithData:nil];
+        [self.stepsDictionary setObject:stepModel forKey:dateString];
+        [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestStepDataWithTime:dateString successBlock:^(id returnData) {
+//            SHStepDataModel *stepModel = [self.dataApi createStepModelWithData:returnData];
+//            [self.dataApi sendStepSportDataWithModel:stepModel];
+            
+            [self.view makeToast:returnData];
+            NSLog(@"returnData %@", returnData);
+        } failedBlock:^(NSError *error) {
+            NSLog(@"error %@", error.debugDescription);
+        }];
+    }
 }
 
 -(void)playerFinished:(UVPlayer *)player{
+    [self playOver];
+    //[self.player replayLast];
+    //[self.player pause];
+}
+
+- (void)playOver{
+    NSDate *date = [NSDate date];
+    self.model.videoEndTime = [self.dateFormatter stringFromDate:date];
+    self.isStartPlayer = NO;
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"确定结束本次运动！" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

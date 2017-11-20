@@ -40,13 +40,15 @@ class DeviceSettingViewController: UIViewController , UITableViewDelegate, UITab
                             self.view.makeToast("请确认蓝牙是否正常开启！")
                             print(error.debugDescription)
                         } else {
-                            let alert = UIAlertController.init(title: "", message: "请选择设备", preferredStyle: .alert)
+                            let alert = UIAlertController.init(title: "", message: "请选择设备", preferredStyle: .actionSheet)
                             if(peripheralList!.count > 0){
                                 self.peripheralList = peripheralList as! Array<CBPeripheral>
                                 for peripheral in peripheralList! {
                                     let thePeripheral = peripheral as! CBPeripheral
                                     print(thePeripheral.debugDescription)
-                                    alert.addAction(UIAlertAction.init(title: thePeripheral.name == nil ? "未知设备" : thePeripheral.name , style: .default, handler: self.selectionDevice))
+                                    if(thePeripheral.name != nil) {
+                                        alert.addAction(UIAlertAction.init(title: thePeripheral.name , style: .default, handler: self.selectionDevice))
+                                    }
                                 }
                                 alert.addAction(UIAlertAction.init(title: "取消绑定", style: .cancel, handler: { (action: UIAlertAction) in
                                 }))

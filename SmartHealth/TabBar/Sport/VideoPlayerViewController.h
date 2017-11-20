@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+@import Toast_Swift;
 
 @interface VideoPlayerViewController : UIViewController
 
