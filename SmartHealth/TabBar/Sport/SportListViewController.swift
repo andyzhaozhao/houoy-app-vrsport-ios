@@ -174,6 +174,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     func selectWith(model: SHFolderresultDataModel) {
         self.videoListNotesModel.removeAll()
         self.tableView.reloadData()
+        self.videPage = 0
         self.rightButton?.setTitle(model.folder_name, for: .normal)
         self.folderModel = model
         self.loadData(folderModel: model)
