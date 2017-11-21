@@ -68,4 +68,11 @@ class SHDataApi: NSObject {
             }
         }
     }
+    
+    func arc4random(lower: UInt32, upper: UInt32) -> UInt32 {
+        guard upper >= lower else {
+            return 0
+        }
+        return arc4random_uniform(upper - lower) + lower
+    }
 }

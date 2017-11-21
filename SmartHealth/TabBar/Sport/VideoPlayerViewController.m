@@ -141,34 +141,38 @@
 - (void)sendDataToAPi {
     NSDate *date = [NSDate date];
     NSString *dateString = [self.dateFormatter stringFromDate:date];
-    NSLog(@"%@", dateString);
+
     
     if([self.heartsDictionary objectForKey:dateString] == nil){
         SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:nil];
+        NSLog(@"%@", dateString);
+        heartmodel.heart = [NSString stringWithFormat:@"%u",[self.dataApi arc4randomWithLower:55 upper:90]];
+        heartmodel.calorie = @"0";//[NSString stringWithFormat:@"%f",([self.dataApi arc4randomWithLower:30 upper:50]/((float)100))];
+        
         [self.heartsDictionary setObject:heartmodel forKey:dateString];
-        [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestHeartRateDataWithTime:dateString successBlock:^(id returnData) {
-//            SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:returnData];
-//            [self.dataApi sendHeartSportDataWithModel:heartmodel];
-            [self.dataApi sendStepSportDataWithModel:nil videoModel:self.model];
-            [self.view makeToast:returnData];
-            NSLog(@"returnData %@", returnData);
-        } failedBlock:^(NSError *error) {
-            NSLog(@"error %@", error.debugDescription);
-        }];
-    }
+//        [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestHeartRateDataWithTime:dateString successBlock:^(id returnData) {
+////            SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:returnData];
+////            [self.dataApi sendHeartSportDataWithModel:heartmodel];
+//            [self.dataApi sendStepSportDataWithModel:nil videoModel:self.model];
+//            [self.view makeToast:returnData];
+//            NSLog(@"returnData %@", returnData);
+//        } failedBlock:^(NSError *error) {
+//            NSLog(@"error %@", error.debugDescription);
+//        }];
+//    }
     
-    if([self.stepsDictionary objectForKey:dateString] == nil){
-        SHStepDataModel *stepModel = [self.dataApi createStepModelWithData:nil];
-        [self.stepsDictionary setObject:stepModel forKey:dateString];
-        [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestStepDataWithTime:dateString successBlock:^(id returnData) {
-//            SHStepDataModel *stepModel = [self.dataApi createStepModelWithData:returnData];
-//            [self.dataApi sendStepSportDataWithModel:stepModel];
-            
-            [self.view makeToast:returnData];
-            NSLog(@"returnData %@", returnData);
-        } failedBlock:^(NSError *error) {
-            NSLog(@"error %@", error.debugDescription);
-        }];
+//    if([self.stepsDictionary objectForKey:dateString] == nil){
+//        SHStepDataModel *stepModel = [self.dataApi createStepModelWithData:nil];
+//        [self.stepsDictionary setObject:stepModel forKey:dateString];
+//        [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestStepDataWithTime:dateString successBlock:^(id returnData) {
+////            SHStepDataModel *stepModel = [self.dataApi createStepModelWithData:returnData];
+////            [self.dataApi sendStepSportDataWithModel:stepModel];
+//
+//            [self.view makeToast:returnData];
+//            NSLog(@"returnData %@", returnData);
+//        } failedBlock:^(NSError *error) {
+//            NSLog(@"error %@", error.debugDescription);
+//        }];
     }
 }
 
