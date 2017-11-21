@@ -101,12 +101,24 @@ struct Constants {
     public static let Record_VRSport_Save_Time_Length = "time_length"
     public static let Record_VRSport_Save_Time_Start = "time_start"
     
-    public static let Register_indicator_calorie_max = "indicator_calorie_max"
-    public static let Register_indicator_calorie_min = "indicator_calorie_min"
-    public static let Register_indicator_heart_rate_max = "indicator_heart_rate_max"
-    public static let Register_indicator_heart_rate_max_max = "indicator_heart_rate_max_max"
-    public static let Register_indicator_heart_rate_max_min = "indicator_heart_rate_max_min"
-    public static let Register_indicator_heart_rate_min = "indicator_heart_rate_min"
+    //recordVR sport detail save parameter
+    public static let Record_VRSportDetailSave_calorie = "calorie"
+    public static let Record_VRSportDetailSave_heart = "heart"
+    public static let Record_VRSportDetailSave_length = "length"
+    
+    public static let Record_VRSportDetailSave_Pk_Person = "pk_person"
+    public static let Record_VRSportDetailSave_Person_Name = "person_name"
+    
+    public static let Record_VRSportDetailSave_Pk_Place = "pk_place"
+    public static let Record_VRSportDetailSave_Place_Name = "place_name"
+    
+    public static let Record_VRSportDetailSave_Pk_Video = "pk_video"
+    public static let Record_VRSportDetailSave_Video_Name = "video_name"
+    
+    public static let Record_VRSportDetailSave_Record_SportDetailCode = "sport_detail_code"
+    public static let Record_VRSportDetailSave_Record_SportDetailname = "sport_detail_name"
+    
+    public static let Record_VRSportDetailSave_Timestamp = "timestamp"
 
     //record Share
     public static let Record_Share_Save_Pk_Person = "pk_person"
@@ -116,6 +128,7 @@ struct Constants {
     public static let Record_Share_Save_Record_Share_Name = "record_share_name"
     
     //URL
+    public static let Photo_Base_Link = "http://47.94.6.120/person/"
     private static let BaseUrl8889 = "http://182.92.128.240:8889/api"
     private static let BaseUrl8888 = "http://182.92.128.240:8888/api"
     public static let SigninSystemMobile = BaseUrl8889+"/login/signinSystemMobile"
@@ -133,6 +146,9 @@ struct Constants {
     public static let PersonPortrait = BaseUrl8889+"/person/portrait"
     public static let PersonUpload = BaseUrl8889+"/person/uploadMobile"
     public static let ForgetPassword = BaseUrl8889+"/login/forgetPassword"
+    public static let RecordVRSportDetailSsave = BaseUrl8889+"/recordVRSportDetail/save"
+    
+    
     
     public static let iTunesLink = "itms://itunes.apple.com/us/app/apple-store/id375380948?mt=8"
 }

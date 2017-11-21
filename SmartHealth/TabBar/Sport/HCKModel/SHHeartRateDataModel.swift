@@ -18,8 +18,8 @@ class SHHeartRateDataModel: NSObject, Mappable {
     var def1: String?
     var def2: String?
     var def3: String?
-    var def4: String?
-    var def5: String?
+    var calorie: String?
+    var heart: String?
     required init(map: Map) {
         self.success = false
     }
@@ -39,7 +39,7 @@ class SHHeartRateDataModel: NSObject, Mappable {
         def1 <- map["def1"]
         def2 <- map["def2"]
         def3 <- map["def3"]
-        def4 <- map["def4"]
-        def5 <- map["def5"]
+        calorie <- map["calorie"]
+        heart <- map["heart"]
     }
 }

@@ -628,7 +628,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Text View" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VJd-VS-hx1">
-                                <rect key="frame" x="26" y="92" width="343" height="575"/>
+                                <rect key="frame" x="26" y="123" width="343" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -652,27 +652,46 @@
                                     <action selector="attentionButtonClick:" destination="vXp-XN-GW8" eventType="touchUpInside" id="UuZ-zC-ayR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-jW-QgG">
+                                <rect key="frame" x="26" y="92" width="156.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROt-Qz-YoQ">
+                                <rect key="frame" x="192.5" y="92" width="156.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kYh-0S-b03" firstAttribute="top" secondItem="5bH-IL-wK7" secondAttribute="bottom" constant="10" id="74W-UM-UwH"/>
                             <constraint firstItem="Qj2-fa-weL" firstAttribute="trailing" secondItem="19R-QE-nJF" secondAttribute="trailingMargin" constant="10" id="7yZ-fA-M8Y"/>
-                            <constraint firstItem="VJd-VS-hx1" firstAttribute="top" secondItem="kYh-0S-b03" secondAttribute="bottom" constant="10" id="BDW-c7-mAj"/>
                             <constraint firstItem="5bH-IL-wK7" firstAttribute="top" secondItem="61s-ZJ-uVZ" secondAttribute="bottom" constant="10" id="Bcn-nY-HzG"/>
                             <constraint firstItem="VJd-VS-hx1" firstAttribute="leading" secondItem="19R-QE-nJF" secondAttribute="leadingMargin" constant="10" id="Cz8-c4-hig"/>
                             <constraint firstItem="5bH-IL-wK7" firstAttribute="leading" secondItem="19R-QE-nJF" secondAttribute="leadingMargin" constant="10" id="E53-Gu-Im4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ROt-Qz-YoQ" secondAttribute="trailing" constant="10" id="IpQ-lb-hwZ"/>
+                            <constraint firstItem="8pV-jW-QgG" firstAttribute="leading" secondItem="19R-QE-nJF" secondAttribute="leadingMargin" constant="10" id="K4d-C0-16f"/>
                             <constraint firstItem="kYh-0S-b03" firstAttribute="leading" secondItem="19R-QE-nJF" secondAttribute="leadingMargin" constant="10" id="Ten-YQ-SmE"/>
+                            <constraint firstItem="ROt-Qz-YoQ" firstAttribute="centerY" secondItem="8pV-jW-QgG" secondAttribute="centerY" id="WhJ-8u-qRq"/>
+                            <constraint firstItem="ROt-Qz-YoQ" firstAttribute="width" secondItem="8pV-jW-QgG" secondAttribute="width" id="Y1q-i1-2aI"/>
                             <constraint firstItem="Qj2-fa-weL" firstAttribute="top" secondItem="61s-ZJ-uVZ" secondAttribute="bottom" constant="10" id="hhq-18-dbC"/>
                             <constraint firstItem="VJd-VS-hx1" firstAttribute="trailing" secondItem="19R-QE-nJF" secondAttribute="trailingMargin" constant="10" id="iSo-uV-c50"/>
+                            <constraint firstItem="ROt-Qz-YoQ" firstAttribute="leading" secondItem="8pV-jW-QgG" secondAttribute="trailing" constant="10" id="lwY-uW-U0d"/>
                             <constraint firstItem="UCd-uo-TM2" firstAttribute="top" secondItem="VJd-VS-hx1" secondAttribute="bottom" id="qJV-Zn-mWc"/>
-                            <constraint firstItem="VJd-VS-hx1" firstAttribute="top" secondItem="kYh-0S-b03" secondAttribute="bottom" constant="10" id="qWF-fB-khE"/>
+                            <constraint firstItem="8pV-jW-QgG" firstAttribute="top" secondItem="kYh-0S-b03" secondAttribute="bottom" constant="10" id="vDm-BQ-Fc2"/>
+                            <constraint firstItem="VJd-VS-hx1" firstAttribute="top" secondItem="8pV-jW-QgG" secondAttribute="bottom" constant="10" id="yhb-lj-rr3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="attentionButton" destination="Qj2-fa-weL" id="BBU-jQ-e3q"/>
                         <outlet property="detailText" destination="VJd-VS-hx1" id="MxH-yd-n1b"/>
                         <outlet property="subTitleLabel" destination="kYh-0S-b03" id="po8-5e-i1k"/>
+                        <outlet property="timeLabel" destination="ROt-Qz-YoQ" id="LRo-8U-M1o"/>
                         <outlet property="titleLabel" destination="5bH-IL-wK7" id="RVE-no-6kB"/>
+                        <outlet property="writerlabel" destination="8pV-jW-QgG" id="fzj-Xl-eed"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwQ-vh-zXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1002,7 +1021,7 @@
                                         <rect key="frame" x="340" y="21" width="25" height="25"/>
                                         <state key="normal" image="settinginfos"/>
                                         <connections>
-                                            <segue destination="VFL-Ot-pDO" kind="show" id="4su-SV-4zi"/>
+                                            <segue destination="VFL-Ot-pDO" kind="show" identifier="userSetting" id="4su-SV-4zi"/>
                                         </connections>
                                     </button>
                                 </subviews>

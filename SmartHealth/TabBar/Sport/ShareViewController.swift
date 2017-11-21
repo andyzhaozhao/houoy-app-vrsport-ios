@@ -42,7 +42,7 @@ class ShareViewController: UIViewController , UITextViewDelegate{
             Constants.Record_VRSport_Save_Pk_Person :  pk ?? "",
             Constants.Record_VRSport_Save_Person_Name : name ?? "",
         
-            Constants.Record_VRSport_Save_Pk_Place : "1",
+            Constants.Record_VRSport_Save_Pk_Place : selectModel?.pk_folder ?? "",
             Constants.Record_VRSport_Save_Place_Name : "Place" ,
         
             Constants.Record_VRSport_Save_Pk_Video : selectModel?.pk_video ?? "",

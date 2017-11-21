@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         HCKCentralManager.shared().scanPeripherals(withScanTime: 1) { (error, list) in
         }
+        //TODO resume bug;
+        //https://forums.developer.apple.com/thread/92119
+        let targetTempURL = Utils.getFileMangetr().appendingPathComponent(Constants.Download_Temp)
+        do{
+            if FileManager.default.fileExists(atPath: targetTempURL.path) {
+                try FileManager.default.removeItem(at: targetTempURL)
+            }
+        } catch let error as NSError {
+            print("download error: \(error)")
+        }
         let isSpash = UserDefaults.standard.bool(forKey: Constants.SH_Splash)
         if(!isSpash){
             showView(name: "SHSplashPageViewController")
