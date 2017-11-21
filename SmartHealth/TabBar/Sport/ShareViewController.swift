@@ -16,7 +16,6 @@ class ShareViewController: UIViewController , UITextViewDelegate{
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
         // Do any additional setup after loading the view.
-        
         HCKPeripheralManager.shared().requestPeripheralHeartRateData(successBlock: { (returnData) in
             self.view.makeToast("数据获取：\(returnData.debugDescription)")
             print("returnData \(returnData.debugDescription)")
@@ -51,10 +50,8 @@ class ShareViewController: UIViewController , UITextViewDelegate{
         
             Constants.Record_VRSport_Save_Record_Sport_Code : "1",
             Constants.Record_VRSport_Save_Record_Sport_name : "record_sport_name",
-        
-            Constants.Record_VRSport_Save_Time_End : "2017-10-25 09:09:09",
-            Constants.Record_VRSport_Save_Time_Length : "300",
-            Constants.Record_VRSport_Save_Time_Start : "2017-10-25 09:09:09"
+            Constants.Record_VRSport_Save_Time_End : selectModel?.videoStartTime ?? "",
+            Constants.Record_VRSport_Save_Time_Start :  selectModel?.videoEndTime ?? ""
         ]
         
         let request = Alamofire.request(Constants.RecordVRSportSave,method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: ApiHelper.getDefaultHeader())

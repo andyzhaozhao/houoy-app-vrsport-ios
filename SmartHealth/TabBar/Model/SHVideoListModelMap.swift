@@ -79,6 +79,9 @@ class SHVideoresultDataModel: NSObject, Mappable {
     var tableName: String?
     var pkfield: String?
     
+    var videoStartTime: String?
+    var videoEndTime: String?
+    
     var downloadTempPath : URL?
     var downloadPath : URL?
     var downloadSize : CLongLong = 0
