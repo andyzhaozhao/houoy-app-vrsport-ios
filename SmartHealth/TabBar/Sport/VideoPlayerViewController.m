@@ -74,6 +74,9 @@
     [self.player rightBarButtonItems];
     //把要播放的内容添加到播放器
     [self.player appendItems:self.itemsToPlay];
+    self.player.gyroscopeEnabled = true;
+    self.player.duralScreenEnabled = true;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -92,6 +95,8 @@
         frame = CGRectMake(0, 0, self.playerView.bounds.size.width, self.playerView.bounds.size.height );
     }
     self.player.playerView.frame = frame;
+    [self.player.playerView setNeedsLayout];
+    [self.player.playerView layoutIfNeeded];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

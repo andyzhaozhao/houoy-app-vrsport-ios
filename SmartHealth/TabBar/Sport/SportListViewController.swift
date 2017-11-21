@@ -44,7 +44,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
         ]
         
         if (self.folderModel != nil){
-            parameters[Constants.List_Pk_Folder] = self.folderModel?.folder_code
+            parameters[Constants.List_Pk_Folder] = self.folderModel?.pk_folder
         }
         
         let request = Alamofire.request(Constants.VideoRetrieve,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
@@ -112,35 +112,28 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! SportVideoListCell
-        let model = self.videoListNotesModel[indexPath.row]
-        model.cell = cell
-        cell.initUI(model:model)
-        cell.progressView.isHidden = true
-        let targetURL =  model.downloadPath!.appendingPathComponent(model.video_name)
-        let targetTempURL =  model.downloadTempPath!.appendingPathComponent(model.video_name)
-        
-        //TODO resume bug;
-        //https://forums.developer.apple.com/thread/92119
-        do{
-            if FileManager.default.fileExists(atPath: targetTempURL.path) {
-                try FileManager.default.removeItem(at: targetTempURL)
+        if(indexPath.row > self.videoListNotesModel.count){
+            return cell;
+        }
+            let model = self.videoListNotesModel[indexPath.row]
+            model.cell = cell
+            cell.initUI(model:model)
+            cell.progressView.isHidden = true
+            let targetURL =  model.downloadPath!.appendingPathComponent(model.video_name)
+            let targetTempURL =  model.downloadTempPath!.appendingPathComponent(model.video_name)
+            
+            if FileManager.default.fileExists(atPath: targetURL.path) {
+                cell.mStatus.text = "已下载"
+            } else if FileManager.default.fileExists(atPath: targetTempURL.path) {
+                cell.mStatus.text = "继续下载"
+            } else{
+                cell.mStatus.text = "未下载"
             }
-        } catch let error as NSError {
-            print("download error: \(error)")
-        }
-        
-        if FileManager.default.fileExists(atPath: targetURL.path) {
-            cell.mStatus.text = "已下载"
-        } else if FileManager.default.fileExists(atPath: targetTempURL.path) {
-            cell.mStatus.text = "继续下载"
-        } else{
-            cell.mStatus.text = "未下载"
-        }
-        
-        let oldSessionTask = DownloadManger.sharedInstance.sessionTaskDictionary[model.video_code!]
-        if (oldSessionTask != nil){
-            oldSessionTask?.setModel(model: model)
-        }
+            
+            let oldSessionTask = DownloadManger.sharedInstance.sessionTaskDictionary[model.video_code!]
+            if (oldSessionTask != nil){
+                oldSessionTask?.setModel(model: model)
+            }
         return cell
     }
     
@@ -180,6 +173,7 @@ class SportListViewController: CommanViewController, UITableViewDelegate, UITabl
     //delegate
     func selectWith(model: SHFolderresultDataModel) {
         self.videoListNotesModel.removeAll()
+        self.tableView.reloadData()
         self.rightButton?.setTitle(model.folder_name, for: .normal)
         self.folderModel = model
         self.loadData(folderModel: model)

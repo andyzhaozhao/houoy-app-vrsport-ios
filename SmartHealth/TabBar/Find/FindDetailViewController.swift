@@ -17,6 +17,8 @@ class FindDetailViewController: UIViewController {
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var detailText: UITextView!
     @IBOutlet weak var attentionButton: UIButton!
+    @IBOutlet weak var writerlabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +28,16 @@ class FindDetailViewController: UIViewController {
         self.titleLabel.text = noteModel?.essay_name
         self.subTitleLabel.text = noteModel?.essay_subname
         self.detailText.attributedText = noteModel?.essay_content?.htmlAttributedString()
+        self.writerlabel.text = noteModel?.person_name
+        self.timeLabel.text = noteModel?.ts_start
+            
         } else if (recordShareModel != nil){
             self.titleLabel.text = recordShareModel?.record_share_name
             self.subTitleLabel.text = recordShareModel?.record_share_code
             self.detailText.attributedText = recordShareModel?.record_share_desc?.htmlAttributedString()
             self.attentionButton.isHidden = true
+            self.writerlabel.text = recordShareModel?.person_name
+            self.timeLabel.text = recordShareModel?.ts
         }
         
         // Do any additional setup after loading the view.
