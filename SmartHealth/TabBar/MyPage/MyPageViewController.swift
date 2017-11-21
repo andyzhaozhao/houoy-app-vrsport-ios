@@ -19,6 +19,8 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var myTable: UITableView!
     var mArray: Array = ["运动历史记录","我的关注"]
+    private var personModel:SHPersonListModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        bgImage.image = UIImage(named: "item_default")
@@ -41,6 +43,7 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
                 Utils.printMsg(msg:"JSON: \(data)")
                 let dic = data as! NSDictionary
                 let model = SHPersoninfoModel(JSON: dic as! [String : Any])
+            
                 let list = model?.resultData
                 guard let theList = list else {
                     return
@@ -50,6 +53,9 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
                 guard let thePersonInfoModel = personInfoModel else {
                     return
                 }
+                self.photoImage.sd_setImage(with: URL(string: Constants.Photo_Base_Link + (thePersonInfoModel.portraitPath)! ), placeholderImage: UIImage(named: "person_default_icon"))
+                
+                self.personModel = thePersonInfoModel
                 self.nameLabel.text = thePersonInfoModel.person_name
                 self.descriptionLabel.text = (thePersonInfoModel.memo == nil) ? "我什么都不想说" : thePersonInfoModel.memo
                 self.ageLabel.text = (thePersonInfoModel.age == nil) ? "秘密" : thePersonInfoModel.age
@@ -84,6 +90,18 @@ class MyPageViewController: CommanViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return mArray.count
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "userSetting") {
+            if let nextViewController = segue.destination as? SettingViewController{
+                guard let model = self.personModel else {
+                    return
+                }
+                nextViewController.personModel = model
+            }
+        }
     }
 }
 

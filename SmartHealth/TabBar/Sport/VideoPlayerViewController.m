@@ -137,12 +137,14 @@
     NSDate *date = [NSDate date];
     NSString *dateString = [self.dateFormatter stringFromDate:date];
     NSLog(@"%@", dateString);
+    
     if([self.heartsDictionary objectForKey:dateString] == nil){
         SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:nil];
         [self.heartsDictionary setObject:heartmodel forKey:dateString];
         [HCKPeripheralManager.sharedPeripheralManager requestPeripheralLatestHeartRateDataWithTime:dateString successBlock:^(id returnData) {
 //            SHHeartRateDataModel *heartmodel = [self.dataApi createHeartModelWithData:returnData];
 //            [self.dataApi sendHeartSportDataWithModel:heartmodel];
+            [self.dataApi sendStepSportDataWithModel:nil videoModel:self.model];
             [self.view makeToast:returnData];
             NSLog(@"returnData %@", returnData);
         } failedBlock:^(NSError *error) {

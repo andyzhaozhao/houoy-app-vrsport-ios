@@ -13,6 +13,8 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var settingTable: UITableView!
     @IBOutlet weak var versionLabel: UILabel!
     var setArray: Array = ["用户设置","设备设置","帮助和关于","版本更新"]
+    public var personModel:SHPersonListModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = false
@@ -64,8 +66,13 @@ class SettingViewController: CommanViewController, UITableViewDelegate, UITableV
                 nextViewController.urlLink = "帮助说明！"
                 nextViewController.title = "帮助和关于"
             }
+        } else if (segue.identifier == "settingInfo") {
+            if let nextViewController = segue.destination as? SettingInfoViewController{
+                guard let model = self.personModel else {
+                    return
+                }
+                nextViewController.personModel = model
+            }
         }
     }
-
-
 }

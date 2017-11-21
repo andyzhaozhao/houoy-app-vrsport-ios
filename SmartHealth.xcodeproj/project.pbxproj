@@ -61,6 +61,7 @@
 		7E35F3421F937E9D0008E688 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3411F937E9D0008E688 /* CoreMotion.framework */; };
 		7E35F3441F937EA40008E688 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E35F3431F937EA40008E688 /* libz.tbd */; };
 		7E35F34B1F9380840008E688 /* wu.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7E35F34A1F9380840008E688 /* wu.mp4 */; };
+		7E7A57721FC449A8007CCF5C /* SHSaveRecordDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7A57711FC449A8007CCF5C /* SHSaveRecordDetailModel.swift */; };
 		7E7E75471FAEB1FF00FB3595 /* SHResetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7E75461FAEB1FF00FB3595 /* SHResetPasswordModel.swift */; };
 		7E97AB271FAD554C004E5E38 /* SHSplashPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB261FAD554C004E5E38 /* SHSplashPageViewController.swift */; };
 		7E97AB291FAD5569004E5E38 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E97AB281FAD5569004E5E38 /* FirstViewController.swift */; };
@@ -191,6 +192,7 @@
 		7E35F3411F937E9D0008E688 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7E35F3431F937EA40008E688 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		7E35F34A1F9380840008E688 /* wu.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = wu.mp4; sourceTree = "<group>"; };
+		7E7A57711FC449A8007CCF5C /* SHSaveRecordDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHSaveRecordDetailModel.swift; sourceTree = "<group>"; };
 		7E7E75461FAEB1FF00FB3595 /* SHResetPasswordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHResetPasswordModel.swift; sourceTree = "<group>"; };
 		7E97AB261FAD554C004E5E38 /* SHSplashPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHSplashPageViewController.swift; sourceTree = "<group>"; };
 		7E97AB281FAD5569004E5E38 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -546,6 +548,7 @@
 		7EB33AEC1FC2F71800CE5431 /* HCKModel */ = {
 			isa = PBXGroup;
 			children = (
+				7E7A57711FC449A8007CCF5C /* SHSaveRecordDetailModel.swift */,
 				7EB33AEF1FC2F76700CE5431 /* SHStepDataModel.swift */,
 				7EB33AED1FC2F71800CE5431 /* SHHeartRateDataModel.swift */,
 				7EB33AF11FC3040A00CE5431 /* SHDataApi.swift */,
@@ -944,6 +947,7 @@
 				7ED32E4A1FC1293B00DE9E67 /* HCKCommunicationTask.m in Sources */,
 				7E2131E51FA9EE64002D7143 /* MySportListListCell.swift in Sources */,
 				1D9AF8C51F6F4DB800EAE44D /* SportDetailViewController.swift in Sources */,
+				7E7A57721FC449A8007CCF5C /* SHSaveRecordDetailModel.swift in Sources */,
 				7ED32E4E1FC1293B00DE9E67 /* MASConstraint.m in Sources */,
 				7ED32E431FC1293B00DE9E67 /* NSArray+HCKBluetoothAdd.m in Sources */,
 				7E3152041FADD00900205959 /* SHSaveRecordModel.swift in Sources */,

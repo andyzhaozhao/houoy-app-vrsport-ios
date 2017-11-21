@@ -1002,7 +1002,7 @@
                                         <rect key="frame" x="340" y="21" width="25" height="25"/>
                                         <state key="normal" image="settinginfos"/>
                                         <connections>
-                                            <segue destination="VFL-Ot-pDO" kind="show" id="4su-SV-4zi"/>
+                                            <segue destination="VFL-Ot-pDO" kind="show" identifier="userSetting" id="4su-SV-4zi"/>
                                         </connections>
                                     </button>
                                 </subviews>

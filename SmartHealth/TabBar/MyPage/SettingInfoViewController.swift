@@ -8,9 +8,11 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 class SettingInfoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate ,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var iconImageView: UIImageView!
+    public var personModel:SHPersonListModel?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,41 +34,44 @@ class SettingInfoViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     func loadImageData(){
-        let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK) ?? ""
-        let parameters: Parameters = [
-            Constants.Login_User_PK: pk
-        ]
-        let request = Alamofire.request(Constants.PersonPortrait,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
-        self.view.isUserInteractionEnabled = false
-        request.responseJSON { response in
-            self.view.isUserInteractionEnabled = true
-            switch response.result {
-            case .success(let data):
-                Utils.printMsg(msg:"JSON: \(data)")
-                let dic = data as! NSDictionary
-                let model = SHPersonPortraitModel(JSON: dic as! [String : Any])
-                guard let theModel = model else {
-                    return
-                }
-                if theModel.success {
-                    guard let theData = theModel.resultData else {
-                        return
-                    }
-                    self.iconImageView.image = UIImage(data: theData)
-                } else {
-                    self.view.makeToast("获取头像失败")
-                }
-            case .failure:
-                self.view.makeToast("获取信息失败")
-            }
-        }
+        iconImageView.sd_setImage(with: URL(string: Constants.Photo_Base_Link + (personModel?.portraitPath)! ), placeholderImage: UIImage(named: "person_default_icon"))
+        
+//        let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK) ?? ""
+//        let parameters: Parameters = [
+//            Constants.Login_User_PK: pk
+//        ]
+//        let request = Alamofire.request(Constants.PersonPortrait,method: .get, parameters: parameters, encoding: URLEncoding.default,headers: ApiHelper.getDefaultHeader())
+//        self.view.isUserInteractionEnabled = false
+//        request.responseJSON { response in
+//            self.view.isUserInteractionEnabled = true
+//            switch response.result {
+//            case .success(let data):
+//                Utils.printMsg(msg:"JSON: \(data)")
+//                let dic = data as! NSDictionary
+//                let model = SHPersonPortraitModel(JSON: dic as! [String : Any])
+//                guard let theModel = model else {
+//                    return
+//                }
+//                if theModel.success {
+//                    guard let theData = theModel.resultData else {
+//                        return
+//                    }
+//                    self.iconImageView.image = UIImage(data: theData)
+//                } else {
+//                    self.view.makeToast("获取头像失败")
+//                }
+//            case .failure:
+//                self.view.makeToast("获取信息失败")
+//            }
+//        }
     }
     
     func uploadImageData(){
         let pk = UserDefaults.standard.string(forKey:Constants.Login_User_PK) ?? ""
         let imageData = UIImageJPEGRepresentation(iconImageView.image!, 0.2) as Data?
+        //"data:image/jpeg;base64" +
         let parameters: Parameters = [
-            Constants.Person_Person_Image: "data:image/jpeg;base64" +     (imageData?.base64EncodedString(options: .lineLength64Characters))!,
+            Constants.Person_Person_Image: (imageData?.base64EncodedString(options: .lineLength64Characters))!,
             Constants.Login_User_PK: pk
         ]
 //        let header: HTTPHeaders = [
