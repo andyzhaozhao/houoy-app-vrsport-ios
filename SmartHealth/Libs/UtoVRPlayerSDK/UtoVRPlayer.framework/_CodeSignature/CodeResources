@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		8rM9SFnZoRWxlhFiY0n+/lKkmNE=
+		9IXmk8OmIKdh82f6W3EDYhlp5PQ=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>LoadingView.nib</key>
 		<data>
-		WtT2ApqlsYtZ/tco0v/lB11Nm/E=
+		wwHzLEjkWpyEwyNiJyY87a1je4k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>UVPlayerDefaultStyleView.nib</key>
 		<data>
-		OEr4+1uB8nJ0wOQtmw2zPQRQqG0=
+		G/C59hLnIYWfEhIp7Mzpiu+p02M=
 		</data>
 		<key>model.mom</key>
 		<data>
@@ -91,11 +91,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WtT2ApqlsYtZ/tco0v/lB11Nm/E=
+			wwHzLEjkWpyEwyNiJyY87a1je4k=
 			</data>
 			<key>hash2</key>
 			<data>
-			INCzlP5aOepV0XjaNiDwBOUgxvKxl9B4FK5Re1A5J28=
+			tqt6WupsBi9YB3NpVpWi1KKi7NdRdaRDh/ML+lIXlUg=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -113,11 +113,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OEr4+1uB8nJ0wOQtmw2zPQRQqG0=
+			G/C59hLnIYWfEhIp7Mzpiu+p02M=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZVLwM1o8irB7iv841dAoBrjYCSCDmWoyJuYaQUYdnyw=
+			aLhpN0gzPbEDVuWM4KILYYIcf8Si8CCh4IRvbXDrJLE=
 			</data>
 		</dict>
 		<key>model.mom</key>
